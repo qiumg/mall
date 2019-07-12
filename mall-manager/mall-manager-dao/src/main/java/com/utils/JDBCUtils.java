@@ -10,13 +10,6 @@ import java.sql.Statement;
 
 
 public class JDBCUtils {
-    static String driver;
-
-    static String url;
-
-    static String user;
-
-    static String password;
 
     static ComboPooledDataSource cpds = null;
 
