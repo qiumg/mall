@@ -9,8 +9,6 @@ import com.mall.impl.ProductImgDAOImpl;
 import com.utils.JDBCUtils;
 import org.junit.Test;
 
-import java.util.List;
-
 public class ConnectionTest {
     @Test
     public void connTest() {
