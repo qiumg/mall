@@ -3,16 +3,14 @@ package com.mall;
 import java.util.List;
 
 public interface IProductDAO {
-    //根据商品名搜索商品
-    Product selectByName(String name);
-    //搜索最新上架产品
+    //搜索spu中最新添加的商品
     Product selectNewProduct();
-    //搜索全部的商品
-    List<Product> selectAll();
-    //修改商品的相关信息
-    void updateProduct(Product product);
-    //删除有关商品
-    void deleteProductByID (int id);
-    //插入一个新建的商品
+    //搜索全部spu商品
+    List<Product> selectAllProduct();
+    //搜索spu根据商品id；
+    Product selectProductById(int id);
+    //在spu插入一条信息
     void insertProduct(Product product);
+    //更新spu中的信息
+    void updateProduct(Product product);
 }

@@ -1,16 +1,14 @@
 package com.mall.impl;
 
-import com.mall.*;
+import com.mall.IProductDAO;
+import com.mall.IProductService;
+import com.mall.Product;
 
 public class ProductServiceImpl implements IProductService {
-
     @Override
-    public ProductImg selectNewProductImg() {
+    public Product QueryNewProduct() {
         IProductDAO dao = new ProductDAOImpl();
         Product product = dao.selectNewProduct();
-
-        IProductImgDAO imgDAO = new ProductImgDAOImpl();
-        ProductImg productImg = imgDAO.selectByShpID(product.getId());
-        return productImg;
+        return product;
     }
 }

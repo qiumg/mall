@@ -1,6 +1,8 @@
-package com.mall;
+package com.mall.servlet;
 
 import com.alibaba.fastjson.JSON;
+import com.mall.IProductService;
+import com.mall.Product;
 import com.mall.impl.ProductServiceImpl;
 
 import javax.servlet.ServletException;
@@ -14,12 +16,11 @@ import java.io.IOException;
 public class InitServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        IProductService productService = new ProductServiceImpl();
-        ProductImg productImg = productService.selectNewProductImg();
-        //String jsonString = JSON.toJSONString(productImg);
-        req.setAttribute("productImg",productImg);
+        IProductService service = new ProductServiceImpl();
+        Product product = service.QueryNewProduct();
+        //String jsonString = JSON.toJSONString(product);
+        req.setAttribute("newProduct",product);
         req.getRequestDispatcher("/index.jsp");
-        //this.getClass().getMethod().invoke();
     }
 
     @Override
