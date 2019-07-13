@@ -40,7 +40,7 @@ public class userloginservlet extends HttpServlet {
         //测试返回的值
         System.out.println(us);
         if (us != null) {
-            request.getRequestDispatcher("/index.html").forward(request, response);
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
         } else {
             //response.sendRedirect("home/login.jsp?error=yes");
             response.setContentType( "text/html;charset=GBK ");
