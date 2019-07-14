@@ -660,8 +660,8 @@
                     <h3>新品上市</h3>
                     <h4>开年福利篇</h4>
                 </div>
-                <div class="recommendationMain ">
-                    <img src="images/zs.jpg "></img>
+                <div class="recommendationMain " id="newproduct">
+
                 </div>
             </div>
             <div class="am-u-sm-4 am-u-lg-3 ">
@@ -1317,10 +1317,11 @@
         $.get({
             //请求方式
             url:"/init",
-            datatype:"text",
             //成功之后的调用函数
             success:function (data) {
-                alert(data);
+                var newproduct = JSON.parse(data);
+                $("#newproduct").append("<img src='"+newproduct.main_Image+"'></img>")
+
             }
         });
     });

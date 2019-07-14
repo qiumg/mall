@@ -1,37 +1,40 @@
 package com.mall;
 
+
+import java.sql.Timestamp;
+
 public class Product {
     private int id;
     private int category_id;
     private String name;
     private String subTitle;
-    private String mainImage;
-    private String subImage;
+    private String main_Image;
+    private String sub_Image;
     private String detail;
     private String attributeList;
     private double price;
     private int stock;
     private int status;
-    private String createDate;
-    private String updateDate;
+    private Timestamp create_time;
+    private Timestamp update_time;
 
     public Product() {
     }
 
-    public Product(int id, int category_id, String name, String subTitle, String mainImage, String subImage, String detail, String attributeList, double price, int stock, int status, String createDate, String updateDate) {
+    public Product(int id, int category_id, String name, String subTitle, String main_Image, String sub_Image, String detail, String attributeList, double price, int stock, int status, Timestamp create_time, Timestamp update_time) {
         this.id = id;
         this.category_id = category_id;
         this.name = name;
         this.subTitle = subTitle;
-        this.mainImage = mainImage;
-        this.subImage = subImage;
+        this.main_Image = main_Image;
+        this.sub_Image = sub_Image;
         this.detail = detail;
         this.attributeList = attributeList;
         this.price = price;
         this.stock = stock;
         this.status = status;
-        this.createDate = createDate;
-        this.updateDate = updateDate;
+        this.create_time = create_time;
+        this.update_time = update_time;
     }
 
     public int getId() {
@@ -66,20 +69,20 @@ public class Product {
         this.subTitle = subTitle;
     }
 
-    public String getMainImage() {
-        return mainImage;
+    public String getMain_Image() {
+        return main_Image;
     }
 
-    public void setMainImage(String mainImage) {
-        this.mainImage = mainImage;
+    public void setMain_Image(String main_Image) {
+        this.main_Image = main_Image;
     }
 
-    public String getSubImage() {
-        return subImage;
+    public String getSub_Image() {
+        return sub_Image;
     }
 
-    public void setSubImage(String subImage) {
-        this.subImage = subImage;
+    public void setSub_Image(String sub_Image) {
+        this.sub_Image = sub_Image;
     }
 
     public String getDetail() {
@@ -122,20 +125,20 @@ public class Product {
         this.status = status;
     }
 
-    public String getCreateDate() {
-        return createDate;
+    public Timestamp getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateDate(String createDate) {
-        this.createDate = createDate;
+    public void setCreate_time(Timestamp create_time) {
+        this.create_time = create_time;
     }
 
-    public String getUpdateDate() {
-        return updateDate;
+    public Timestamp getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateDate(String updateDate) {
-        this.updateDate = updateDate;
+    public void setUpdate_time(Timestamp update_time) {
+        this.update_time = update_time;
     }
 
     @Override
@@ -145,15 +148,15 @@ public class Product {
                 ", category_id=" + category_id +
                 ", name='" + name + '\'' +
                 ", subTitle='" + subTitle + '\'' +
-                ", mainImage='" + mainImage + '\'' +
-                ", subImage='" + subImage + '\'' +
+                ", main_Image='" + main_Image + '\'' +
+                ", sub_Image='" + sub_Image + '\'' +
                 ", detail='" + detail + '\'' +
                 ", attributeList='" + attributeList + '\'' +
                 ", price=" + price +
                 ", stock=" + stock +
                 ", status=" + status +
-                ", createDate='" + createDate + '\'' +
-                ", updateDate='" + updateDate + '\'' +
+                ", create_time=" + create_time +
+                ", update_time=" + update_time +
                 '}';
     }
 }

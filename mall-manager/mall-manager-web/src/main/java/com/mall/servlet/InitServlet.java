@@ -20,6 +20,7 @@ public class InitServlet extends HttpServlet {
         IProductService service = new ProductServiceImpl();
         Product product = service.QueryNewProduct();
         String jsonString = JSON.toJSONString(product);
+        //System.out.println(product);
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
