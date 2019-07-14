@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/init")
 public class InitServlet extends HttpServlet {
@@ -18,9 +19,11 @@ public class InitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         IProductService service = new ProductServiceImpl();
         Product product = service.QueryNewProduct();
-        //String jsonString = JSON.toJSONString(product);
-        req.setAttribute("newProduct",product);
-        req.getRequestDispatcher("/index.jsp");
+        String jsonString = JSON.toJSONString(product);
+        resp.setCharacterEncoding("UTF-8");
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.print(jsonString);
     }
 
     @Override
