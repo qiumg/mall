@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -44,7 +45,11 @@ public class userloginservlet extends HttpServlet {
             //测试返回的值
             //System.out.println(us);
             if (us != null) {
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                HttpSession session = request.getSession();
+                //把用户数据保存在session域对象中
+                session.setAttribute("loginName", us.getName());
+                response.sendRedirect(request.getContextPath()+"/indexservlet");
+               // request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {
                 //response.sendRedirect("home/login.jsp?error=yes");
                 response.setContentType("text/html;charset=GBK ");
