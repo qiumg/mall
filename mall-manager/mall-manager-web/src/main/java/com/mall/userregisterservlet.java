@@ -28,8 +28,15 @@ public class userregisterservlet extends HttpServlet {
         String password = request.getParameter("password");
         String passwordRepeat = request.getParameter("passwordRepeat");
         String phone = request.getParameter("phone");
-
-        if (!password.equals(passwordRepeat)) {
+        if(name.equals("")){
+            response.setContentType("text/html;charset=GBK ");
+            PrintWriter out = response.getWriter();
+            out.print("<script>alert('用户名不能为空');location.href='home/register.html'</script>");
+        }else if(password.equals("")){
+            response.setContentType("text/html;charset=GBK ");
+            PrintWriter out = response.getWriter();
+            out.print("<script>alert('密码不能为空');location.href='home/register.html'</script>");
+        } else if (!password.equals(passwordRepeat)) {
             response.setContentType("text/html;charset=GBK ");
             PrintWriter out = response.getWriter();
             out.print("<script>alert('两次密码不相同');location.href='home/register.html'</script>");
@@ -38,7 +45,6 @@ public class userregisterservlet extends HttpServlet {
             user.setName(name);
             user.setPassword(password);
             user.setPhone(phone);
-
             //引入数据交互层
             userdao dao = new userdaoimpl();
             boolean flag = dao.register(user);
@@ -52,7 +58,7 @@ public class userregisterservlet extends HttpServlet {
                 //request.setAttribute("info", "注册失败");
                 response.setContentType("text/html;charset=GBK ");
                 PrintWriter out = response.getWriter();
-                out.print("<script>alert('注册失败');location.href='home/register.html'</script>");
+                out.print("<script>alert('注册失败（用户已存在）');location.href='home/register.html'</script>");
             }
         }
     }
