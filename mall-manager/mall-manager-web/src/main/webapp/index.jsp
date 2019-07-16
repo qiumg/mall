@@ -5,7 +5,7 @@
   Time: 10:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -15,14 +15,14 @@
 
     <title>首页</title>
 
-    <link href="AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
-    <link href="AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
 
-    <link href="basic/css/demo.css" rel="stylesheet" type="text/css" />
+    <link href="${pageContext.request.contextPath}/basic/css/demo.css" rel="stylesheet" type="text/css" />
 
-    <link href="css/hmstyle.css" rel="stylesheet" type="text/css" />
-    <script src="AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
-    <script src="AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+    <link href="${pageContext.request.contextPath}/css/hmstyle.css" rel="stylesheet" type="text/css" />
+    <script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 
 
 </head>
@@ -34,7 +34,7 @@
         <ul class="message-l">
             <div class="topMessage">
                 <div class="menu-hd">
-                    <a href="home/login.html" target="_top" class="h">亲，请登录</a>
+                    <a href="${pageContext.request.contextPath}/home/login.html" target="_top" class="h">亲，请登录</a>
                     <a href="home/register.html" target="_top">免费注册</a>
                 </div>
             </div>
@@ -114,420 +114,8 @@
 
                     <div class="category">
                         <ul class="category-list" id="js_climit_li">
-                            <li class="appliance js_toggle relative first">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/cake.png"></i><a class="ml-22" title="休闲鞋">休闲鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/cookies.png"></i><a class="ml-22" title="板鞋">板鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
 
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/meat.png"></i><a class="ml-22" title="皮鞋">皮鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/bamboo.png"></i><a class="ml-22" title="帆布鞋">帆布鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/nut.png"></i><a class="ml-22" title="工装鞋">工装鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/candy.png"></i><a class="ml-22" title="拖鞋">拖鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/chocolate.png"></i><a class="ml-22" title="凉鞋">凉鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/fish.png"></i><a class="ml-22" title="高跟鞋">高跟鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/tea.png"></i><a class="ml-22" title="乐福鞋">乐福鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <b class="arrow"></b>
-                            </li>
-                            <li class="appliance js_toggle relative last">
-                                <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="images/package.png"></i><a class="ml-22" title="运动鞋">运动鞋</a></h3>
-                                    <em>&gt;</em></div>
-                                <div class="menu-item menu-in top">
-                                    <div class="area-in">
-                                        <div class="area-bg">
-                                            <div class="menu-srot">
-                                                <div class="sort-side">
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="男鞋">男鞋</span></dt>
-                                                        <dd><a title="奥康" href="#"><span>奥康</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                        <dd><a title="意尔康" href="#"><span>意尔康</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="蜘蛛王" href="#"><span>蜘蛛王</span></a></dd>
-                                                        <dd><a title="康奈" href="#"><span>康奈</span></a></dd>
-                                                        <dd><a title="爱步" href="#"><span>爱步</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="卡帝乐鳄鱼" href="#"><span>卡帝乐鳄鱼</span></a></dd>
-                                                    </dl>
-                                                    <dl class="dl-sort">
-                                                        <dt><span title="女鞋">女鞋</span></dt>
-                                                        <dd><a title="百丽" href="#"><span>百丽</span></a></dd>
-                                                        <dd><a title="斯凯奇" href="#"><span>斯凯奇</span></a></dd>
-                                                        <dd><a title="UGG" href="#"><span>UGG</span></a></dd>
-                                                        <dd><a title="达芙妮" href="#"><span>达芙妮</span></a></dd>
-                                                        <dd><a title="卓诗尼" href="#"><span>卓诗尼</span></a></dd>
-                                                        <dd><a title="他她" href="#"><span>他她</span></a></dd>
-                                                        <dd><a title="思加图" href="#"><span>思加图</span></a></dd>
-                                                        <dd><a title="骆驼" href="#"><span>骆驼</span></a></dd>
-                                                        <dd><a title="红蜻蜓" href="#"><span>红蜻蜓</span></a></dd>
-                                                    </dl>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -661,7 +249,7 @@
                     <h4>开年福利篇</h4>
                 </div>
                 <div class="recommendationMain " id="newproduct">
-
+                    <a><img></img></a>
                 </div>
             </div>
             <div class="am-u-sm-4 am-u-lg-3 ">
@@ -670,7 +258,7 @@
                     <h4>让爱早回家</h4>
                 </div>
                 <div class="recommendationMain ">
-                    <img src="images/zs1.jpg "></img>
+                    <a><img></img></a>
                 </div>
             </div>
             <div class="am-u-sm-4 am-u-lg-3 ">
@@ -679,7 +267,7 @@
                     <h4>甜甜蜜蜜</h4>
                 </div>
                 <div class="recommendationMain ">
-                    <img src="images/zs2.jpg "></img>
+                    <a><img></img></a>
                 </div>
             </div>
 
@@ -687,7 +275,7 @@
         <div class="clear "></div>
         <!--热门活动 -->
 
-        <div class="am-container activity ">
+        <div class="am-container activity " id="activity">
             <div class="shopTitle ">
                 <h4>活动</h4>
                 <h3>每期活动 优惠享不停 </h3>
@@ -747,7 +335,7 @@
 
         <!--休闲鞋-->
 
-        <div class="am-container ">
+        <div class="am-container " >
             <div class="shopTitle ">
                 <h4>休闲鞋</h4>
                 <h3>每一双鞋子都有一个故事</h3>
@@ -765,9 +353,9 @@
             </div>
         </div>
 
-        <div class="am-g am-g-fixed floodOne ">
+        <div class="am-g am-g-fixed floodOne " id ="CasualShoes">
             <div class="am-u-sm-5 am-u-md-3 am-u-lg-4 text-one ">
-                <a href="# ">
+                <a >
                     <div class="outer-con ">
                         <div class="title ">
                             休闲时尚主题
@@ -776,7 +364,7 @@
                             当小鱼儿恋上休闲
                         </div>
                     </div>
-                    <img src="images/act1.jpg " />
+                    <img  />
                 </a>
             </div>
             <div class="am-u-sm-7 am-u-md-5 am-u-lg-4">
@@ -790,7 +378,7 @@
                         </div>
 
                     </div>
-                    <a href="# "><img src="images/act2.jpg " /></a>
+                    <a ><img  /></a>
                 </div>
                 <div class="text-two last">
                     <div class="outer-con ">
@@ -802,7 +390,7 @@
                         </div>
 
                     </div>
-                    <a href="# "><img src="images/act2.jpg " /></a>
+                    <a ><img  /></a>
                 </div>
             </div>
             <div class="am-u-sm-12 am-u-md-4 ">
@@ -816,7 +404,7 @@
                             尝鲜价：¥68
                         </div>
                     </div>
-                    <a href="# "><img src="images/act3.jpg " /></a>
+                    <a ><img  /></a>
                 </div>
 
                 <div class="am-u-sm-3 am-u-md-6 text-three">
@@ -829,7 +417,7 @@
                             尝鲜价：¥68
                         </div>
                     </div>
-                    <a href="# "><img src="images/act3.jpg " /></a>
+                    <a ><img /></a>
                 </div>
 
                 <div class="am-u-sm-3 am-u-md-6 text-three">
@@ -842,7 +430,7 @@
                             尝鲜价：¥68
                         </div>
                     </div>
-                    <a href="# "><img src="images/act3.jpg " /></a>
+                    <a ><img /></a>
                 </div>
 
                 <div class="am-u-sm-3 am-u-md-6 text-three last ">
@@ -855,14 +443,14 @@
                             尝鲜价：¥68
                         </div>
                     </div>
-                    <a href="# "><img src="images/act3.jpg " /></a>
+                    <a ><img /></a>
                 </div>
             </div>
 
         </div>
         <div class="clear "></div>
         <!--运动鞋-->
-        <div class="am-container ">
+        <div class="am-container " >
             <div class="shopTitle ">
                 <h4>运动鞋</h4>
                 <h3>飞一般的感觉</h3>
@@ -879,12 +467,12 @@
                         </span>
             </div>
         </div>
-        <div class="am-g am-g-fixed floodTwo ">
+        <div class="am-g am-g-fixed floodTwo " id = "GymShoes">
 
 
             <div class="am-u-sm-5 am-u-md-4 text-one ">
-                <a href="# ">
-                    <img src="images/b-51.jpg " />
+                <a >
+                    <img  />
                     <div class="outer-con ">
                         <div class="title ">
                             运动时尚风格
@@ -906,7 +494,7 @@
                         仅售：¥98
                     </div>
                 </div>
-                <a href="# "><img src="images/b-52.jpg " /></a>
+                <a ><img  /></a>
             </div>
 
             <div class="am-u-md-4 am-u-lg-2 text-three">
@@ -919,7 +507,7 @@
                         尝鲜价：¥68
                     </div>
                 </div>
-                <a href="# "><img src="images/b-54.jpg " /></a>
+                <a ><img /></a>
             </div>
             <div class="am-u-md-4 am-u-lg-2 text-three">
                 <div class="outer-con ">
@@ -931,7 +519,7 @@
                         尝鲜价：¥68
                     </div>
                 </div>
-                <a href="# "><img src="images/b-54.jpg " /></a>
+                <a ><img /></a>
             </div>
             <div class="am-u-sm-6 am-u-md-4 am-u-lg-2 text-two ">
                 <div class="outer-con ">
@@ -943,7 +531,7 @@
                         仅售：¥98
                     </div>
                 </div>
-                <a href="# "><img src="images/b-52.jpg " /></a>
+                <a ><img  /></a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 am-u-lg-2 text-four ">
                 <div class="outer-con ">
@@ -955,7 +543,7 @@
                         仅售：¥98
                     </div>
                 </div>
-                <a href="# "><img src="images/b-52.jpg " /></a>
+                <a ><img  /></a>
             </div>
             <div class="am-u-sm-4 am-u-md-3 am-u-lg-4 text-five">
                 <div class="outer-con ">
@@ -968,7 +556,7 @@
                     </div>
 
                 </div>
-                <a href="# "><img src="images/b-53.jpg " /></a>
+                <a ><img /></a>
             </div>
             <div class="am-u-sm-4 am-u-md-3 am-u-lg-2 text-six">
                 <div class="outer-con ">
@@ -980,7 +568,7 @@
                         尝鲜价：¥68
                     </div>
                 </div>
-                <a href="# "><img src="images/b-54.jpg " /></a>
+                <a ><img  /></a>
             </div>
             <div class="am-u-sm-4 am-u-md-3 am-u-lg-4 text-five">
                 <div class="outer-con ">
@@ -993,7 +581,7 @@
                     </div>
 
                 </div>
-                <a href="# "><img src="images/b-53.jpg " /></a>
+                <a ><img /></a>
             </div>
         </div>
 
@@ -1001,7 +589,7 @@
 
 
 
-        <div class="am-container ">
+        <div class="am-container " >
             <div class="shopTitle ">
                 <h4>皮鞋</h4>
                 <h3>倾心所在，足有所爱</h3>
@@ -1018,98 +606,9 @@
                         </span>
             </div>
         </div>
-        <div class="am-g am-g-fixed flood method3 ">
-            <ul class="am-thumbnails ">
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-1.jpg " />
-                            <div class="pro-title ">靓女精选</div>
-                            <span class="e-price ">￥118</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-2.jpg " />
-                            <div class="pro-title ">俊男优选</div>
-                            <span class="e-price ">￥108</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-1.jpg " />
-                            <div class="pro-title ">靓女精选</div>
-                            <span class="e-price ">￥118</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-2.jpg " />
-                            <div class="pro-title ">俊男优选</div>
-                            <span class="e-price ">￥108</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-1.jpg " />
-                            <div class="pro-title ">靓女精选</div>
-                            <span class="e-price ">￥118</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-2.jpg " />
-                            <div class="pro-title ">俊男优选</div>
-                            <span class="e-price ">￥108</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-1.jpg " />
-                            <div class="pro-title ">靓女精选</div>
-                            <span class="e-price ">￥118</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-2.jpg " />
-                            <div class="pro-title ">俊男优选</div>
-                            <span class="e-price ">￥108</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-1.jpg " />
-                            <div class="pro-title ">靓女精选</div>
-                            <span class="e-price ">￥118</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="list ">
-                        <a href="# ">
-                            <img src="images/f-2.jpg " />
-                            <div class="pro-title ">俊男优选</div>
-                            <span class="e-price ">￥108</span>
-                        </a>
-                    </div>
-                </li>
+        <div class="am-g am-g-fixed flood method3 " >
+            <ul class="am-thumbnails " id="leatherShoes">
+
 
             </ul>
 
@@ -1317,14 +816,181 @@
         $.get({
             //请求方式
             url:"/init",
+            //请求的数据
+            data:{_method:"newProduct"},
             //成功之后的调用函数
             success:function (data) {
                 var newproduct = JSON.parse(data);
-                $("#newproduct").append("<img src='"+newproduct.main_Image+"'></img>")
+                var newImgs = $(".recommendationMain img")
+                var newherfs = $(".recommendationMain>a")
+                for(var i = 0 ; i < newproduct.length;i++) {
+                    $(newImgs.get(i)).attr("src", newproduct[i].main_Image);
+                    $(newherfs.get(i)).attr("href", newproduct[i].detail+"?productid="+newproduct[i].id);
+                }
+            }
+        });
+        $.get({
+            //请求方式
+            url:"/init",
+            //请求的数据
+            data:{_method:"getCategory"},
+            //成功之后的调用函数
+            success:function (data) {
+                var categorys = JSON.parse(data);
+                $("#js_climit_li").append("<li class='appliance js_toggle relative first'>\n" +
+                    "                                <div class='category-info'>\n" +
+                    "                                    <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a class='ml-22' title='"+categorys[0].name+"'>"+categorys[0].name+"</a></h3>\n" +
+                    "                                    <em>&gt;</em></div>\n" +
+                    "                                <div class='menu-item menu-in top'>\n" +
+                    "                                    <div class='area-in'>\n" +
+                    "                                        <div class='area-bg'>\n" +
+                    "                                            <div class='menu-srot'>\n" +
+                    "                                                <div class='sort-side'>\n" +
+                    "                                                    <dl class='dl-sort'>\n" +
+                    "                                                        <dt><span title='男鞋'>男鞋</span></dt>\n" +
+                    "                                                        <dd><a title='奥康' href='#'><span>奥康</span></a></dd>\n" +
+                    "                                                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
+                    "                                                        <dd><a title='意尔康' href='#'><span>意尔康</span></a></dd>\n" +
+                    "                                                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
+                    "                                                        <dd><a title='蜘蛛王' href='#'><span>蜘蛛王</span></a></dd>\n" +
+                    "                                                        <dd><a title='康奈' href='#'><span>康奈</span></a></dd>\n" +
+                    "                                                        <dd><a title='爱步' href='#'><span>爱步</span></a></dd>\n" +
+                    "                                                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
+                    "                                                        <dd><a title='卡帝乐鳄鱼' href='#'><span>卡帝乐鳄鱼</span></a></dd>\n" +
+                    "                                                    </dl>\n" +
+                    "                                                    <dl class='dl-sort'>\n" +
+                    "                                                        <dt><span title='女鞋'>女鞋</span></dt>\n" +
+                    "                                                        <dd><a title='百丽' href=\"#\"><span>百丽</span></a></dd>\n" +
+                    "                                                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
+                    "                                                        <dd><a title='UGG' href='#'><span>UGG</span></a></dd>\n" +
+                    "                                                        <dd><a title='达芙妮' href='#'><span>达芙妮</span></a></dd>\n" +
+                    "                                                        <dd><a title='卓诗尼' href='#'><span>卓诗尼</span></a></dd>\n" +
+                    "                                                        <dd><a title='他她' href='#'><span>他她</span></a></dd>\n" +
+                    "                                                        <dd><a title='思加图' href='#'><span>思加图</span></a></dd>\n" +
+                    "                                                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
+                    "                                                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
+                    "                                                    </dl>\n" +
+                    "\n" +
+                    "                                                </div>\n" +
+                    "                                            </div>\n" +
+                    "                                        </div>\n" +
+                    "                                    </div>\n" +
+                    "                                </div>\n" +
+                    "                                <b class='arrow'></b>\n" +
+                    "                            </li>");
+                for(var i = 1 ; i < categorys.length;i++){
+                    $("#js_climit_li").append("<li class='appliance js_toggle relative'>\n" +
+                        "                            <div class='category-info'>\n" +
+                        "                            <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a class='ml-22' title='"+categorys[i].name+"'>"+categorys[i].name+"</a></h3>\n" +
+                        "                        <em>&gt;</em></div>\n" +
+                        "                        <div class='menu-item menu-in top'>\n" +
+                        "                            <div class='area-in'>\n" +
+                        "                            <div class='area-bg'>\n" +
+                        "                            <div class='menu-srot'>\n" +
+                        "                            <div class='sort-side'>\n" +
+                        "                            <dl class='dl-sort'>\n" +
+                        "                            <dt><span title='男鞋'>男鞋</span></dt>\n" +
+                        "                        <dd><a title='奥康' href='#'><span>奥康</span></a></dd>\n" +
+                        "                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
+                        "                        <dd><a title='意尔康' href='#'><span>意尔康</span></a></dd>\n" +
+                        "                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
+                        "                        <dd><a title='蜘蛛王' href='#'><span>蜘蛛王</span></a></dd>\n" +
+                        "                        <dd><a title='康奈' href='#'><span>康奈</span></a></dd>\n" +
+                        "                        <dd><a title='爱步' href='#'><span>爱步</span></a></dd>\n" +
+                        "                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
+                        "                        <dd><a title='卡帝乐鳄鱼' href='#'><span>卡帝乐鳄鱼</span></a></dd>\n" +
+                        "                        </dl>\n" +
+                        "                        <dl class='dl-sort'>\n" +
+                        "                            <dt><span title='女鞋'>女鞋</span></dt>\n" +
+                        "                        <dd><a title='百丽' href=\"#\"><span>百丽</span></a></dd>\n" +
+                        "                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
+                        "                        <dd><a title='UGG' href='#'><span>UGG</span></a></dd>\n" +
+                        "                        <dd><a title='达芙妮' href='#'><span>达芙妮</span></a></dd>\n" +
+                        "                        <dd><a title='卓诗尼' href='#'><span>卓诗尼</span></a></dd>\n" +
+                        "                        <dd><a title='他她' href='#'><span>他她</span></a></dd>\n" +
+                        "                        <dd><a title='思加图' href='#'><span>思加图</span></a></dd>\n" +
+                        "                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
+                        "                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
+                        "                        </dl>\n" +
+                        "\n" +
+                        "                        </div>\n" +
+                        "                        </div>\n" +
+                        "                        </div>\n" +
+                        "                        </div>\n" +
+                        "                        </div>\n" +
+                        "                        <b class='arrow'></b>\n" +
+                        "                            </li>");
+                }
 
             }
         });
+        $("ul").delegate("li","mouseenter",function(){
+            $(".category-content .category-list li.first .menu-in").css("display", "none");
+            $(".category-content .category-list li.first").removeClass("hover");
+            $(this).addClass("hover");
+            $(this).children("div.menu-in").css("display", "block")
+        })
+        $("ul").delegate("li","mouseleave",function(){
+            $(this).removeClass("hover")
+            $(this).children("div.menu-in").css("display", "none")
+        })
+        $.get({
+            url:"init",
+            data:{_method:"getProduct",categoryname:"休闲鞋"},
+            success:function (data) {
+                var product = JSON.parse(data);
+                var producthrefs = $("#CasualShoes a");
+                var productImage = $("#CasualShoes img");
+                for(var i = 0 ; i < 7;i++) {
+                    $(productImage.get(i)).attr("src", product[i].main_Image);
+                    $(producthrefs.get(i)).attr("href", product[i].detail+"?productid="+product[i].id);
+                }
+            }
+        })
+        $.get({
+            url:"init",
+            data:{_method:"getProduct",categoryname:"运动鞋"},
+            success:function (data) {
+                var product = JSON.parse(data);
+                var producthrefs = $("#GymShoes a");
+                var productImage = $("#GymShoes img");
+                for(var i = 0 ; i < 9;i++) {
+                    $(productImage.get(i)).attr("src", product[i].main_Image);
+                    $(producthrefs.get(i)).attr("href", product[i].detail+"?productid="+product[i].id);
+                }
+            }
+        })
+        $.get({
+            url:"init",
+            data:{_method:"getProduct",categoryname:"皮鞋"},
+            success:function (data) {
+                var product = JSON.parse(data);
+                var leatherShoes = $("#leatherShoes");
+
+                for(var i = 0 ; i < 6;i++) {
+                    leatherShoes.append("<li>\n" +
+                        "                    <div class=\"list \">\n" +
+                        "                        <a href='"+product[0].detail+"?productid="+product[0].id+"'>\n" +
+                        "                            <img src='"+product[0].main_Image+"' />\n" +
+                        "                            <div class=\"pro-title \">靓女精选</div>\n" +
+                        "                            <span class=\"e-price \">￥118</span>\n" +
+                        "                        </a>\n" +
+                        "                    </div>\n" +
+                        "                </li>\n" +
+                        "                <li>\n" +
+                        "                    <div class=\"list \">\n" +
+                        "                        <a href='"+product[1].detail+"?productid="+product[1].id+"'>\n" +
+                        "                            <img src='"+product[1].main_Image+"?productid="+product[1].id+"' />\n" +
+                        "                            <div class=\"pro-title \">俊男优选</div>\n" +
+                        "                            <span class=\"e-price \">￥108</span>\n" +
+                        "                        </a>\n" +
+                        "                    </div>\n" +
+                        "                </li>")
+                }
+            }
+        })
     });
+
 </script>
 </body>
 </html>

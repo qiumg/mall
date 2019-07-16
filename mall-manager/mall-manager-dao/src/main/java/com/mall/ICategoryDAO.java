@@ -13,4 +13,6 @@ public interface ICategoryDAO {
     void updateCategory(Category category);
     //通过记id删除一条记录
     void deleteCategoryByID(int id);
+    //根据类别名搜索类别id
+    int selectIdByName(String name);
 }

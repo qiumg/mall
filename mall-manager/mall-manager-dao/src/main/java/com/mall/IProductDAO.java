@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface IProductDAO {
     //搜索spu中最新添加的商品
-    Product selectNewProduct();
+    List<Product> selectNewProduct();
     //搜索全部spu商品
     List<Product> selectAllProduct();
     //搜索spu根据商品id；
@@ -13,4 +13,6 @@ public interface IProductDAO {
     void insertProduct(Product product);
     //更新spu中的信息
     void updateProduct(Product product);
+    //根据分类id查询信息
+    List<Product> selectProductByCategoryId(int id);
 }

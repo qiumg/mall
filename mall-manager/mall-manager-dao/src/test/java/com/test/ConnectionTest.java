@@ -4,7 +4,6 @@ package com.test;
 import com.mall.*;
 import com.mall.impl.CategoryDAOImpl;
 import com.mall.impl.ProductDAOImpl;
-import com.mall.impl.ProductSpecDAOImpl;
 import com.utils.JDBCUtils;
 import org.junit.Test;
 
@@ -19,8 +18,7 @@ public class ConnectionTest {
     @Test
     public  void productTest(){
         IProductDAO dao = new ProductDAOImpl();
-        Product product = dao.selectProductById(26);
-        System.out.println(product);
+        dao.selectProductByCategoryId(10002);
 
     }
     @Test
