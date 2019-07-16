@@ -61,7 +61,7 @@ public class JDBCUtils {
                 }
             }
             int count = ps.executeUpdate();//第四步：执行sql语句
-            System.out.println(count);
+            //System.out.println(count);
             if (count > 0) {
                 return true;
             } else {

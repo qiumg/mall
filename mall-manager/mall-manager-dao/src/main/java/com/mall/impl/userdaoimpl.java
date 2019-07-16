@@ -8,7 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class userdaoimpl implements userdao {
@@ -46,10 +49,15 @@ public class userdaoimpl implements userdao {
 
     @Override
     public boolean register(user user) {
-        String sql = "insert into mmall_user (username,password,sex,role) values(?,?,0,0) ";
+        Date getDate = Calendar.getInstance().getTime();
+        String dateStr = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(getDate);
+        //System.out.println("日期加时间:" + dateStr);
+        String sql = "insert into mmall_user (username,password,sex,role,create_time,update_time) values(?,?,0,0,?,?) ";
         List<Object> list = new ArrayList<Object>();
         list.add(user.getName());
         list.add(user.getPassword());
+        list.add(dateStr);
+        list.add(dateStr);
         //list.add(user.getPhone());
         boolean flag=JDBCUtils.addUpdateDelete(sql,list.toArray());
         if(flag){
