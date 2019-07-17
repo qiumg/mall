@@ -36,7 +36,7 @@
 							<%}%>
 							<%
 								if(s == null || s.isEmpty()){								%>
-							<a href="home/register.html" target="_top" style="color: mediumspringgreen">&nbsp免费注册</a>
+							<a href="home/register.html" target="_top" >&nbsp免费注册</a>
 							<%}else{%>
 							<a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
 							<%}%>
@@ -68,7 +68,7 @@
 
 					<div class="search-bar pr">
 						<a name="index_none_header_sysc" href="#"></a>
-						<form>
+						<form action="/SearchProductServlet" method="get">
 							<input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
 							<input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
 						</form>
@@ -1169,7 +1169,11 @@
 							<div class="avatar_box ">
 								<p class="avatar_imgbox "><img src="images/no-img_mid_.jpg " /></p>
 								<ul class="user_info ">
-									<li>用户名：sl1903</li>
+									<%if(s == null || s.isEmpty()){	%>
+									<li>用户名：未登录</li>
+									<%}else{%>
+									<li style="color: seagreen">用户名：<%=s%></li>
+									<%}%>
 									<li>级&nbsp;别：普通会员</li>
 								</ul>
 							</div>
