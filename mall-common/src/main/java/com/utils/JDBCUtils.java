@@ -11,6 +11,7 @@ public class JDBCUtils {
 
     static ComboPooledDataSource cpds = null;
 
+
     static {
         cpds = new ComboPooledDataSource();
 
@@ -45,8 +46,7 @@ public class JDBCUtils {
     }
 
     public static ComboPooledDataSource getDataSource() {
-        ComboPooledDataSource ds = new ComboPooledDataSource("mysql");
-        return ds;
+        return cpds;
     }
     public static boolean addUpdateDelete(String sql, Object[] arr) {
         Connection con = null;
