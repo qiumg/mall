@@ -34,8 +34,19 @@
         <ul class="message-l">
             <div class="topMessage">
                 <div class="menu-hd">
-                    <a href="${pageContext.request.contextPath}/home/login.html" target="_top" class="h">亲，请登录</a>
-                    <a href="home/register.html" target="_top">免费注册</a>
+                    <%
+                        String s= (String) request.getSession(false).getAttribute("loginName");
+                        if(s == null || s.isEmpty()){								%>
+                    <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
+                    <%}else{%>
+                    <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                    <%}%>
+                    <%
+                        if(s == null || s.isEmpty()){								%>
+                    <a href="home/register.html" target="_top" >&nbsp免费注册</a>
+                    <%}else{%>
+                    <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+                    <%}%>
                 </div>
             </div>
         </ul>
@@ -189,14 +200,19 @@
                                 <img src="images/getAvatar.do.jpg">
                             </a>
                             <em>
-                                Hi,<span class="s-name">小叮当</span>
+                                Hi ,
+                                <%if(s == null || s.isEmpty()){	%>
+                                <span class="s-name">请登录</span>
+                                <%}else{%>
+                                <span class="s-name"><%=s%></span>
+                                <%}%>
                                 <a href="#"><p>点击更多优惠活动</p></a>
                             </em>
                         </div>
-                        <div class="member-logout">
-                            <a class="am-btn-warning btn" href="home/login.html">登录</a>
-                            <a class="am-btn-warning btn" href="home/register.html">注册</a>
-                        </div>
+<%--                        <div class="member-logout">--%>
+<%--                            <a class="am-btn-warning btn" href="home/login.html">登录</a>--%>
+<%--                            <a class="am-btn-warning btn" href="home/register.html">注册</a>--%>
+<%--                        </div>--%>
                         <div class="member-login">
                             <a href="#"><strong>0</strong>待收货</a>
                             <a href="#"><strong>0</strong>待发货</a>
@@ -660,10 +676,16 @@
                     <div class="avatar_box ">
                         <p class="avatar_imgbox "><img src="images/no-img_mid_.jpg " /></p>
                         <ul class="user_info ">
-                            <li>用户名：sl1903</li>
+                            <%if(s == null || s.isEmpty()){	%>
+                            <li>用户名：未登录</li>
+                            <%}else{%>
+                            <li style="color: seagreen">用户名：<%=s%></li>
+                            <%}%>
                             <li>级&nbsp;别：普通会员</li>
                         </ul>
                     </div>
+
+
                     <div class="login_btnbox ">
                         <a href="# " class="login_order ">我的订单</a>
                         <a href="# " class="login_favorite ">我的收藏</a>
