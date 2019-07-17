@@ -112,6 +112,11 @@
                 <artifactId>solr-solrj</artifactId>
                 <version>${solrj.version}</version>
             </dependency>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>1.2</version>
+            </dependency>
             <!-- dubbo相关 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
