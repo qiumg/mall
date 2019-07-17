@@ -11,7 +11,7 @@ public class Product {
     private String main_Image;
     private String sub_Image;
     private String detail;
-    private String attributeList;
+    private String attribute_List;
     private double price;
     private int stock;
     private int status;
@@ -21,7 +21,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, int category_id, String name, String subTitle, String main_Image, String sub_Image, String detail, String attributeList, double price, int stock, int status, Timestamp create_time, Timestamp update_time) {
+    public Product(int id, int category_id, String name, String subTitle, String main_Image, String sub_Image, String detail, String attribute_List, double price, int stock, int status, Timestamp create_time, Timestamp update_time) {
         this.id = id;
         this.category_id = category_id;
         this.name = name;
@@ -29,7 +29,7 @@ public class Product {
         this.main_Image = main_Image;
         this.sub_Image = sub_Image;
         this.detail = detail;
-        this.attributeList = attributeList;
+        this.attribute_List = attribute_List;
         this.price = price;
         this.stock = stock;
         this.status = status;
@@ -93,12 +93,12 @@ public class Product {
         this.detail = detail;
     }
 
-    public String getAttributeList() {
-        return attributeList;
+    public String getAttribute_List() {
+        return attribute_List;
     }
 
-    public void setAttributeList(String attributeList) {
-        this.attributeList = attributeList;
+    public void setAttribute_List(String attribute_List) {
+        this.attribute_List = attribute_List;
     }
 
     public double getPrice() {
@@ -151,7 +151,7 @@ public class Product {
                 ", main_Image='" + main_Image + '\'' +
                 ", sub_Image='" + sub_Image + '\'' +
                 ", detail='" + detail + '\'' +
-                ", attributeList='" + attributeList + '\'' +
+                ", attribute_List='" + attribute_List + '\'' +
                 ", price=" + price +
                 ", stock=" + stock +
                 ", status=" + status +

@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 public class BaseInitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String method = request.getParameter("_method");
+
         if(method==null){
             execute(request, response);
         }

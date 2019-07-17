@@ -18,6 +18,7 @@ public class IntroductionServlet extends HttpServlet {
         int id = Integer.parseInt(productid);
         IProductService service = new ProductServiceImpl();
         Product product = service.queryProductById(id);
+        //System.out.println(product);
         request.setAttribute("product",product);
         request.getRequestDispatcher("/home/introduction.jsp").forward(request,response);
     }

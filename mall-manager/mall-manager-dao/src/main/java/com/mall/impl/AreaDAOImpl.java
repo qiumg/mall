@@ -14,7 +14,7 @@ public class AreaDAOImpl implements IAreaDAO {
     public List<Area> selectAreaByCityId(int id) {
         List<Area> areas = null;
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        String sql = "select area from areas where cityid = ?";
+        String sql = "select * from areas where cityid = ?";
         try {
             areas = qr.query(sql, new BeanListHandler<>(Area.class), id);
         } catch (SQLException e) {

@@ -14,7 +14,7 @@ public class CityDAOImpl implements ICityDAO {
     public List<City> selectCityByProvinceId(int id) {
         List<City> cities = null;
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        String sql = "select city from cities where provinceid = ?";
+        String sql = "select * from cities where provinceid = ?";
         try {
             cities = qr.query(sql, new BeanListHandler<>(City.class), id);
         } catch (SQLException e) {

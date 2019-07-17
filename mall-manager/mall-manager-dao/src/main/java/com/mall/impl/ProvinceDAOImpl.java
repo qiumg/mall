@@ -14,7 +14,7 @@ public class ProvinceDAOImpl implements IProvinceDAO {
     public List<Province> selectAllProvince() {
         List<Province> provinces = null;
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        String sql = "select province from provinces";
+        String sql = "select * from provinces";
         try {
             provinces = qr.query(sql, new BeanListHandler<>(Province.class));
         } catch (SQLException e) {
