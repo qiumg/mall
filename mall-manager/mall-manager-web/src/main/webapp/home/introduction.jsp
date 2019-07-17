@@ -55,7 +55,7 @@
                     class="am-icon-user am-icon-fw"></i>个人中心</a></div>
         </div>
         <div class="topMessage mini-cart">
-            <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i
+            <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.jsp" target="_top"><i
                     class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum"
                                                                                           class="h">0</strong></a></div>
         </div>
@@ -70,17 +70,21 @@
 <!--悬浮搜索框-->
 
 <div class="nav white">
-    <div class="logo"><img src="../images/logo.png"/></div>
+    <div class="logo"><img src="images/logo.png" /></div>
     <div class="logoBig">
-        <li><img src="../images/logobig.png"/></li>
+        <li><img src="images/logobig.png" /></li>
     </div>
+
     <div class="search-bar pr">
         <a name="index_none_header_sysc" href="#"></a>
-        <form>
+        <form action="/SearchProductServlet" method="get">
             <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
             <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
         </form>
     </div>
+</div>
+
+<div class="clear"></div>
 </div>
 
 <div class="clear"></div>
@@ -92,7 +96,7 @@
         <div class="long-title"><span class="all-goods">全部分类</span></div>
         <div class="nav-cont">
             <ul>
-                <li class="index"><a href="../home/home3.html">首页</a></li>
+                <li class="index"><a href="../index.jsp">首页</a></li>
                 <li class="qc"><a href="#">闪购</a></li>
                 <li class="qc"><a href="#">限时抢</a></li>
                 <li class="qc"><a href="#">团购</a></li>
@@ -105,7 +109,7 @@
         </div>
     </div>
     <ol class="am-breadcrumb am-breadcrumb-slash">
-        <li><a href="../home/home3.html">首页</a></li>
+        <li><a href="../index.jsp">首页</a></li>
         <li><a href="#">分类</a></li>
         <li class="am-active">内容</li>
     </ol>

@@ -7,16 +7,18 @@ public class Car {
     private int quantity;
     private String product_specs;
     private double product_price;
+    private String user_name;
 
     public Car(){}
 
-    public Car(int id, String name, String main_image, int quantity, String product_specs, double product_price) {
+    public Car(int id, String name, String main_image, int quantity, String product_specs, double product_price, String user_name) {
         this.id = id;
         this.name = name;
         this.main_image = main_image;
         this.quantity = quantity;
         this.product_specs = product_specs;
         this.product_price = product_price;
+        this.user_name = user_name;
     }
 
     public int getId() {
@@ -67,6 +69,14 @@ public class Car {
         this.product_price = product_price;
     }
 
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -76,6 +86,7 @@ public class Car {
                 ", quantity=" + quantity +
                 ", product_specs='" + product_specs + '\'' +
                 ", product_price=" + product_price +
+                ", user_name='" + user_name + '\'' +
                 '}';
     }
 }

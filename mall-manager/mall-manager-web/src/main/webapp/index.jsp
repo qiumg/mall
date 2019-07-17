@@ -43,7 +43,7 @@
                     <%}%>
                     <%
                         if(s == null || s.isEmpty()){								%>
-                    <a href="home/register.html" target="_top" >&nbsp免费注册</a>
+                    <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
                     <%}else{%>
                     <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
                     <%}%>
@@ -58,10 +58,10 @@
                 <div class="menu-hd MyShangcheng"><a href="person/index.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
             </div>
             <div class="topMessage mini-cart">
-                <div class="menu-hd"><a id="mc-menu-hd" href="home/shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+                <div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
             </div>
             <div class="topMessage favorite">
-                <div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div></div>
+                <div class="menu-hd"><a href="/person/collection.html" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div></div>
         </ul>
     </div>
 
@@ -75,7 +75,7 @@
 
         <div class="search-bar pr">
             <a name="index_none_header_sysc" href="#"></a>
-            <form>
+            <form action="/SearchProductServlet" method="get">
                 <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
                 <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
             </form>

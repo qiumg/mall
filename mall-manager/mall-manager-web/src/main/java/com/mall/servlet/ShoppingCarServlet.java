@@ -40,10 +40,12 @@ public class ShoppingCarServlet extends HttpServlet {
     }
     //显示商品列表页
     public void selectCar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String user_name = (String) request.getSession().getAttribute("loginName");
+        System.out.println(user_name);
         ICarDao carDao = new CarDaoImpl();
         List<Car> cars = null;
 
-        cars = carDao.selectCar();
+        cars = carDao.selectCar(user_name);
 
         request.setAttribute("cars",cars);
 
@@ -52,7 +54,6 @@ public class ShoppingCarServlet extends HttpServlet {
     }
     public void deleteCar(HttpServletRequest request, HttpServletResponse response){
         String num =request.getParameter("id");
-        System.out.println(num);
         int id = Integer.parseInt(num);
         ICarDao carDao = new CarDaoImpl();
         carDao.deleteCar(id);

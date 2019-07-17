@@ -14,12 +14,12 @@ import java.util.List;
 public class CarDaoImpl implements ICarDao {
 
     @Override
-    public List<Car> selectCar() {
+    public List<Car> selectCar(String user_name) {
         List<Car> cars = null;
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        String sql = "select * from cart";
+        String sql = "select * from cart where user_name = ?";
         try {
-             cars =  qr.query(sql,new BeanListHandler<>(Car.class));
+             cars =  qr.query(sql,new BeanListHandler<>(Car.class),user_name);
         } catch (SQLException e) {
             e.printStackTrace();
         }
