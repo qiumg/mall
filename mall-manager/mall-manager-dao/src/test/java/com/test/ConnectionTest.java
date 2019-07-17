@@ -1,12 +1,9 @@
 package com.test;
 
 
-import com.mall.IProductDAO;
-import com.mall.IProductSpecsDAO;
-import com.mall.Product;
-import com.mall.ProductSpecs;
+import com.mall.*;
+import com.mall.impl.CategoryDAOImpl;
 import com.mall.impl.ProductDAOImpl;
-import com.mall.impl.ProductSpecDAOImpl;
 import com.utils.JDBCUtils;
 import org.junit.Test;
 
@@ -21,17 +18,17 @@ public class ConnectionTest {
     @Test
     public  void productTest(){
         IProductDAO dao = new ProductDAOImpl();
-        Product product = dao.selectProductById(26);
-        System.out.println(product);
+        dao.selectProductByCategoryId(10002);
 
     }
     @Test
     public  void productImgTest(){
-        IProductSpecsDAO dao = new ProductSpecDAOImpl();
-        List<ProductSpecs> productSpecsList = dao.selectAllProductSpec();
-        for (ProductSpecs productSpecs : productSpecsList){
-            System.out.println(productSpecs);
+        ICategoryDAO dao = new CategoryDAOImpl();
+        List<Category> categories = dao.selectAllCategory();
+        for(Category category : categories){
+            System.out.println(category);
         }
+    }
 
     }
-}
+

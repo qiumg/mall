@@ -1,26 +1,27 @@
 <%--
   Created by IntelliJ IDEA.
-  User: yanhuan
-  Date: 2019/7/16
-  Time: 22:32
+  User: asus
+  Date: 2019/7/17
+  Time: 8:05
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>商品页面</title>
 
-    <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css" />
-    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
-    <link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
-    <link type="text/css" href="../css/optstyle.css" rel="stylesheet" />
-    <link type="text/css" href="../css/style.css" rel="stylesheet" />
+    <link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css"/>
+    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
+    <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link type="text/css" href="../css/optstyle.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/style.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="../basic/js/quick_links.js"></script>
@@ -50,22 +51,28 @@
             <div class="menu-hd"><a href="home3.html" target="_top" class="h">商城首页</a></div>
         </div>
         <div class="topMessage my-shangcheng">
-            <div class="menu-hd MyShangcheng"><a href="../person/index.html" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+            <div class="menu-hd MyShangcheng"><a href="../person/index.html" target="_top"><i
+                    class="am-icon-user am-icon-fw"></i>个人中心</a></div>
         </div>
         <div class="topMessage mini-cart">
-            <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+            <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.html" target="_top"><i
+                    class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum"
+                                                                                          class="h">0</strong></a></div>
         </div>
         <div class="topMessage favorite">
-            <div class="menu-hd"><a href="../person/collection.html" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-        </div> </ul>
+            <div class="menu-hd"><a href="../person/collection.html" target="_top"><i
+                    class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
+            </div>
+        </div>
+    </ul>
 </div>
 
 <!--悬浮搜索框-->
 
 <div class="nav white">
-    <div class="logo"><img src="../images/logo.png" /></div>
+    <div class="logo"><img src="../images/logo.png"/></div>
     <div class="logoBig">
-        <li><img src="../images/logobig.png" /></li>
+        <li><img src="../images/logobig.png"/></li>
     </div>
     <div class="search-bar pr">
         <a name="index_none_header_sysc" href="#"></a>
@@ -103,11 +110,12 @@
         <li class="am-active">内容</li>
     </ol>
     <script type="text/javascript">
-        $(function() {});
-        $(window).load(function() {
+        $(function () {
+        });
+        $(window).load(function () {
             $('.flexslider').flexslider({
                 animation: "slide",
-                start: function(slider) {
+                start: function (slider) {
                     $('body').removeClass('loading');
                 }
             });
@@ -118,7 +126,7 @@
             <div class="flexslider">
                 <ul class="slides">
                     <li>
-                        <img src="../images/01.jpg" title="pic" />
+                        <img src="../images/01.jpg" title="pic"/>
                     </li>
 
                 </ul>
@@ -133,9 +141,9 @@
 
             <div class="box">
                 <script type="text/javascript">
-                    $(document).ready(function() {
+                    $(document).ready(function () {
                         $(".jqzoom").imagezoom();
-                        $("#thumblist li a").click(function() {
+                        $("#thumblist li a").click(function () {
                             $(this).parents("li").addClass("tb-selected").siblings().removeClass("tb-selected");
                             $(".jqzoom").attr('src', $(this).find("img").attr("mid"));
                             $(".jqzoom").attr('rel', $(this).find("img").attr("big"));
@@ -144,12 +152,16 @@
                 </script>
 
                 <div class="tb-booth tb-pic tb-s310">
-                    <img src="../images/zs.jpg" /></a>
+                    <c:if test="${product != null}">
+                        <img src="../${product.main_Image}"/></a>
+                    </c:if>
                 </div>
                 <ul class="tb-thumb" id="thumblist">
                     <li class="tb-selected">
                         <div class="tb-pic tb-s40">
-                            <a href="#"><img src="../images/zs.jpg" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
+                            <c:if test="${product != null}">
+                            <a href="#"><img src="../${product.main_Image}"/></a>
+                            </c:if>
                         </div>
                     </li>
 
@@ -163,26 +175,24 @@
 
             <!--规格属性-->
             <!--名称-->
-            <form class="theme-signin" name="loginform" action="" method="post">
             <div class="tb-detail-hd">
-                <h1 name="name">
+                <h1>
                     潮男优选
                 </h1>
             </div>
             <div class="tb-detail-list">
                 <!--价格-->
                 <div class="tb-detail-price">
-                    <table>
-                        <tr class="price iteminfo_price">
-                            <td>&nbsp;&nbsp;&nbsp;促销价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            <td class="sys_item_price" name="product_price">¥56.90</td>
-                        </tr>
-                        <tr class="price iteminfo_mktprice">
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;原价</td>
-                            <td class="sys_item_mktprice">¥98.00</td>
-                        </tr>
-
-                    </table>
+                    <li class="price iteminfo_price">
+                        <dt>促销价</dt>
+                        <c:if test="${product != null}">
+                        <dd><em>¥</em><b class="sys_item_price">${product.price}</b></dd>
+                        </c:if>
+                    </li>
+                    <li class="price iteminfo_mktprice">
+                        <dt>原价</dt>
+                        <dd><em>¥</em><b class="sys_item_mktprice">208.00</b></dd>
+                    </li>
                     <div class="clear"></div>
                 </div>
 
@@ -191,17 +201,14 @@
                     <dt>配送至</dt>
                     <div class="iteminfo_freprice">
                         <div class="am-form-content address">
-                            <select data-am-selected>
-                                <option value="a">浙江省</option>
-                                <option value="b">湖北省</option>
+                            <select id="province" onchange="selectCity()">
+                                <option value="--">--省</option>
                             </select>
-                            <select data-am-selected>
-                                <option value="a">温州市</option>
-                                <option value="b">武汉市</option>
+                            <select id="city" onchange="selectArea()">
+                                <option value="--">--市</option>
                             </select>
-                            <select data-am-selected>
-                                <option value="a">瑞安区</option>
-                                <option value="b">洪山区</option>
+                            <select id="area">
+                                <option value="a">--区</option>
                             </select>
                         </div>
                         <div class="pay-logis">
@@ -211,13 +218,15 @@
                 </dl>
                 <div class="clear"></div>
 
+
                 <!--销量-->
                 <ul class="tm-ind-panel">
                     <li class="tm-ind-item tm-ind-sellCount canClick">
                         <div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">1015</span></div>
                     </li>
                     <li class="tm-ind-item tm-ind-sumCount canClick">
-                        <div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">6015</span></div>
+                        <div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">6015</span>
+                        </div>
                     </li>
                     <li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
                         <div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
@@ -227,7 +236,9 @@
 
                 <!--各种规格-->
                 <dl class="iteminfo_parameter sys_item_specpara">
-                    <dt class="theme-login"><div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div></dt>
+                    <dt class="theme-login">
+                        <div class="cart-title">可选规格<span class="am-icon-angle-right"></span></div>
+                    </dt>
                     <dd>
                         <!--操作页面-->
 
@@ -239,46 +250,47 @@
                                 <a href="javascript:;" title="关闭" class="close">×</a>
                             </div>
                             <div class="theme-popbod dform">
-
+                                <form class="theme-signin" name="loginform" action="" method="post">
 
                                     <div class="theme-signin-left">
 
                                         <div class="theme-options">
                                             <div class="cart-title">颜色</div>
-                                            <ul>
-                                                <li class="sku-line selected" name="">白色<i></i></li>
-                                                <li class="sku-line">黑色<i></i></li>
-                                                <li class="sku-line">红色<i></i></li>
+                                            <ul id="color">
+                                                <c:if test="${product != null}">
+
+                                                </c:if>
                                             </ul>
                                         </div>
                                         <div class="theme-options">
                                             <div class="cart-title">尺寸</div>
-                                            <ul>
-                                                <li class="sku-line selected">40<i></i></li>
-                                                <li class="sku-line">41<i></i></li>
-                                                <li class="sku-line">42<i></i></li>
+                                            <ul id="size">
+
                                             </ul>
                                         </div>
                                         <div class="theme-options">
                                             <div class="cart-title number">数量</div>
                     <dd>
-                        <input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
-                        <input id="text_box" name="" type="text" value="1" style="width:30px;" />
-                        <input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
-                        <span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+                        <input id="min" class="am-btn am-btn-default" name="" type="button" value="-"/>
+                        <input id="text_box" name="" type="text" value="1" style="width:30px;"/>
+                        <input id="add" class="am-btn am-btn-default" name="" type="button" value="+"/>
+                    <c:if test="${product != null}">
+                        <span id="Stock" class="tb-hidden">库存<span class="stock">${product.stock}</span>件</span>
+                    </c:if>
                     </dd>
 
-                </dl></div>
+                </dl>
+            </div>
             <div class="clear"></div>
 
             <div class="btn-op">
                 <div class="btn am-btn am-btn-warning">确认</div>
                 <div class="btn close am-btn am-btn-warning">取消</div>
             </div>
-            </form></div>
+        </div>
         <div class="theme-signin-right">
             <div class="img-info">
-                <img src="../images/zs1.jpg" />
+                <img src="../images/zs1.jpg"/>
             </div>
             <div class="text-info">
                 <span class="J_Price price-now">¥39.00</span>
@@ -315,10 +327,11 @@
 </div>
 </div>
 
-<div class="pay">
+<div class="pay" style="margin-left: 600px">
     <div class="pay-opt">
         <a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
         <a><span class="am-icon-heart am-icon-fw">收藏</span></a>
+
     </div>
     <li>
         <div class="clearfix tb-btn tb-btn-buy theme-login">
@@ -346,20 +359,24 @@
             <li>
                 <div class="s_picBox">
                     <a class="s_pic" href="#"><img src="../images/zs1.jpg"></a>
-                </div> <a class="txt" target="_blank" href="#">精品</a>
-                <div class="info-box"> <span class="info-box-price">¥ 79.00</span> <span class="info-original-price">￥ 199.00</span> </div>
+                </div>
+                <a class="txt" target="_blank" href="#">精品</a>
+                <div class="info-box"><span class="info-box-price">¥ 79.00</span> <span class="info-original-price">￥ 199.00</span>
+                </div>
             </li>
             <li class="plus_icon"><i>+</i></li>
             <li>
                 <div class="s_picBox">
                     <a class="s_pic" href="#"><img src="../images/zs2.jpg"></a>
-                </div> <a class="txt" target="_blank" href="#">精品</a>
-                <div class="info-box"> <span class="info-box-price">¥ 109.00</span> <span class="info-original-price">￥ 299.00</span> </div>
+                </div>
+                <a class="txt" target="_blank" href="#">精品</a>
+                <div class="info-box"><span class="info-box-price">¥ 109.00</span> <span class="info-original-price">￥ 299.00</span>
+                </div>
             </li>
             <li class="plus_icon"><i>=</i></li>
             <li class="total_price">
-                <p class="combo_price"><span class="c-title">套餐价:</span><span>￥149.00</span> </p>
-                <p class="save_all">共省:<span>￥39.00</span></p> <a href="#" class="buy_now">立即购买</a> </li>
+                <p class="combo_price"><span class="c-title">套餐价:</span><span>￥149.00</span></p>
+                <p class="save_all">共省:<span>￥39.00</span></p> <a href="#" class="buy_now">立即购买</a></li>
             <li class="plus_icon"><i class="am-icon-angle-right"></i></li>
         </ul>
     </div>
@@ -379,7 +396,7 @@
 
                 <li class="first">
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="../images/act1.jpg"> </a>
+                        <a href="#"> <img class="" src="../images/act1.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         精品男鞋
@@ -389,7 +406,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="../images/act2.jpg"> </a>
+                        <a href="#"> <img class="" src="../images/act2.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         精品男鞋
@@ -399,7 +416,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="../images/act3.jpg"> </a>
+                        <a href="#"> <img class="" src="../images/act3.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         精品男鞋
@@ -409,7 +426,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="../images/b-51.jpg"> </a>
+                        <a href="#"> <img class="" src="../images/b-51.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         精品男鞋
@@ -419,7 +436,7 @@
                 </li>
                 <li>
                     <div class="p-img">
-                        <a  href="#"> <img class="" src="../images/b-52.jpg"> </a>
+                        <a href="#"> <img class="" src="../images/b-52.jpg"> </a>
                     </div>
                     <div class="p-name"><a href="#">
                         精品男鞋
@@ -479,13 +496,13 @@
                             <h4>商品细节</h4>
                         </div>
                         <div class="twlistNews">
-                            <img src="../images/act1.jpg" />
-                            <img src="../images/act2.jpg" />
-                            <img src="../images/act3.jpg" />
-                            <img src="../images/b-51.jpg" />
-                            <img src="../images/b-52.jpg" />
-                            <img src="../images/b-53.jpg" />
-                            <img src="../images/b-54.jpg" />
+                            <img src="../images/act1.jpg"/>
+                            <img src="../images/act2.jpg"/>
+                            <img src="../images/act3.jpg"/>
+                            <img src="../images/b-51.jpg"/>
+                            <img src="../images/b-52.jpg"/>
+                            <img src="../images/b-53.jpg"/>
+                            <img src="../images/b-54.jpg"/>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -549,7 +566,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -583,7 +600,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -617,7 +634,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -651,7 +668,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -685,7 +702,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -719,7 +736,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -753,7 +770,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -787,7 +804,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -820,7 +837,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -854,7 +871,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -888,7 +905,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -922,7 +939,7 @@
                         <li class="am-comment">
                             <!-- 评论容器 -->
                             <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg" />
+                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
                                 <!-- 评论者头像 -->
                             </a>
 
@@ -970,7 +987,8 @@
                     <div class="clear"></div>
 
                     <div class="tb-reviewsft">
-                        <div class="tb-rate-alert type-attention">购买前请查看该商品的 <a href="#" target="_blank">购物保障</a>，明确您的售后保障权益。</div>
+                        <div class="tb-rate-alert type-attention">购买前请查看该商品的 <a href="#" target="_blank">购物保障</a>，明确您的售后保障权益。
+                        </div>
                     </div>
 
                 </div>
@@ -980,7 +998,7 @@
                         <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -991,7 +1009,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1002,7 +1020,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1013,7 +1031,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1024,7 +1042,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1035,7 +1053,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1046,7 +1064,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1057,7 +1075,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1068,7 +1086,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1079,7 +1097,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1090,7 +1108,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1102,7 +1120,7 @@
                             </li>
                             <li>
                                 <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg" />
+                                    <img src="../images/f-2.jpg"/>
                                     <p>【鳄鱼】精品皮鞋
                                         <span>体验舒服的皮鞋</span></p>
                                     <p class="price fl">
@@ -1153,7 +1171,9 @@
                     <a href="#">合作伙伴</a>
                     <a href="#">联系我们</a>
                     <a href="#">网站地图</a>
-                    <em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+                    <em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank"
+                                                               title="模板之家">模板之家</a> - Collect from <a
+                            href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
                 </p>
             </div>
         </div>
@@ -1171,7 +1191,7 @@
                 </a>
                 <div class="ibar_login_box status_login">
                     <div class="avatar_box">
-                        <p class="avatar_imgbox"><img src="../images/no-img_mid_.jpg" /></p>
+                        <p class="avatar_imgbox"><img src="../images/no-img_mid_.jpg"/></p>
                         <ul class="user_info">
                             <li>用户名：sl1903</li>
                             <li>级&nbsp;别：普通会员</li>
@@ -1216,7 +1236,7 @@
 
             <div id="brand" class="item">
                 <a href="#">
-                    <span class="wdsc"><img src="../images/wdsc.png" /></span>
+                    <span class="wdsc"><img src="../images/wdsc.png"/></span>
                 </a>
                 <div class="mp_tooltip">
                     我的收藏
@@ -1226,7 +1246,7 @@
 
             <div id="broadcast" class="item">
                 <a href="#">
-                    <span class="chongzhi"><img src="../images/chongzhi.png" /></span>
+                    <span class="chongzhi"><img src="../images/chongzhi.png"/></span>
                 </a>
                 <div class="mp_tooltip">
                     我要充值
@@ -1242,7 +1262,8 @@
                 <!--二维码 -->
                 <li class="qtitem">
                     <a href="#none"><span class="mpbtn_qrcode"></span></a>
-                    <div class="mp_qrcode" style="display:none;"><img src="../images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
+                    <div class="mp_qrcode" style="display:none;"><img src="../images/weixin_code_145.png"/><i
+                            class="icon_arrow_white"></i></div>
                 </li>
                 <li class="qtitem">
                     <a href="#top" class="return_top"><span class="top"></span></a>
@@ -1322,5 +1343,79 @@
 </div>
 
 </body>
+
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+                url: "/change.do",
+                type: "post",
+                data: {_method: "selectProvinces"},
+                success: function (data) {
+                    var pList = JSON.parse(data);
+                    //alert(data)
+                    var pSelect = $("#province");
+                    for (var i = 0; i < pList.length; i++) {
+                        pSelect.append("<option value='" + pList[i].provinceId + "'>" + pList[i].province + "</option>")
+                    }
+                }
+            }
+        )
+        var List = ${product.attribute_List};
+        $("#color").append("<li class='sku-line selected'>"+List.color[0]+"<i></i></li>");
+        for(var i=1 ;i<List.color.length; i++){
+            $("#color").append("<li class='sku-line '>"+List.color[i]+"<i></i></li>");
+        }
+        $("#size").append("<li class='sku-line selected'>"+List.size[0]+"<i></i></li>");
+        for(var i=1 ;i<List.size.length; i++){
+            $("#size").append("<li class='sku-line '>"+List.size[i]+"<i></i></li>");
+        }
+        $("#color").delegate("li","click",function(){
+            $(this).siblings("li").removeClass("selected");
+            $(this).addClass("selected");
+        })
+        $("#size").delegate("li","click",function(){
+            $(this).siblings("li").removeClass("selected");
+            $(this).addClass("selected");
+        })
+    })
+
+    function selectCity() {
+        var pId = $("#province").val();
+        $.ajax({
+                url: "change.do",
+                type: "post",
+                data: {_method: "selectCities", provinceid: pId},
+                success: function (data) {
+                    var cList = JSON.parse(data);
+                    var cSelect = $("#city");
+                    cSelect.empty();
+                    for (var i = 0; i < cList.length; i++) {
+                        cSelect.append(" <option value='" + cList[i].cityId + "'>" + cList[i].city + "</option>")
+                    }
+                }
+            }
+        )
+    }
+
+    function selectArea() {
+        var cId = $("#city").val();
+        $.ajax({
+                url: "change.do",
+                type: "post",
+                data: {_method: "selectAreas", cityid: cId},
+                success: function (data) {
+                    var aList = JSON.parse(data);
+                    var aSelect = $("#area");
+                    aSelect.empty();
+                    for (var i = 0; i < aList.length; i++) {
+                        aSelect.append(" <option value='" + aList[i].areaId + "'>" + aList[i].area + "</option>")
+                    }
+                }
+            }
+        )
+    }
+
+</script>
+
 
 </html>
