@@ -25,11 +25,11 @@
 
     <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="../basic/js/quick_links.js"></script>
-
     <script type="text/javascript" src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>
     <script type="text/javascript" src="../js/jquery.imagezoom.min.js"></script>
     <script type="text/javascript" src="../js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="../js/list.js"></script>
+    <script type="text/javascript"  src="../js/jquery.js"></script>
 
 </head>
 
@@ -51,11 +51,11 @@
             <div class="menu-hd"><a href="home3.html" target="_top" class="h">商城首页</a></div>
         </div>
         <div class="topMessage my-shangcheng">
-            <div class="menu-hd MyShangcheng"><a href="../person/index.html" target="_top"><i
+            <div class="menu-hd MyShangcheng"><a href="../person/index.jsp" target="_top"><i
                     class="am-icon-user am-icon-fw"></i>个人中心</a></div>
         </div>
         <div class="topMessage mini-cart">
-            <div class="menu-hd"><a id="mc-menu-hd" href="shopcart.jsp" target="_top"><i
+            <div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i
                     class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum"
                                                                                           class="h">0</strong></a></div>
         </div>
@@ -344,7 +344,7 @@
     </li>
     <li>
         <div class="clearfix tb-btn tb-btn-basket theme-login">
-            <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+            <a id="LikBasket" title="加入购物车" href="#" class="addcar">加入购物车</a>
         </div>
     </li>
 </div>
