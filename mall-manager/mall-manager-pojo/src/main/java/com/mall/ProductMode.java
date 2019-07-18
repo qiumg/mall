@@ -6,6 +6,24 @@ public class ProductMode {
     private String price;  //价格
     private String subtitle;//介绍
     private String main_img;//图片名
+    private  int id;
+    private  String detail;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
 
     public String getCatagore_name() {
         return catagore_name;
@@ -55,6 +73,8 @@ public class ProductMode {
                 ", price='" + price + '\'' +
                 ", subtitle='" + subtitle + '\'' +
                 ", main_img='" + main_img + '\'' +
+                ", id=" + id +
+                ", detail='" + detail + '\'' +
                 '}';
     }
 }

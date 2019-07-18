@@ -30,9 +30,9 @@
             $("#out").click(function() {
                 $.get({
                     url:"/outajax.do",
-
             })
-        })})
+        })
+        })
     </script>
 
 
@@ -856,7 +856,7 @@
 <script type="text/javascript " src="basic/js/quick_links.js "></script>
 <script type="text/javascript">
     $(function () {
-        $.get({
+       $.get ({
             //请求方式
             url:"/init",
             //请求的数据

@@ -47,6 +47,11 @@
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat</groupId>
+                <artifactId>tomcat-servlet-api</artifactId>
+                <version>7.0.62</version>
+            </dependency>
             <!-- fastjson Json处理工具包 -->
             <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
             <dependency>

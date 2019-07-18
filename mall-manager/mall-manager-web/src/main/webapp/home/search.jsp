@@ -182,10 +182,12 @@
 										String price=list.get(i).getPrice();
 										String subtitle=list.get(i).getSubtitle();
 										String img=list.get(i).getMain_img();
+										int id=list.get(i).getId();
+										String detail=list.get(i).getDetail();
 									%>
 									<li>
 										<div class="i-pic limit">
-											<img src="../<%=img%>" />
+											<a href="<%=detail%>?productid=<%=id%>"><img src="../<%=img%>" /></a>
 											<p class="title fl"><%=name%></p>
 											<p class="price fl">
 												<b>¥</b>
