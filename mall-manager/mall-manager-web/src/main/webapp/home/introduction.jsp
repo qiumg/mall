@@ -261,15 +261,11 @@
                                         <div class="theme-options">
                                             <div class="cart-title">颜色</div>
                                             <ul id="color">
-                                                <c:if test="${product != null}">
-
-                                                </c:if>
                                             </ul>
                                         </div>
                                         <div class="theme-options">
                                             <div class="cart-title">尺寸</div>
                                             <ul id="size">
-
                                             </ul>
                                         </div>
                                         <div class="theme-options">
@@ -1380,6 +1376,38 @@
         $("#size").delegate("li","click",function(){
             $(this).siblings("li").removeClass("selected");
             $(this).addClass("selected");
+        })
+        $("#LikBuy").click(function () {
+            var productId = ${product.id};
+            var provinceInfo = $("#province").val();
+            var cityInfo = $("#city").val();
+            var areaInfo = $("#area").val();
+            var colorInfo = $("#color").find(".selected").text();
+            var sizeInfo = $("#size").find(".selected").text();
+            $.ajax({
+                url:"/pay.do",
+                type:"get",
+                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo},
+                success:function(){
+                    window.location.href="/pay.do?_method=jump";
+                }
+            })
+        })
+        $("#LikBasket").click(function () {
+            var productId = ${product.id};
+            var provinceInfo = $("#province").val();
+            var cityInfo = $("#city").val();
+            var areaInfo = $("#area").val();
+            var colorInfo = $("#color").find(".selected").text();
+            var sizeInfo = $("#size").find(".selected").text();
+            $.ajax({
+                url:"/pay.do",
+                type:"get",
+                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo},
+                success:function(){
+                    window.location.href="/car.do?_method=selectCar";
+                }
+            })
         })
     })
 

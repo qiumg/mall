@@ -158,7 +158,7 @@
                                 type:"get",
                                 data:{_method:"save",productId:productInfo,productNum:numInfo},
                                 success:function(data){
-                                    window.location.href="/pay.do?_method=jump&productId="+data;
+                                    window.location.href="/pay.do?_method=jump&id="+data;
                                 }
                             })
 

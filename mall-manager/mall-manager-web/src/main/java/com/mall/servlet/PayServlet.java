@@ -23,8 +23,21 @@ public class PayServlet extends BaseServlet {
         out.print(productId);
     }
     public void jump (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        String productId = request.getParameter("productId");
-        System.out.println(productId);
+
         request.getRequestDispatcher("/home/pay.jsp").forward(request,response);
+    }
+    public void addInfo(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+        String productid = request.getParameter("productid");
+        System.out.println(productid);
+        String province = request.getParameter("province");
+        System.out.println(province);
+        String city = request.getParameter("city");
+        System.out.println(city);
+        String area = request.getParameter("area");
+        System.out.println(area);
+        String color = request.getParameter("color");
+        System.out.println(color);
+        String size = request.getParameter("size");
+        System.out.println(size);
     }
 }
