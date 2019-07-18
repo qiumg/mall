@@ -6,7 +6,7 @@
   Time: 20:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -120,10 +120,12 @@
                             var t=$(this).parent().find('input[class*=text_box]');
                             t.val(parseInt(t.val())+1)
                             var price = t.parent().parent().parent().parent().prev().children().children().children().children().text()
-                            //alert(price*t.val())
                             t.parent().parent().parent().parent().next().children().children().text(price*t.val())
-
-
+                            var check = t.parent().parent().parent().parent().siblings().eq(0).children().find('input');
+                            if(check[0].checked){
+                                var se = $("#J_Total");
+                                se.text(parseInt(se.text())+parseInt(price));
+                            }
                         })
                         $(".min").click(function(){
                             var t=$(this).parent().find('input[class*=text_box]');
@@ -132,8 +134,33 @@
                                 t.val(0);
                             }
                             var price = t.parent().parent().parent().parent().prev().children().children().children().children().text()
-                            //alert(price*t.val())
                             t.parent().parent().parent().parent().next().children().children().text(price*t.val())
+                            var check = t.parent().parent().parent().parent().siblings().eq(0).children().find('input');
+                            if(check[0].checked && parseInt(t.val())>0){
+                                var se = $("#J_Total");
+                                se.text(parseInt(se.text())-parseInt(price));
+                            }
+
+                        })
+                        $("#J_Go").click(function () {
+                            var checks = document.getElementsByName("check");
+                            var productInfo = "";
+                            var numInfo = "";
+                            for(var i=0;i<checks.length;i++){
+                                if(checks[i].checked){
+                                    productInfo = productInfo+$(checks[i]).val()+",";
+                                    var t = $(checks[i]).parent().parent().siblings().eq(3).children().children().children().find('input[class*=text_box]');
+                                    numInfo = numInfo+t.val()+",";
+                                }
+                            }
+                            $.ajax({
+                                url:"/pay.do",
+                                type:"get",
+                                data:{_method:"save",productId:productInfo,productNum:numInfo},
+                                success:function(data){
+                                    window.location.href="/pay.do?_method=jump&productId="+data;
+                                }
+                            })
 
                         })
                     })
@@ -148,7 +175,7 @@
                     <ul class="item-content clearfix">
                         <li class="td td-chk">
                             <div class="cart-checkbox ">
-                                <input class="check" id="J_CheckBox_170037950254" name="check" value="170037950254" type="checkbox">
+                                <input class="check" id="J_CheckBox_170037950254" name="check" value="<%=car.getId()%>" type="checkbox">
                                 <label for="J_CheckBox_170037950254"></label>
                             </div>
                         </li>
@@ -224,6 +251,19 @@
                 var checks = document.getElementsByName("check");
                 for(var i = 0;i < checks.length ; i++){
                     checks[i].onclick = function(){
+                        var price = $(this).parent().parent().siblings().eq(4).children().children().text();
+                        var t = document.getElementById("J_Total");
+                        var quentity = document.getElementById("J_SelectedItemsCount");
+                        if(this.checked){
+                            t.innerText=parseInt(t.innerText)+parseInt(price);
+                            quentity.innerText=parseInt(quentity.innerText)+1;
+
+
+                        }else{
+                            t.innerText=parseInt(t.innerText)-parseInt(price);
+                            quentity.innerText=parseInt(quentity.innerText)-1;
+                        }
+
                         for(var i = 0;i < checks.length ; i++){
                             if(!checks[i].checked){
                                 all.checked = false;
@@ -235,11 +275,21 @@
                     }
                 }
                 all.onclick = function(){
+                    var t = document.getElementById("J_Total");
+                    var quentity = document.getElementById("J_SelectedItemsCount");
+                    t.innerText=0;
+                    quentity.innerText=0;
                     for(var i = 0;i < checks.length ; i++){
                         var ch = all.checked;
                         checks[i].checked = ch;
+                        if(checks[i].checked){
+                            var price = $(checks[i]).parent().parent().siblings().eq(4).children().children().text();
+                            t.innerText=parseInt(t.innerText)+parseInt(price);
+                            quentity.innerText=parseInt(quentity.innerText)+1;
+                        }
                     }
                 }
+
 
             }
         </script>
@@ -252,7 +302,7 @@
                 <span>全选</span>
             </div>
             <div class="operations">
-                <a href="#" hidefocus="true" class="deleteAll">删除</a>
+                <a href="#" hidefocus="true" class="deleteAll"></a>
 
             </div>
             <div class="float-bar-right">
@@ -266,10 +316,10 @@
                 </div>
                 <div class="price-sum">
                     <span class="txt">合计:</span>
-                    <strong class="price">¥<em id="J_Total">0.0</em></strong>
+                    <strong class="price">¥<em id="J_Total" >0.0</em></strong>
                 </div>
                 <div class="btn-area">
-                    <a href="/home/pay.jsp" id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
+                    <a  id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
                         <span>结&nbsp;算</span></a>
                 </div>
             </div>

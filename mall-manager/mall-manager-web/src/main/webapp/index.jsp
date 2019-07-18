@@ -862,40 +862,6 @@
                 $("#js_climit_li").append("<li class='appliance js_toggle relative first'>\n" +
                     "                                <div class='category-info'>\n" +
                     "                                    <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a class='ml-22' title='"+categorys[0].name+"'>"+categorys[0].name+"</a></h3>\n" +
-                    "                                    <em>&gt;</em></div>\n" +
-                    "                                <div class='menu-item menu-in top'>\n" +
-                    "                                    <div class='area-in'>\n" +
-                    "                                        <div class='area-bg'>\n" +
-                    "                                            <div class='menu-srot'>\n" +
-                    "                                                <div class='sort-side'>\n" +
-                    "                                                    <dl class='dl-sort'>\n" +
-                    "                                                        <dt><span title='男鞋'>男鞋</span></dt>\n" +
-                    "                                                        <dd><a title='奥康' href='#'><span>奥康</span></a></dd>\n" +
-                    "                                                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
-                    "                                                        <dd><a title='意尔康' href='#'><span>意尔康</span></a></dd>\n" +
-                    "                                                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
-                    "                                                        <dd><a title='蜘蛛王' href='#'><span>蜘蛛王</span></a></dd>\n" +
-                    "                                                        <dd><a title='康奈' href='#'><span>康奈</span></a></dd>\n" +
-                    "                                                        <dd><a title='爱步' href='#'><span>爱步</span></a></dd>\n" +
-                    "                                                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
-                    "                                                        <dd><a title='卡帝乐鳄鱼' href='#'><span>卡帝乐鳄鱼</span></a></dd>\n" +
-                    "                                                    </dl>\n" +
-                    "                                                    <dl class='dl-sort'>\n" +
-                    "                                                        <dt><span title='女鞋'>女鞋</span></dt>\n" +
-                    "                                                        <dd><a title='百丽' href=\"#\"><span>百丽</span></a></dd>\n" +
-                    "                                                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
-                    "                                                        <dd><a title='UGG' href='#'><span>UGG</span></a></dd>\n" +
-                    "                                                        <dd><a title='达芙妮' href='#'><span>达芙妮</span></a></dd>\n" +
-                    "                                                        <dd><a title='卓诗尼' href='#'><span>卓诗尼</span></a></dd>\n" +
-                    "                                                        <dd><a title='他她' href='#'><span>他她</span></a></dd>\n" +
-                    "                                                        <dd><a title='思加图' href='#'><span>思加图</span></a></dd>\n" +
-                    "                                                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
-                    "                                                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
-                    "                                                    </dl>\n" +
-                    "\n" +
-                    "                                                </div>\n" +
-                    "                                            </div>\n" +
-                    "                                        </div>\n" +
                     "                                    </div>\n" +
                     "                                </div>\n" +
                     "                                <b class='arrow'></b>\n" +
@@ -904,40 +870,6 @@
                     $("#js_climit_li").append("<li class='appliance js_toggle relative'>\n" +
                         "                            <div class='category-info'>\n" +
                         "                            <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a class='ml-22' title='"+categorys[i].name+"'>"+categorys[i].name+"</a></h3>\n" +
-                        "                        <em>&gt;</em></div>\n" +
-                        "                        <div class='menu-item menu-in top'>\n" +
-                        "                            <div class='area-in'>\n" +
-                        "                            <div class='area-bg'>\n" +
-                        "                            <div class='menu-srot'>\n" +
-                        "                            <div class='sort-side'>\n" +
-                        "                            <dl class='dl-sort'>\n" +
-                        "                            <dt><span title='男鞋'>男鞋</span></dt>\n" +
-                        "                        <dd><a title='奥康' href='#'><span>奥康</span></a></dd>\n" +
-                        "                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
-                        "                        <dd><a title='意尔康' href='#'><span>意尔康</span></a></dd>\n" +
-                        "                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
-                        "                        <dd><a title='蜘蛛王' href='#'><span>蜘蛛王</span></a></dd>\n" +
-                        "                        <dd><a title='康奈' href='#'><span>康奈</span></a></dd>\n" +
-                        "                        <dd><a title='爱步' href='#'><span>爱步</span></a></dd>\n" +
-                        "                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
-                        "                        <dd><a title='卡帝乐鳄鱼' href='#'><span>卡帝乐鳄鱼</span></a></dd>\n" +
-                        "                        </dl>\n" +
-                        "                        <dl class='dl-sort'>\n" +
-                        "                            <dt><span title='女鞋'>女鞋</span></dt>\n" +
-                        "                        <dd><a title='百丽' href=\"#\"><span>百丽</span></a></dd>\n" +
-                        "                        <dd><a title='斯凯奇' href='#'><span>斯凯奇</span></a></dd>\n" +
-                        "                        <dd><a title='UGG' href='#'><span>UGG</span></a></dd>\n" +
-                        "                        <dd><a title='达芙妮' href='#'><span>达芙妮</span></a></dd>\n" +
-                        "                        <dd><a title='卓诗尼' href='#'><span>卓诗尼</span></a></dd>\n" +
-                        "                        <dd><a title='他她' href='#'><span>他她</span></a></dd>\n" +
-                        "                        <dd><a title='思加图' href='#'><span>思加图</span></a></dd>\n" +
-                        "                        <dd><a title='骆驼' href='#'><span>骆驼</span></a></dd>\n" +
-                        "                        <dd><a title='红蜻蜓' href='#'><span>红蜻蜓</span></a></dd>\n" +
-                        "                        </dl>\n" +
-                        "\n" +
-                        "                        </div>\n" +
-                        "                        </div>\n" +
-                        "                        </div>\n" +
                         "                        </div>\n" +
                         "                        </div>\n" +
                         "                        <b class='arrow'></b>\n" +
