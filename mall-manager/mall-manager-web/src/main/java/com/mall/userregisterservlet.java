@@ -31,15 +31,15 @@ public class userregisterservlet extends HttpServlet {
         if(name.equals("")){
             response.setContentType("text/html;charset=GBK ");
             PrintWriter out = response.getWriter();
-            out.print("<script>alert('用户名不能为空');location.href='home/register.html'</script>");
+            out.print("<script>alert('用户名不能为空');location.href='home/register.jsp'</script>");
         }else if(password.equals("")){
             response.setContentType("text/html;charset=GBK ");
             PrintWriter out = response.getWriter();
-            out.print("<script>alert('密码不能为空');location.href='home/register.html'</script>");
+            out.print("<script>alert('密码不能为空');location.href='home/register.jsp'</script>");
         } else if (!password.equals(passwordRepeat)) {
             response.setContentType("text/html;charset=GBK ");
             PrintWriter out = response.getWriter();
-            out.print("<script>alert('两次密码不相同');location.href='home/register.html'</script>");
+            out.print("<script>alert('两次密码不相同');location.href='home/register.jsp'</script>");
         } else {
             //获取register.jsp页面提交的账号和密码设置到实体类User中
             user.setName(name);
@@ -58,7 +58,7 @@ public class userregisterservlet extends HttpServlet {
                 //request.setAttribute("info", "注册失败");
                 response.setContentType("text/html;charset=GBK ");
                 PrintWriter out = response.getWriter();
-                out.print("<script>alert('注册失败（用户已存在）');location.href='home/register.html'</script>");
+                out.print("<script>alert('注册失败（用户已存在）');location.href='home/register.jsp'</script>");
             }
         }
     }

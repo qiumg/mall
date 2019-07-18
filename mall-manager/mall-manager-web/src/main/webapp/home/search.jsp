@@ -39,7 +39,7 @@
 						<%}%>
 						<%
 							if(s == null || s.isEmpty()){								%>
-						<a href="home/register.html" target="_top" >&nbsp免费注册</a>
+						<a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
 						<%}else{%>
 						<a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
 						<%}%>
@@ -108,12 +108,12 @@
 								<a title="板鞋" href="#">板鞋</a>
 								<a title="休闲鞋" href="#">休闲鞋</a>
 								<a title="皮鞋" href="#">皮鞋</a>
-
+								<% List<ProductMode> list=(List<ProductMode>)request.getAttribute("list");%>
 							</div>
 							<ul class="select">
 								<p class="title font-normal">
-									<span class="fl">松子</span>
-									<span class="total fl">搜索到<strong class="num">997</strong>件相关商品</span>
+									<span class="fl">共</span>
+									<span class="total fl">搜索到<strong class="num"><%=list.size()%></strong>件相关商品</span>
 								</p>
 								<div class="clear"></div>
 								<li class="select-result">
@@ -176,7 +176,6 @@
 									<li class="big"><a title="评价" href="#">评价为主</a></li>
 								</div>
 								<div class="clear"></div>
-								<% List<ProductMode> list=(List<ProductMode>)request.getAttribute("list");%>
 								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
 									<% for(int i = 0 ; i < list.size() ; i++) {
 										String name=list.get(i).getName();
