@@ -4,6 +4,7 @@ package com.test;
 import com.mall.*;
 import com.mall.impl.CategoryDAOImpl;
 import com.mall.impl.ProductDAOImpl;
+import com.mall.impl.ShippingDAOImpl;
 import com.utils.JDBCUtils;
 import org.junit.Test;
 
@@ -23,12 +24,17 @@ public class ConnectionTest {
     }
     @Test
     public  void productImgTest(){
-        ICategoryDAO dao = new CategoryDAOImpl();
-        List<Category> categories = dao.selectAllCategory();
-        for(Category category : categories){
-            System.out.println(category);
+        Shipping shipping = new Shipping();
+        shipping.setUser_Id(1);
+        shipping.setReceiver_name("helloworld");
+        shipping.setReceiver_mobile("13356295928");
+        shipping.setReceiver_province("shandong");
+        shipping.setReceiver_city("binzhou");
+        shipping.setReceiver_district("buyang");
+        shipping.setReceiver_address("daxue");
+        IShippingDAO dao = new ShippingDAOImpl();
+        dao.insertShipping(shipping);
         }
-    }
 
     }
 

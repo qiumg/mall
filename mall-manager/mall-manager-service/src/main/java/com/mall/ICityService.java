@@ -4,4 +4,6 @@ import java.util.List;
 
 public interface ICityService {
     List<City> queryCityByProvinceId(int id);
+
+    City queryCityByCid(int id);
 }

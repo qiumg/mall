@@ -4,6 +4,7 @@ import com.mall.City;
 import com.mall.ICityDAO;
 import com.utils.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
@@ -21,5 +22,18 @@ public class CityDAOImpl implements ICityDAO {
             e.printStackTrace();
         }
         return cities;
+    }
+
+    @Override
+    public City selectCityByCityId(int id) {
+        City city = null;
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "select city from cities where cityid = ?";
+        try {
+            city = qr.query(sql, new BeanHandler<>(City.class), id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return city;
     }
 }
