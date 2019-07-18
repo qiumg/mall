@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet("/change.do")
-public class PositionServlet extends BaseInitServlet{
+public class PositionServlet extends BaseServlet {
     public void selectProvinces(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         IProvinceService service = new ProvinceServiceImpl();
         List<Province> provinces = service.queryAllProvince();

@@ -16,10 +16,9 @@ import java.util.List;
 
 
 @WebServlet("/init")
-public class InitServlet extends BaseInitServlet {
+public class InitServlet extends BaseServlet {
 
     public void newProduct(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        System.out.println("...");
         IProductService service = new ProductServiceImpl();
         List<Product> products = service.queryNewProduct();
         String jsonString = JSON.toJSONString(products);
