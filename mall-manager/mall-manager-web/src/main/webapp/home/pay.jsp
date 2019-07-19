@@ -204,9 +204,6 @@
                         <div class="th th-sum">
                             <div class="td-inner">金额</div>
                         </div>
-                        <div class="th th-oplist">
-                            <div class="td-inner">配送方式</div>
-                        </div>
 
                     </div>
                 </div>
@@ -232,7 +229,7 @@
                                     <li class="td td-info">
                                         <div class="item-props">
                                             <span class="sku-line">颜色：白色</span>
-                                            <span class="sku-line">包装：裸装</span>
+
                                         </div>
                                     </li>
                                     <li class="td td-price">
@@ -260,14 +257,7 @@
                                         <em tabindex="0" class="J_ItemSum number">117.00</em>
                                     </div>
                                 </li>
-                                <li class="td td-oplist">
-                                    <div class="td-inner">
-                                        <span class="phone-title">配送方式</span>
-                                        <div class="pay-logis">
-                                            快递<b class="sys_item_freprice">10</b>元
-                                        </div>
-                                    </div>
-                                </li>
+
 
                             </ul>
                             <div class="clear"></div>
@@ -277,136 +267,10 @@
                 <div class="clear"></div>
             </div>
 
-            <tr id="J_BundleList_s_1911116345_1" class="item-list">
-                <div id="J_Bundle_s_1911116345_1_0" class="bundle  bundle-last">
-                    <div class="bundle-main">
-                        <ul class="item-content clearfix">
-                            <div class="pay-phone">
-                                <li class="td td-item">
-                                    <div class="item-pic">
-                                        <a href="#" class="J_MakePoint">
-                                            <img src="../images/zs.jpg" class="itempic J_ItemImg" style="width: 100px;height: 100px;"></a>
-                                    </div>
-                                    <div class="item-info">
-                                        <div class="item-basic-info">
-                                            <a href="#" target="_blank" title="美康粉黛醉美唇膏 持久保湿滋润防水不掉色" class="item-title J_MakePoint" data-point="tbcart.8.11">运动户外潮鞋</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="td td-info">
-                                    <div class="item-props">
-                                        <span class="sku-line">颜色：卡其色</span>
-                                        <span class="sku-line">包装：无</span>
-                                    </div>
-                                </li>
-                                <li class="td td-price">
-                                    <div class="item-price price-promo-promo">
-                                        <div class="price-content">
-                                            <em class="J_Price price-now">39.00</em>
-                                        </div>
-                                    </div>
-                                </li>
-                            </div>
 
-                            <li class="td td-amount">
-                                <div class="amount-wrapper ">
-                                    <div class="item-amount ">
-                                        <span class="phone-title">购买数量</span>
-                                        <div class="sl">
-                                            <input class="min am-btn" name="" type="button" value="-" />
-                                            <input class="text_box" name="" type="text" value="3" style="width:30px;" />
-                                            <input class="add am-btn" name="" type="button" value="+" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="td td-sum">
-                                <div class="td-inner">
-                                    <em tabindex="0" class="J_ItemSum number">117.00</em>
-                                </div>
-                            </li>
-                            <li class="td td-oplist">
-                                <div class="td-inner">
-                                    <span class="phone-title">配送方式</span>
-                                    <div class="pay-logis">
-                                        包邮
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                        <div class="clear"></div>
-
-                    </div>
-                </div></tr>
         </div>
         <div class="clear"></div>
-        <div class="pay-total">
-            <!--留言-->
-            <div class="order-extra">
-                <div class="order-user-info">
-                    <div id="holyshit257" class="memo">
-                        <label>买家留言：</label>
-                        <input type="text" title="选填,对本次交易的说明（建议填写已经和卖家达成一致的说明）" placeholder="选填,建议填写和卖家达成一致的说明" class="memo-input J_MakePoint c2c-text-default memo-close">
-                        <div class="msg hidden J-msg">
-                            <p class="error">最多输入500个字符</p>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-            <!--优惠券 -->
-            <div class="buy-agio">
-                <li class="td td-coupon">
-
-                    <span class="coupon-title">优惠券</span>
-                    <select data-am-selected>
-                        <option value="a">
-                            <div class="c-price">
-                                <strong>￥8</strong>
-                            </div>
-                            <div class="c-limit">
-                                【消费满95元可用】
-                            </div>
-                        </option>
-                        <option value="b" selected>
-                            <div class="c-price">
-                                <strong>￥3</strong>
-                            </div>
-                            <div class="c-limit">
-                                【无使用门槛】
-                            </div>
-                        </option>
-                    </select>
-                </li>
-
-                <li class="td td-bonus">
-
-                    <span class="bonus-title">红包</span>
-                    <select data-am-selected>
-                        <option value="a">
-                            <div class="item-info">
-                                ¥50.00<span>元</span>
-                            </div>
-                            <div class="item-remainderprice">
-                                <span>还剩</span>10.40<span>元</span>
-                            </div>
-                        </option>
-                        <option value="b" selected>
-                            <div class="item-info">
-                                ¥50.00<span>元</span>
-                            </div>
-                            <div class="item-remainderprice">
-                                <span>还剩</span>50.00<span>元</span>
-                            </div>
-                        </option>
-                    </select>
-
-                </li>
-
-            </div>
-            <div class="clear"></div>
-        </div>
         <!--含运费小计 -->
         <div class="buy-point-discharge ">
             <p class="price g_price ">

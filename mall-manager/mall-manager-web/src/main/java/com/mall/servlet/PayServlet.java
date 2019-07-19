@@ -1,5 +1,8 @@
 package com.mall.servlet;
 
+import com.mall.ICarDao;
+import com.mall.impl.CarDaoImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,12 +14,19 @@ import java.io.PrintWriter;
 public class PayServlet extends BaseServlet {
 
     public void save (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        ICarDao carDao = new CarDaoImpl();
+
         String productId = request.getParameter("productId");
-        String[] split = productId.split(",");
-        for(String id : split){
-            System.out.println(id);
-        }
+        String[] idArr = productId.split(",");
+
         String productNum = request.getParameter("productNum");
+        String[] numArr = productNum.split(",");
+       for(int i =0 ;i<idArr.length;i++){
+           int id = Integer.parseInt(idArr[i]);
+           int quantity = Integer.parseInt(numArr[i]);
+           carDao.updateCar(id,quantity);
+       }
+
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();

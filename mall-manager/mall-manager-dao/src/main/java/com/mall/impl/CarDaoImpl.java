@@ -48,4 +48,15 @@ public class CarDaoImpl implements ICarDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void updateCar(int id, int quantity) {
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "UPDATE cart set quantity = ? where id = ?";
+        try {
+            qr.update(sql,id,quantity);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

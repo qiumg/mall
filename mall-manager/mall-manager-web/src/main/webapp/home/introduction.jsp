@@ -261,9 +261,7 @@
                                         <div class="theme-options">
                                             <div class="cart-title">颜色</div>
                                             <ul id="color">
-                                                <c:if test="${product != null}">
 
-                                                </c:if>
                                             </ul>
                                         </div>
                                         <div class="theme-options">
