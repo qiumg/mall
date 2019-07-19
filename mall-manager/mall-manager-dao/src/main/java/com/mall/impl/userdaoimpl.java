@@ -29,15 +29,16 @@ public class userdaoimpl implements userdao {
             ps.setString(1, user.getName());
             ps.setString(2, user.getPassword());
             rs = ps.executeQuery();//5:执行sql语句
-            user users = null;
+            user users = new user();
             if (rs.next()) {
-                users = new user();
                 //从数据库中获取值设置到实体类的setter方法中
-                //users.setId(rs.getInt("id"));
+                users.setId(rs.getInt("id"));
                 users.setName(rs.getString("username"));
                 users.setPassword(rs.getString("password"));
-                //users.setPhone(rs.getString("phone"));
-                return user;
+                users.setSex(rs.getInt("sex"));
+                users.setPhone(rs.getString("phone"));
+                user.setEmail(rs.getString("email"));
+                return users;
             } else {
                 return null;
             }

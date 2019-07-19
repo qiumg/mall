@@ -25,17 +25,6 @@
     <script src="${pageContext.request.contextPath}/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
 
 
-    <script type="text/javascript">
-        $(function() {
-            $("#out").click(function() {
-                $.get({
-                    url:"/outajax.do",
-            })
-        })
-        })
-    </script>
-
-
 </head>
 
 <body>
@@ -56,7 +45,7 @@
                         if(s == null || s.isEmpty()){								%>
                     <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
                     <%}else{%>
-                    <a href="index.jsp" id="out" target="_top" style="color: red">&nbsp退出登录</a>
+                    <a href="/outajax.do" id="out" target="_top" style="color: red">&nbsp退出登录</a>
                     <%}%>
                 </div>
             </div>

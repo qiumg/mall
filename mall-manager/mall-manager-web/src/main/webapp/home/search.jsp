@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="../js/script.js"></script>
 	</head>
 
+
 	<body>
 
 		<!--顶部导航条 -->
@@ -41,7 +42,7 @@
 							if(s == null || s.isEmpty()){								%>
 						<a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
 						<%}else{%>
-						<a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+						<a href="/outajax.do" id="out" target="_top" style="color: red">&nbsp退出登录</a>
 						<%}%>
 					</div>
 				</div>

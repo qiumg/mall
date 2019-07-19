@@ -1,12 +1,14 @@
 package com.mall;
 
 public class user {
-     private Integer id;
+     private int id;
+     private int sex;
     private String name;
     private String password;
     private String phone;
+    private String email;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -22,7 +24,7 @@ public class user {
         return phone;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -38,13 +40,31 @@ public class user {
         this.phone = phone;
     }
 
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "user{" +
                 "id=" + id +
+                ", sex=" + sex +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
