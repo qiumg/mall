@@ -37,7 +37,7 @@ public class UserUpdateServlet extends HttpServlet {
             //request.getRequestDispatcher("home/login.jsp").forward(request, response);
             response.setContentType("text/html;charset=GBK ");
             PrintWriter out = response.getWriter();
-            session.setAttribute("loginName",user.getName());
+            session.setAttribute("user",user);
             out.print("<script>alert('修改成功');location.href='person/information.jsp'</script>");
         } else {
             //request.setAttribute("info", "注册失败");

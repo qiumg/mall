@@ -48,6 +48,7 @@ public class userloginservlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 //把用户数据保存在session域对象中
                 session.setAttribute("loginName", us.getName());
+                session.setAttribute("user",us);
                 response.sendRedirect(request.getContextPath()+"/indexservlet");
                // request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {

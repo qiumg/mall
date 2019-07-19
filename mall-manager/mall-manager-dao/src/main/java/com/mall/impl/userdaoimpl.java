@@ -37,7 +37,7 @@ public class userdaoimpl implements userdao {
                 users.setPassword(rs.getString("password"));
                 users.setSex(rs.getInt("sex"));
                 users.setPhone(rs.getString("phone"));
-                user.setEmail(rs.getString("email"));
+                users.setEmail(rs.getString("email"));
                 return users;
             } else {
                 return null;

@@ -23,6 +23,8 @@ public class indexservlet extends HttpServlet {
         }
         //取出会话数据
         String loginName = (String)session.getAttribute("loginName");
+        user us= (user) session.getAttribute("user");
+        //System.out.println("很快很快就回家客户客户"+us);
         if(loginName==null){
             //没有登录成功，跳转到登录页面
             response.sendRedirect(request.getContextPath()+"home/login.jsp");

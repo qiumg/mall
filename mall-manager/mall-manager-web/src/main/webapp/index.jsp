@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.mall.user" %><%--
   Created by IntelliJ IDEA.
   User: asus
   Date: 2019/7/14
@@ -35,11 +35,13 @@
             <div class="topMessage">
                 <div class="menu-hd">
                     <%
-                        String s= (String) request.getSession(false).getAttribute("loginName");
+                        HttpSession hs=request.getSession(false);
+                        String s= (String) hs.getAttribute("loginName");
+                        user us= (user) hs.getAttribute("user");
                         if(s == null || s.isEmpty()){								%>
                     <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
                     <%}else{%>
-                    <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                    <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+us.getName() %>&nbsp</a>
                     <%}%>
                     <%
                         if(s == null || s.isEmpty()){								%>

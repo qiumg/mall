@@ -1,3 +1,4 @@
+<%@ page import="com.mall.user" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
@@ -31,10 +32,12 @@
 									<%
 										HttpSession session1 = request.getSession(false);
 										String s= (String) session1.getAttribute("loginName");
+										user us= (user) session1.getAttribute("user");
+										System.out.println("sadas大苏打大飒飒大苏打撒旦"+us);
 										if(s == null || s.isEmpty()){								%>
 									<a href="../home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
 									<%}else{%>
-									<a href="../home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+									<a href="../home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+us.getName() %>&nbsp</a>
 									<%}%>
 									<%
 										if(s == null || s.isEmpty()){								%>
@@ -131,7 +134,7 @@
 							<p class="am-form-help">头像</p>
 
 							<div class="info-m">
-								<div><b>用户名：<i><%=s%></i></b></div>
+								<div><b>用户名：<i><%=us.getName()%></i></b></div>
 								<div class="vip">
                                       <span></span><a href="#">会员专享</a>
 								</div>
@@ -145,7 +148,7 @@
 								<div class="am-form-group">
 									<label for="user-name2" class="am-form-label">用户名</label>
 									<div class="am-form-content">
-										<input type="text" id="user-name2" name="username" placeholder="nickname" value="<%=s%>">
+										<input type="text" id="user-name2" name="username" placeholder="nickname" value="<%=us.getName()%>">
                                           <small>昵称长度不能超过40个汉字</small>
 									</div>
 								</div>
@@ -162,13 +165,13 @@
 									<label class="am-form-label">性别</label>
 									<div class="am-form-content sex">
 										<label class="am-radio-inline">
-											<input type="radio" name="radio10" value="0" data-am-ucheck> 男
+											<input type="radio" name="radio10" value="0" data-am-ucheck > 男
 										</label>
 										<label class="am-radio-inline">
 											<input type="radio" name="radio10" value="1" data-am-ucheck> 女
 										</label>
 										<label class="am-radio-inline">
-											<input type="radio" name="radio10" value="2" data-am-ucheck> 保密
+											<input type="radio" name="radio10" value="2" data-am-ucheck checked="checked"> 保密
 										</label>
 									</div>
 								</div>
@@ -201,14 +204,14 @@
 								<div class="am-form-group">
 									<label for="user-phone" class="am-form-label">电话</label>
 									<div class="am-form-content">
-										<input id="user-phone" name="user-phone" placeholder="telephonenumber" type="tel" value="请输入">
+										<input id="user-phone" name="user-phone" placeholder="telephonenumber" type="tel" value="<%=us.getPhone()%>">
 
 									</div>
 								</div>
 								<div class="am-form-group">
 									<label for="user-email" class="am-form-label">电子邮件</label>
 									<div class="am-form-content">
-										<input id="user-email" name="user-email" placeholder="Email" type="email" value="请输入">
+										<input id="user-email" name="user-email" placeholder="Email" type="email" value="<%=us.getEmail()%>">
 
 									</div>
 								</div>
