@@ -1384,10 +1384,11 @@
             var areaInfo = $("#area").val();
             var colorInfo = $("#color").find(".selected").text();
             var sizeInfo = $("#size").find(".selected").text();
+            var productNum = $("#text_box").val();
             $.ajax({
                 url:"/pay.do",
                 type:"get",
-                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo},
+                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
                 success:function(){
                     window.location.href="/pay.do?_method=jump";
                 }
@@ -1400,10 +1401,11 @@
             var areaInfo = $("#area").val();
             var colorInfo = $("#color").find(".selected").text();
             var sizeInfo = $("#size").find(".selected").text();
+            var productNum = $("#text_box").val();
             $.ajax({
                 url:"/pay.do",
                 type:"get",
-                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo},
+                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
                 success:function(){
                     window.location.href="/car.do?_method=selectCar";
                 }
@@ -1448,6 +1450,5 @@
     }
 
 </script>
-
 
 </html>

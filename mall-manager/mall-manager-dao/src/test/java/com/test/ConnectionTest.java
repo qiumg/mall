@@ -24,16 +24,20 @@ public class ConnectionTest {
     }
     @Test
     public  void productImgTest(){
-        Shipping shipping = new Shipping();
-        shipping.setUser_Id(1);
-        shipping.setReceiver_name("helloworld");
-        shipping.setReceiver_mobile("13356295928");
-        shipping.setReceiver_province("shandong");
-        shipping.setReceiver_city("binzhou");
-        shipping.setReceiver_district("buyang");
-        shipping.setReceiver_address("daxue");
-        IShippingDAO dao = new ShippingDAOImpl();
-        dao.insertShipping(shipping);
+//        Shipping shipping = new Shipping();
+//        shipping.setUser_Id(1);
+//        shipping.setReceiver_name("helloworld");
+//        shipping.setReceiver_mobile("13356295928");
+//        shipping.setReceiver_province("山西");
+//        shipping.setReceiver_city("binzhou");
+//        shipping.setReceiver_district("buyang");
+//        shipping.setReceiver_address("daxue");
+//        IShippingDAO dao = new ShippingDAOImpl();
+//        dao.insertShipping(shipping);
+//        String color = "白色";
+//        String size = "41码";
+//        String spec = "{\"color\":\""+color+"\",\"size\":\""+size+"\"}";
+//        System.out.println(spec);
         }
 
     }

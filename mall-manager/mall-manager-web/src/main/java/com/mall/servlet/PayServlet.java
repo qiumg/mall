@@ -1,5 +1,9 @@
 package com.mall.servlet;
 
+import com.mall.IProductSpecService;
+import com.mall.ProductSpecs;
+import com.mall.impl.ProductSpecServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,11 +32,15 @@ public class PayServlet extends BaseServlet {
     }
     public void addInfo(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
         String productid = request.getParameter("productid");
-        String province = request.getParameter("province");
-        String city = request.getParameter("city");
-        String area = request.getParameter("area");
+        int pid = Integer.parseInt(productid);
         String color = request.getParameter("color");
         String size = request.getParameter("size");
+        String productnum = request.getParameter("productnum");
+        int productNum = Integer.parseInt(productnum);
+        String spec = "{\"color\":\""+color+"\",\"size\":\""+size+"\"}";
+        IProductSpecService service = new ProductSpecServiceImpl();
+        ProductSpecs productSpecs = service.queryByPidAndSpecs(pid, spec);
+
 
     }
 }
