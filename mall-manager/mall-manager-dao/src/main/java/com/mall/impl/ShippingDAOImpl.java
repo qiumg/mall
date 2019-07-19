@@ -33,4 +33,15 @@ public class ShippingDAOImpl implements IShippingDAO {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void deleteShippingById(int id) {
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "delete from mmall_shipping where id = ?";
+        try {
+            qr.update(sql,id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

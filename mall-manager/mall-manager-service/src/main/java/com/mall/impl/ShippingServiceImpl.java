@@ -19,4 +19,10 @@ public class ShippingServiceImpl implements IShippingService {
         IShippingDAO dao = new ShippingDAOImpl();
         dao.insertShipping(shipping);
     }
+
+    @Override
+    public void deleteShippingById(int id) {
+        IShippingDAO dao = new ShippingDAOImpl();
+        dao.deleteShippingById(id);
+    }
 }

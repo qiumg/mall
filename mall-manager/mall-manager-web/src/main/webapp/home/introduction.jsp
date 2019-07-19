@@ -48,7 +48,7 @@
     </ul>
     <ul class="message-r">
         <div class="topMessage home">
-            <div class="menu-hd"><a href="home3.html" target="_top" class="h">商城首页</a></div>
+            <div class="menu-hd"><a href="../index.jsp" target="_top" class="h">商城首页</a></div>
         </div>
         <div class="topMessage my-shangcheng">
             <div class="menu-hd MyShangcheng"><a href="../person/index.jsp" target="_top"><i
@@ -57,7 +57,7 @@
         <div class="topMessage mini-cart">
             <div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i
                     class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum"
-                                                                                          class="h">0</strong></a></div>
+                                                                                          class="h"></strong></a></div>
         </div>
         <div class="topMessage favorite">
             <div class="menu-hd"><a href="../person/collection.html" target="_top"><i
@@ -212,7 +212,7 @@
                                 <option value="--">--市</option>
                             </select>
                             <select id="area">
-                                <option value="a">--区</option>
+                                <option value="--">--区</option>
                             </select>
                         </div>
                         <div class="pay-logis">
@@ -1417,7 +1417,7 @@
     function selectCity() {
         var pId = $("#province").val();
         $.ajax({
-                url: "change.do",
+                url: "/change.do",
                 type: "post",
                 data: {_method: "selectCities", provinceid: pId},
                 success: function (data) {
@@ -1435,7 +1435,7 @@
     function selectArea() {
         var cId = $("#city").val();
         $.ajax({
-                url: "change.do",
+                url: "/change.do",
                 type: "post",
                 data: {_method: "selectAreas", cityid: cId},
                 success: function (data) {

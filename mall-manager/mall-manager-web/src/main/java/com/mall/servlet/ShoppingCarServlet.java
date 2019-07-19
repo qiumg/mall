@@ -41,7 +41,7 @@ public class ShoppingCarServlet extends HttpServlet {
     //显示商品列表页
     public void selectCar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user_name = (String) request.getSession().getAttribute("loginName");
-        System.out.println(user_name);
+
         ICarDao carDao = new CarDaoImpl();
         List<Car> cars = null;
 

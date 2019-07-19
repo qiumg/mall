@@ -33,8 +33,19 @@
                 <ul class="message-l">
                     <div class="topMessage">
                         <div class="menu-hd">
-                            <a href="#" target="_top" class="h">亲，请登录</a>
-                            <a href="#" target="_top">免费注册</a>
+                            <%
+                                String s= (String) request.getSession(false).getAttribute("loginName");
+                                if(s == null || s.isEmpty()){								%>
+                            <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
+                            <%}else{%>
+                            <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                            <%}%>
+                            <%
+                                if(s == null || s.isEmpty()){								%>
+                            <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
+                            <%}else{%>
+                            <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+                            <%}%>
                         </div>
                     </div>
                 </ul>
