@@ -39,12 +39,25 @@ public class ProductSpecDAOImpl implements IProductSpecsDAO {
     }
 
     @Override
-    public void insertProductSpec(Product product) {
+    public void insertProductSpec(ProductSpecs productSpecs) {
 
     }
 
     @Override
-    public void updateProductSpec(Product product) {
+    public void updateProductSpec(ProductSpecs productSpecs) {
 
+    }
+
+    @Override
+    public ProductSpecs selectByProIdAndSpec(int productid, String specs) {
+        ProductSpecs productSpecs = null;
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "select id from mmall_product_specs where product_id = ? and product_specs = ?";
+        try {
+            productSpecs = qr.query(sql, new BeanHandler<>(ProductSpecs.class), productid, specs);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productSpecs;
     }
 }

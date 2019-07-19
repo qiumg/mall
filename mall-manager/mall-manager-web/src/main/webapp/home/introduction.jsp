@@ -25,11 +25,11 @@
 
     <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
     <script type="text/javascript" src="../basic/js/quick_links.js"></script>
+
     <script type="text/javascript" src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>
     <script type="text/javascript" src="../js/jquery.imagezoom.min.js"></script>
     <script type="text/javascript" src="../js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="../js/list.js"></script>
-    <script type="text/javascript"  src="../js/jquery.js"></script>
 
 </head>
 
@@ -261,7 +261,6 @@
                                         <div class="theme-options">
                                             <div class="cart-title">颜色</div>
                                             <ul id="color">
-
                                             </ul>
                                         </div>
                                         <div class="theme-options">
@@ -342,7 +341,7 @@
     </li>
     <li>
         <div class="clearfix tb-btn tb-btn-basket theme-login">
-            <a id="LikBasket" title="加入购物车" href="#" class="addcar">加入购物车</a>
+            <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
         </div>
     </li>
 </div>
@@ -1378,6 +1377,40 @@
         $("#size").delegate("li","click",function(){
             $(this).siblings("li").removeClass("selected");
             $(this).addClass("selected");
+        })
+        $("#LikBuy").click(function () {
+            var productId = ${product.id};
+            var provinceInfo = $("#province").val();
+            var cityInfo = $("#city").val();
+            var areaInfo = $("#area").val();
+            var colorInfo = $("#color").find(".selected").text();
+            var sizeInfo = $("#size").find(".selected").text();
+            var productNum = $("#text_box").val();
+            $.ajax({
+                url:"/pay.do",
+                type:"get",
+                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
+                success:function(){
+                    window.location.href="/pay.do?_method=jump";
+                }
+            })
+        })
+        $("#LikBasket").click(function () {
+            var productId = ${product.id};
+            var provinceInfo = $("#province").val();
+            var cityInfo = $("#city").val();
+            var areaInfo = $("#area").val();
+            var colorInfo = $("#color").find(".selected").text();
+            var sizeInfo = $("#size").find(".selected").text();
+            var productNum = $("#text_box").val();
+            $.ajax({
+                url:"/pay.do",
+                type:"get",
+                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
+                success:function(){
+                    window.location.href="/car.do?_method=selectCar";
+                }
+            })
         })
     })
 

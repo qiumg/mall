@@ -50,13 +50,27 @@ public class CarDaoImpl implements ICarDao {
     }
 
     @Override
-    public void updateCar(int id, int quantity) {
+    public void updateCar(int quantity, int id) {
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
         String sql = "UPDATE cart set quantity = ? where id = ?";
         try {
-            qr.update(sql,id,quantity);
+            qr.update(sql,quantity,id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public Car selectById(int id) {
+        Car car = new Car();
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "select * from cart where id = ?";
+
+        try {
+            car = qr.query(sql,new BeanHandler<>(Car.class),id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return car;
     }
 }

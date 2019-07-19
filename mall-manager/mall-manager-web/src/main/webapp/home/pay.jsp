@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: yanhuan
@@ -5,7 +6,7 @@
   Time: 10:34
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -211,31 +212,33 @@
 
                 <tr class="item-list">
                     <div class="bundle  bundle-last">
-
+                        <c:forEach items="${cars}" var="car">
                         <div class="bundle-main">
                             <ul class="item-content clearfix">
                                 <div class="pay-phone">
                                     <li class="td td-item">
                                         <div class="item-pic">
                                             <a href="#" class="J_MakePoint">
-                                                <img src="../images/zs1.jpg" class="itempic J_ItemImg" style="width: 100px;height: 100px;"></a>
+
+                                                <img src="${car.main_image}" class="itempic J_ItemImg" style="width: 100px;height: 100px;"></a>
+
                                         </div>
                                         <div class="item-info">
                                             <div class="item-basic-info">
-                                                <a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">运动户外潮鞋</a>
+                                                <a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">${car.name}</a>
                                             </div>
                                         </div>
                                     </li>
                                     <li class="td td-info">
                                         <div class="item-props">
-                                            <span class="sku-line">颜色：白色</span>
+                                            <span class="sku-line">${car.product_specs}</span>
 
                                         </div>
                                     </li>
                                     <li class="td td-price">
                                         <div class="item-price price-promo-promo">
                                             <div class="price-content">
-                                                <em class="J_Price price-now">39.00</em>
+                                                <em class="J_Price price-now">${car.product_price}</em>
                                             </div>
                                         </div>
                                     </li>
@@ -246,7 +249,7 @@
                                             <span class="phone-title">购买数量</span>
                                             <div class="sl">
                                                 <input class="min am-btn" name="" type="button" value="-" />
-                                                <input class="text_box" name="" type="text" value="3" style="width:30px;" />
+                                                <input class="text_box" name="" type="text" value="${car.quantity}" style="width:30px;" />
                                                 <input class="add am-btn" name="" type="button" value="+" />
                                             </div>
                                         </div>
@@ -254,7 +257,7 @@
                                 </li>
                                 <li class="td td-sum">
                                     <div class="td-inner">
-                                        <em tabindex="0" class="J_ItemSum number">117.00</em>
+                                        <em tabindex="0" class="J_ItemSum number">${car.quantity*car.product_price}</em>
                                     </div>
                                 </li>
 
@@ -263,6 +266,7 @@
                             <div class="clear"></div>
 
                         </div>
+                        </c:forEach>
                     </div></tr>
                 <div class="clear"></div>
             </div>

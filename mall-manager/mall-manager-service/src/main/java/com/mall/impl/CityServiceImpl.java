@@ -13,4 +13,11 @@ public class CityServiceImpl implements ICityService {
         List<City> cities = dao.selectCityByProvinceId(id);
         return cities;
     }
+
+    @Override
+    public City queryCityByCid(int id) {
+        ICityDAO dao = new CityDAOImpl();
+        City city = dao.selectCityByCityId(id);
+        return city;
+    }
 }

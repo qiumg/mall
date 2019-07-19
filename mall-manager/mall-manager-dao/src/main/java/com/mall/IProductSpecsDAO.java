@@ -8,8 +8,10 @@ public interface IProductSpecsDAO {
     //搜索spu根据商品id；
     ProductSpecs selectProductSpecById(int id);
     //在spu插入一条信息
-    void insertProductSpec(Product product);
+    void insertProductSpec(ProductSpecs productSpecs);
     //更新spu中的信息
-    void updateProductSpec(Product product);
+    void updateProductSpec(ProductSpecs productSpecs);
+    //根据spu属性和productid查询出sku
+    ProductSpecs selectByProIdAndSpec(int productid , String specs);
 
 }

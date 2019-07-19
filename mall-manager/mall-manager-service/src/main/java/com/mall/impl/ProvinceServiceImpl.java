@@ -13,4 +13,11 @@ public class ProvinceServiceImpl implements IProvinceService {
         List<Province> provinces = dao.selectAllProvince();
         return provinces;
     }
+
+    @Override
+    public Province queryProvinceNameByPid(int id) {
+        IProvinceDAO dao = new ProvinceDAOImpl();
+        Province province = dao.selectProvinceByPid(id);
+        return province;
+    }
 }

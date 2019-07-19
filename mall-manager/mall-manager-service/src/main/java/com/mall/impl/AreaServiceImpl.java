@@ -13,4 +13,11 @@ public class AreaServiceImpl implements IAreaService {
         List<Area> areas = dao.selectAreaByCityId(id);
         return areas;
     }
+
+    @Override
+    public Area queryAreaByAid(int id) {
+        IAreaDAO dao = new AreaDAOImpl();
+        Area area = dao.selectAreaByAreaId(id);
+        return null;
+    }
 }
