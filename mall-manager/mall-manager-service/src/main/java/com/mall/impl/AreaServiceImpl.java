@@ -18,6 +18,6 @@ public class AreaServiceImpl implements IAreaService {
     public Area queryAreaByAid(int id) {
         IAreaDAO dao = new AreaDAOImpl();
         Area area = dao.selectAreaByAreaId(id);
-        return null;
+        return area;
     }
 }

@@ -212,7 +212,7 @@
                                 <option value="--">--市</option>
                             </select>
                             <select id="area">
-                                <option value="a">--区</option>
+                                <option value="--">--区</option>
                             </select>
                         </div>
                         <div class="pay-logis">
@@ -1416,7 +1416,7 @@
     function selectCity() {
         var pId = $("#province").val();
         $.ajax({
-                url: "change.do",
+                url: "/change.do",
                 type: "post",
                 data: {_method: "selectCities", provinceid: pId},
                 success: function (data) {
@@ -1434,7 +1434,7 @@
     function selectArea() {
         var cId = $("#city").val();
         $.ajax({
-                url: "change.do",
+                url: "/change.do",
                 type: "post",
                 data: {_method: "selectAreas", cityid: cId},
                 success: function (data) {

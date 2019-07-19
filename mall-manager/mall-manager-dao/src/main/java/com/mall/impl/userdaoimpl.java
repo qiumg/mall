@@ -3,6 +3,8 @@ package com.mall.impl;
 import com.mall.user;
 import com.mall.userdao;
 import com.utils.JDBCUtils;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -65,5 +67,18 @@ public class userdaoimpl implements userdao {
         }else {
             return false;
         }
+    }
+
+    @Override
+    public int selectUserIdByName(String name) {
+        user user = null;
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "select id from mmall_user where username = ?";
+        try {
+            user = qr.query(sql, new BeanHandler<>(user.class), name);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user.getId();
     }
 }

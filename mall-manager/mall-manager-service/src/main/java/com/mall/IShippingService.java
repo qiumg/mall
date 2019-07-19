@@ -6,4 +6,6 @@ public interface IShippingService {
     List<Shipping> queryShippingByUserId(int userId);
 
     void addShipping(Shipping shipping);
+
+    void deleteShippingById(int id);
 }
