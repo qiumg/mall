@@ -33,6 +33,8 @@ public class SearchProductDaoImpl implements SearchProductDao {
             p.setPrice(rs.getString("price"));
             p.setSubtitle(rs.getString("subtitle"));
             p.setMain_img(rs.getString("main_image"));
+            p.setId(rs.getInt("id"));
+            p.setDetail(rs.getString("detail"));
             System.out.println(p);
             list.add(p);
         }

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.mall.user" %><%--
   Created by IntelliJ IDEA.
   User: asus
   Date: 2019/7/14
@@ -35,17 +35,19 @@
             <div class="topMessage">
                 <div class="menu-hd">
                     <%
-                        String s= (String) request.getSession(false).getAttribute("loginName");
+                        HttpSession hs=request.getSession(false);
+                        String s= (String) hs.getAttribute("loginName");
+                        user us= (user) hs.getAttribute("user");
                         if(s == null || s.isEmpty()){								%>
                     <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
                     <%}else{%>
-                    <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                    <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+us.getName() %>&nbsp</a>
                     <%}%>
                     <%
                         if(s == null || s.isEmpty()){								%>
                     <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
                     <%}else{%>
-                    <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+                    <a href="/outajax.do" id="out" target="_top" style="color: red">&nbsp退出登录</a>
                     <%}%>
                 </div>
             </div>
@@ -55,13 +57,23 @@
                 <div class="menu-hd"><a href="index.jsp" target="_top" class="h">商城首页</a></div>
             </div>
             <div class="topMessage my-shangcheng">
+                <%
+                    if(s == null || s.isEmpty()){								%>
+                <div class="menu-hd MyShangcheng"><a href="home/login.jsp" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                <%}else{%>
                 <div class="menu-hd MyShangcheng"><a href="person/index.jsp" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+                <%}%>
             </div>
             <div class="topMessage mini-cart">
+                <%
+                    if(s == null || s.isEmpty()){								%>
+                <div class="menu-hd"><a id="mc-menu-hd" href="home/login.jsp" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+                <%}else{%>
                 <div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+                <%}%>
             </div>
             <div class="topMessage favorite">
-                <div class="menu-hd"><a href="/person/collection.html" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div></div>
+                <div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div></div>
         </ul>
     </div>
 

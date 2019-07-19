@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="../js/script.js"></script>
 	</head>
 
+
 	<body>
 
 		<!--顶部导航条 -->
@@ -39,9 +40,9 @@
 						<%}%>
 						<%
 							if(s == null || s.isEmpty()){								%>
-						<a href="home/register.html" target="_top" >&nbsp免费注册</a>
+						<a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
 						<%}else{%>
-						<a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+						<a href="/outajax.do" id="out" target="_top" style="color: red">&nbsp退出登录</a>
 						<%}%>
 					</div>
 				</div>
@@ -54,10 +55,10 @@
 					<div class="menu-hd MyShangcheng"><a href="../person/index.jsp" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
 				</div>
 				<div class="topMessage mini-cart">
-					<div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+					<div class="menu-hd"><a id="mc-menu-hd" href="home/shopcart.html" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
 				</div>
 				<div class="topMessage favorite">
-					<div class="menu-hd"><a href="../person/collection.html" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div></div>
+					<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div></div>
 			</ul>
 		</div>
 
@@ -108,10 +109,13 @@
 								<a title="板鞋" href="#">板鞋</a>
 								<a title="休闲鞋" href="#">休闲鞋</a>
 								<a title="皮鞋" href="#">皮鞋</a>
-
+								<% List<ProductMode> list=(List<ProductMode>)request.getAttribute("list");%>
 							</div>
 							<ul class="select">
-
+								<p class="title font-normal">
+									<span class="fl">共</span>
+									<span class="total fl">搜索到<strong class="num"><%=list.size()%></strong>件相关商品</span>
+								</p>
 								<div class="clear"></div>
 								<li class="select-result">
 									<dl>
@@ -173,17 +177,18 @@
 									<li class="big"><a title="评价" href="#">评价为主</a></li>
 								</div>
 								<div class="clear"></div>
-								<% List<ProductMode> list=(List<ProductMode>)request.getAttribute("list");%>
 								<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
 									<% for(int i = 0 ; i < list.size() ; i++) {
 										String name=list.get(i).getName();
 										String price=list.get(i).getPrice();
 										String subtitle=list.get(i).getSubtitle();
 										String img=list.get(i).getMain_img();
+										int id=list.get(i).getId();
+										String detail=list.get(i).getDetail();
 									%>
 									<li>
 										<div class="i-pic limit">
-											<img src="../<%=img%>" />
+											<a href="<%=detail%>?productid=<%=id%>"><img src="../<%=img%>" /></a>
 											<p class="title fl"><%=name%></p>
 											<p class="price fl">
 												<b>¥</b>
@@ -442,7 +447,7 @@
 		<div class="navCir">
 			<li><a href="home2.html"><i class="am-icon-home "></i>首页</a></li>
 			<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
-			<li><a href="shopcart.jsp"><i class="am-icon-shopping-basket"></i>购物车</a></li>
+			<li><a href="shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>	
 			<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a></li>					
 		</div>
 
