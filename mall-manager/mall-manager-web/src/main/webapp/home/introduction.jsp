@@ -1390,8 +1390,8 @@
                 url:"/pay.do",
                 type:"get",
                 data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
-                success:function(){
-                    window.location.href="/pay.do?_method=jump";
+                success:function(data){
+                    window.location.href="/pay.do?_method=jump&id="+data;
                 }
             })
         })

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.mall.Car" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
@@ -6,7 +7,7 @@
   Time: 20:17
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -165,33 +166,30 @@
                     })
                 </script>
 
-                <%
-                    List<Car> cars = (List<Car>)request.getAttribute("cars");
-                    if(cars != null){
-                    for (Car car : cars){
-                %>
+
+                <c:forEach items="${cars}" var="car">
                 <div class="bundle-main">
                     <ul class="item-content clearfix">
                         <li class="td td-chk">
                             <div class="cart-checkbox ">
-                                <input class="check" id="J_CheckBox_170037950254" name="check" value="<%=car.getId()%>" type="checkbox">
+                                <input class="check" id="J_CheckBox_170037950254" name="check" value="${car.id}" type="checkbox">
                                 <label for="J_CheckBox_170037950254"></label>
                             </div>
                         </li>
                         <li class="td td-item">
                             <div class="item-pic">
                                 <a href="#" target="_blank" data-title="美康粉黛醉美东方唇膏口红正品 持久保湿滋润防水不掉色护唇彩妆" class="J_MakePoint" data-point="tbcart.8.12">
-                                    <img src="<%=car.getMain_image()%>" class="itempic J_ItemImg" style="width: 100px;height: 100px;" class="itempic J_ItemImg"></a>
+                                    <img src="../${car.main_image}" class="itempic J_ItemImg" style="width: 100px;height: 100px;" class="itempic J_ItemImg"></a>
                             </div>
                             <div class="item-info">
                                 <div class="item-basic-info">
-                                    <a href="#" target="_blank" title="美康粉黛醉美唇膏 持久保湿滋润防水不掉色" class="item-title J_MakePoint" data-point="tbcart.8.11"><%=car.getName()%></a>
+                                    <a href="#" target="_blank" title="美康粉黛醉美唇膏 持久保湿滋润防水不掉色" class="item-title J_MakePoint" data-point="tbcart.8.11">${car.name}</a>
                                 </div>
                             </div>
                         </li>
                         <li class="td td-info">
                             <div class="item-props item-props-can">
-                                <span class="sku-line"><%=car.getProduct_specs()%></span>
+                                <span class="sku-line">${car.product_specs}</span>
                                 <span tabindex="0" class="btn-edit-sku theme-login">修改</span>
                                 <i class="theme-login am-icon-sort-desc"></i>
                             </div>
@@ -200,7 +198,7 @@
                             <div class="item-price price-promo-promo">
                                 <div class="price-content">
                                     <div class="price-line">
-                                        <em class="J_Price price-now" tabindex="0"><%=car.getProduct_price()%></em>
+                                        <em class="J_Price price-now" tabindex="0">${car.product_price}</em>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +209,7 @@
                                 <div class="item-amount ">
                                     <div class="sl">
                                         <input class="min am-btn" name="" type="button" value="-" />
-                                        <input class="text_box" name="" type="text" value="<%=car.getQuantity()%>" style="width:30px;" />
+                                        <input class="text_box" name="" type="text" value="${car.quantity}" style="width:30px;" />
                                         <input class="add am-btn" name="" type="button" value="+" />
                                     </div>
                                 </div>
@@ -219,22 +217,18 @@
                         </li>
                         <li class="td td-sum">
                             <div class="td-inner">
-                                <em tabindex="0" class="J_ItemSum number"><%=car.getQuantity()*car.getProduct_price()%></em>
+                                <em tabindex="0" class="J_ItemSum number">${car.quantity*car.product_price}</em>
                             </div>
                         </li>
                         <li class="td td-op">
                             <div class="td-inner">
-                                <a href="/car.do?_method=deleteCar&id=<%=car.getId()%>" data-point-url="#" class="delete">
+                                <a href="/car.do?_method=deleteCar&id=${car.id}" data-point-url="#" class="delete">
                                     删除</a>
                             </div>
                         </li>
                     </ul>
                 </div>
-
-                <%
-                        }
-                    }
-                %>
+                </c:forEach>
 
 
             </div>

@@ -1,11 +1,10 @@
 package com.mall.servlet;
 
-import com.mall.Car;
-import com.mall.ICarDao;
+import com.mall.*;
 import com.mall.impl.CarDaoImpl;
 
-import com.mall.IProductSpecService;
-import com.mall.ProductSpecs;
+import com.mall.impl.ProductDAOImpl;
+import com.mall.impl.ProductSpecDAOImpl;
 import com.mall.impl.ProductSpecServiceImpl;
 
 import javax.servlet.ServletException;
@@ -48,8 +47,6 @@ public class PayServlet extends BaseServlet {
         String productNum = request.getParameter("productNum");
         String[] numArr = productNum.split(",");
        for(int i =0 ;i<idArr.length;i++){
-           System.out.println(idArr[i]);
-           System.out.println(numArr[i]);
            int id = Integer.parseInt(idArr[i]);
            int quantity = Integer.parseInt(numArr[i]);
            carDao.updateCar(quantity,id);
@@ -76,6 +73,9 @@ public class PayServlet extends BaseServlet {
         request.getRequestDispatcher("/home/pay.jsp").forward(request,response);
     }
     public void addInfo(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException{
+        ICarDao carDao = new CarDaoImpl();
+        IProductDAO productDAO = new ProductDAOImpl();
+
         String productid = request.getParameter("productid");
         int pid = Integer.parseInt(productid);
         String color = request.getParameter("color");
@@ -86,6 +86,12 @@ public class PayServlet extends BaseServlet {
         IProductSpecService service = new ProductSpecServiceImpl();
         ProductSpecs productSpecs = service.queryByPidAndSpecs(pid, spec);
 
-
+        Product product = productDAO.selectProductById(pid);
+        String user_name = (String) request.getSession().getAttribute("loginName");
+        carDao.addToCar(productSpecs.getId(),user_name,product.getName(),product.getMain_Image(),productNum,productSpecs.getProduct_Specs(),productSpecs.getProduct_Price());
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.print(productSpecs.getId());
     }
 }

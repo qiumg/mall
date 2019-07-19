@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.mall.Car" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: yanhuan
   Date: 2019/7/17
@@ -28,9 +29,21 @@
     <ul class="message-l">
         <div class="topMessage">
             <div class="menu-hd">
-                <a href="#" target="_top" class="h">亲，请登录</a>
-                <a href="#" target="_top">免费注册</a>
-            </div></div>
+                <%
+                    String s= (String) request.getSession(false).getAttribute("loginName");
+                    if(s == null || s.isEmpty()){								%>
+                <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
+                <%}else{%>
+                <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                <%}%>
+                <%
+                    if(s == null || s.isEmpty()){								%>
+                <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
+                <%}else{%>
+                <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+                <%}%>
+            </div>
+        </div>
     </ul>
     <ul class="message-r">
         <div class="topMessage home"><div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div></div>
@@ -63,9 +76,10 @@
 <div class="take-delivery">
     <div class="status">
         <h2>您已成功付款</h2>
+
         <div class="successInfo">
             <ul>
-                <li>付款金额<em>¥244.00</em></li>
+                <li>付款金额:¥<em></em></li>
                 <div class="user-info">
                     <p>收货人：艾迪</p>
                     <p>联系电话：15871145629</p>
@@ -74,11 +88,7 @@
                 请认真核对您的收货信息，如有错误请联系客服
 
             </ul>
-            <div class="option">
-                <span class="info">您可以</span>
-                <a href="../person/order.html" class="J_MakePoint">查看<span>已买到的宝贝</span></a>
-                <a href="../person/orderinfo.html" class="J_MakePoint">查看<span>交易详情</span></a>
-            </div>
+
         </div>
     </div>
 </div>

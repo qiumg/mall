@@ -39,15 +39,16 @@ public class CarDaoImpl implements ICarDao {
     }
 
     @Override
-    public void addToCar(String name, String main_image, int quantity, String product_specs, double product_price) {
+    public void addToCar(int id, String user_name, String name, String main_image, int quantity, String product_specs, double product_price) {
         QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
-        String sql = "insert into cart(name,main_image,quantity,product_specs,product_price) value (?,?,?,?,?)";
+        String sql = "insert into cart(id,user_name,name,main_image,quantity,product_specs,product_price) value(?,?,?,?,?,?,?)";
         try {
-            qr.execute(sql,new BeanListHandler<>(Car.class),name,main_image,quantity,product_specs,product_price);
+            qr.insert(sql,new BeanListHandler<>(Car.class),id,user_name,name,main_image,quantity,product_specs,product_price);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public void updateCar(int quantity, int id) {

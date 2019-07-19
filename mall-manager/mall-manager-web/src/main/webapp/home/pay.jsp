@@ -1,3 +1,5 @@
+<%@ page import="com.mall.Car" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -33,8 +35,19 @@
     <ul class="message-l">
         <div class="topMessage">
             <div class="menu-hd">
-                <a href="#" target="_top" class="h">亲，请登录</a>
-                <a href="#" target="_top">免费注册</a>
+                <%
+                    String s= (String) request.getSession(false).getAttribute("loginName");
+                    if(s == null || s.isEmpty()){								%>
+                <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
+                <%}else{%>
+                <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                <%}%>
+                <%
+                    if(s == null || s.isEmpty()){								%>
+                <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
+                <%}else{%>
+                <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
+                <%}%>
             </div>
         </div>
     </ul>
@@ -248,9 +261,9 @@
                                         <div class="item-amount ">
                                             <span class="phone-title">购买数量</span>
                                             <div class="sl">
-                                                <input class="min am-btn" name="" type="button" value="-" />
+
                                                 <input class="text_box" name="" type="text" value="${car.quantity}" style="width:30px;" />
-                                                <input class="add am-btn" name="" type="button" value="+" />
+
                                             </div>
                                         </div>
                                     </div>
@@ -276,9 +289,17 @@
         <div class="clear"></div>
 
         <!--含运费小计 -->
+        <%
+            List<Car> cars = (List<Car>)request.getAttribute("cars");
+            int money = 0;
+            if(cars != null){
+                for (Car car : cars) {
+                    money += car.getQuantity() * car.getProduct_price();
+                }
+        %>
         <div class="buy-point-discharge ">
             <p class="price g_price ">
-                合计（含运费） <span>¥</span><em class="pay-sum">244.00</em>
+                合计 <span>¥</span><em class="pay-sum"><%=money%></em>
             </p>
         </div>
 
@@ -286,13 +307,14 @@
         <div class="order-go clearfix">
             <div class="pay-confirm clearfix">
                 <div class="box">
-                    <div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：</em>
+                    <div tabindex="0" id="holyshit267" class="realPay"><em class="t">实付款：<%=money%></em>
                         <span class="price g_price ">
-                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">244.00</em>
+                                    <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee"></em>
 											</span>
                     </div>
-
-                    <div id="holyshit268" class="pay-address">
+<%
+    }
+%>                   <div id="holyshit268" class="pay-address">
 
                         <p class="buy-footer-address">
                             <span class="buy-line-title buy-line-title-type">寄送至：</span>
@@ -316,7 +338,7 @@
 
                 <div id="holyshit269" class="submitOrder">
                     <div class="go-btn-wrap">
-                        <a id="J_Go" href="success.jsp" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
+                        <a id="J_Go" href="/home/success.jsp" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
                     </div>
                 </div>
                 <div class="clear"></div>
