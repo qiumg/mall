@@ -514,7 +514,7 @@
             <li class="person">
                 <p><i class="am-icon-newspaper-o"></i>个人资料</p>
                 <ul>
-                    <li> <a href="information.html">个人信息</a></li>
+                    <li> <a href="information.jsp">个人信息</a></li>
                     <li> <a href="safety.html">安全设置</a></li>
                     <li> <a href="address.html">地址管理</a></li>
                     <li> <a href="cardlist.html">快捷支付</a></li>

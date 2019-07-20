@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.mall.user" %><%--
   Created by IntelliJ IDEA.
   User: asus
   Date: 2019/7/17
@@ -181,7 +181,7 @@
             <!--名称-->
             <div class="tb-detail-hd">
                 <h1>
-                    潮男优选
+                    ${product.name}
                 </h1>
             </div>
             <div class="tb-detail-list">
@@ -327,7 +327,11 @@
     </div>
 </div>
 </div>
-
+<%
+    HttpSession hs=request.getSession(false);
+    String s= (String) hs.getAttribute("loginName");
+    user us= (user) hs.getAttribute("user");
+							%>
 <div class="pay" style="margin-left: 600px">
     <div class="pay-opt">
         <a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
@@ -336,12 +340,20 @@
     </div>
     <li>
         <div class="clearfix tb-btn tb-btn-buy theme-login">
+           <% if(s == null || s.isEmpty()){%>
+            <a id="LikBuy1" title="点此按钮到下一步确认购买信息" href="../home/login.jsp">立即购买</a>
+            <%}else{%>
             <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+            <%}%>
         </div>
     </li>
     <li>
         <div class="clearfix tb-btn tb-btn-basket theme-login">
+            <% if(s == null || s.isEmpty()){%>
+            <a id="LikBasket1" title="加入购物车" href="../home/login.jsp"><i></i>加入购物车</a>
+            <%}else{%>
             <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+            <%}%>
         </div>
     </li>
 </div>
