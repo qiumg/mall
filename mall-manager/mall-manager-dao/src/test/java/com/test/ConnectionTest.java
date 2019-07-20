@@ -18,7 +18,9 @@ public class ConnectionTest {
     @Test
     public  void productTest(){
         IProductDAO dao = new ProductDAOImpl();
-        dao.selectProductByCategoryId(10002);
+        Product product = dao.selectProductById(31);
+        product.setStock(111111);
+        dao.updateProduct(product);
 
     }
     @Test
@@ -31,4 +33,7 @@ public class ConnectionTest {
     }
 
     }
+
+
+
 
