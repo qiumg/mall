@@ -22,7 +22,7 @@ public class userregisterservlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        user user = new user();
+        User user = new User();
         //获取login.jsp页面提交的账号和密码
         String name = request.getParameter("name");
         String password = request.getParameter("password");
@@ -42,7 +42,7 @@ public class userregisterservlet extends HttpServlet {
             out.print("<script>alert('两次密码不相同');location.href='home/register.html'</script>");
         } else {
             //获取register.jsp页面提交的账号和密码设置到实体类User中
-            user.setName(name);
+            user.setUsername(name);
             user.setPassword(password);
             user.setPhone(phone);
             //引入数据交互层

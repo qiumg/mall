@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="com.mall.Resource" %><%--
   Created by IntelliJ IDEA.
   User: asus
   Date: 2019/7/14
@@ -1014,5 +1015,6 @@
     });
 
 </script>
+
 </body>
 </html>

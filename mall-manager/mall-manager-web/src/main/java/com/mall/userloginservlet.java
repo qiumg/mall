@@ -25,7 +25,7 @@ public class userloginservlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        user user = new user();
+        User user = new User();
         //获取login.jsp页面提交的账号和密码
         String name = request.getParameter("name");
         String password = request.getParameter("password");
@@ -37,17 +37,17 @@ public class userloginservlet extends HttpServlet {
             //测试数据
             //System.out.println(name + " " + password);
             //获取login.jsp页面提交的账号和密码设置到实体类User中
-            user.setName(name);
+            user.setUsername(name);
             user.setPassword(password);
             //引入数据交互层
             userdao dao = new userdaoimpl();
-            user us = dao.login(user);
+            User us = dao.login(user);
             //测试返回的值
             //System.out.println(us);
             if (us != null) {
                 HttpSession session = request.getSession();
                 //把用户数据保存在session域对象中
-                session.setAttribute("loginName", us.getName());
+                session.setAttribute("loginName", us.getUsername());
                 response.sendRedirect(request.getContextPath()+"/indexservlet");
                // request.getRequestDispatcher("/index.jsp").forward(request, response);
             } else {

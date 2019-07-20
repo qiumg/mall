@@ -1,7 +1,9 @@
 package com.mall;
 
 public interface userdao {
-    public user login(user user);
-    public boolean register(user user);
+
+    public User login(User user);
+
+    public boolean register(User user);
 
 }
