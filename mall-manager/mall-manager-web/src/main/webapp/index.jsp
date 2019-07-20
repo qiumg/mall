@@ -317,7 +317,7 @@
                     <div class="icon-sale one "></div>
                     <h4>秒杀</h4>
                     <div class="activityMain ">
-                        <img src="images/activity1.jpg " id="miaosha"></img>
+                        <a href="/introduction?productid=54"><img src="images/activity1.jpg " ></img></a>
                     </div>
                     <div class="info ">
                         <h3>送礼优选</h3>
@@ -328,7 +328,7 @@
                     <div class="icon-sale two "></div>
                     <h4>特惠</h4>
                     <div class="activityMain ">
-                        <img src="images/activity2.jpg "></img>
+                        <a href="/introduction?productid=53"><img src="images/activity2.jpg "></img></a>
                     </div>
                     <div class="info ">
                         <h3>送礼优选</h3>
@@ -339,7 +339,7 @@
                     <div class="icon-sale three "></div>
                     <h4>团购</h4>
                     <div class="activityMain ">
-                        <img src="images/activity3.jpg "></img>
+                        <a href="/introduction?productid=52"><img src="images/activity3.jpg "></img></a>
                     </div>
                     <div class="info ">
                         <h3>送礼优选</h3>
@@ -350,7 +350,7 @@
                     <div class="icon-sale "></div>
                     <h4>超值</h4>
                     <div class="activityMain ">
-                        <img src="images/activity4.jpg "></img>
+                        <a href="/introduction?productid=51"><img src="images/activity4.jpg "></img></a>
                     </div>
                     <div class="info ">
                         <h3>送礼优选</h3>
@@ -873,7 +873,7 @@
                 var categorys = JSON.parse(data);
                 $("#js_climit_li").append("<li class='appliance js_toggle relative first'>\n" +
                     "                                <div class='category-info'>\n" +
-                    "                                    <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a class='ml-22' title='"+categorys[0].name+"'>"+categorys[0].name+"</a></h3>\n" +
+                    "                                    <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a href='/SearchProductServlet?index_none_header_sysc="+categorys[0].name+"' class='ml-22' title='"+categorys[0].name+"'>"+categorys[0].name+"</a></h3>\n" +
                     "                                    </div>\n" +
                     "                                </div>\n" +
                     "                                <b class='arrow'></b>\n" +
@@ -881,7 +881,7 @@
                 for(var i = 1 ; i < categorys.length;i++){
                     $("#js_climit_li").append("<li class='appliance js_toggle relative'>\n" +
                         "                            <div class='category-info'>\n" +
-                        "                            <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a class='ml-22' title='"+categorys[i].name+"'>"+categorys[i].name+"</a></h3>\n" +
+                        "                            <h3 class='category-name b-category-name'><i><img src='images/cake.png'></i><a href='/SearchProductServlet?index_none_header_sysc="+categorys[i].name+"' class='ml-22' title='"+categorys[i].name+"'>"+categorys[i].name+"</a></h3>\n" +
                         "                        </div>\n" +
                         "                        </div>\n" +
                         "                        <b class='arrow'></b>\n" +
