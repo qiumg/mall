@@ -16,20 +16,6 @@ public class ConnectionTest {
     public void connTest() {
         System.out.println(JDBCUtils.getConnection());
     }
-    @Test
-    public  void productTest(){
-        IProductDAO dao = new ProductDAOImpl();
-        dao.selectProductByCategoryId(10002);
-
-    }
-    @Test
-    public  void productImgTest(){
-        ICategoryDAO dao = new CategoryDAOImpl();
-        List<Category> categories = dao.selectAllCategory();
-        for(Category category : categories){
-            System.out.println(category);
-        }
-    }
 
     @Test
     public  void orderImgTest(){

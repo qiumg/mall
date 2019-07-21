@@ -111,9 +111,9 @@
 
                         <td class="f-14">
                             &nbsp;&nbsp;&nbsp;
-                            <a title="编辑" href="javascript:;" onclick="order_edit('订单编辑','/OrderUpdateServlet.do?id=<%=order.getId()%>',<%=order.getId()%>)" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a>
+                            <a title="编辑" href="javascript:;" onclick="order_edit('订单编辑','/OrderUpdateServlet.do?id=<%=order.getId()%>',<%=order.getId()%>)" style="text-decoration:none"><i class="Hui-iconfont">编辑 &#xe6df;</i></a>
                             &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
-                            <a title="删除" href="javascript:;" onclick="order_del(this,<%=order.getId()%>)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a>
+                            <a title="删除" href="javascript:;" onclick="order_del(this,<%=order.getId()%>)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">删除 &#xe6e2;</i></a>
                         </td>
 
 
