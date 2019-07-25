@@ -398,24 +398,27 @@
             success:function (data) {
                 var addList = JSON.parse(data);
                 $("#holyshit268").empty();
-                $("#holyshit268").append("<p class=\"buy-footer-address\">\n" +
-                    "                            <span class=\"buy-line-title buy-line-title-type\">寄送至：</span>\n" +
-                    "                            <span class=\"buy--address-detail\">\n" +
-                    "\t\t\t\t\t\t\t\t   <span class=\"province\">"+addList[0].receiver_province+"</span>省\n" +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"city\">"+addList[0].receiver_city+"</span>市\n" +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">"+addList[0].receiver_district+"</span>区\n" +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"street\">"+addList[0].receiver_address+"</span>\n" +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t</span>\n" +
-                    "                            </span>\n" +
-                    "                        </p>\n" +
-                    "                        <p class=\"buy-footer-address\">\n" +
-                    "                            <span class=\"buy-line-title\">收货人：</span>\n" +
-                    "                            <span class=\"buy-address-detail\">\n" +
-                    "                                         <span class=\"buy-user\">"+addList[0].receiver_name+" </span>\n" +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">"+addList[0].receiver_mobile+"</span>\n" +
-                    "\t\t\t\t\t\t\t\t\t\t\t\t</span>\n" +
-                    "                        </p>");
+                if(addList.length != 0) {
+                    $("#holyshit268").append("<p class=\"buy-footer-address\">\n" +
+                        "                            <span class=\"buy-line-title buy-line-title-type\">寄送至：</span>\n" +
+                        "                            <span class=\"buy--address-detail\">\n" +
+                        "\t\t\t\t\t\t\t\t   <span class=\"province\">" + addList[0].receiver_province + "</span>省\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"city\">" + addList[0].receiver_city + "</span>市\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">" + addList[0].receiver_district + "</span>区\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"street\">" + addList[0].receiver_address + "</span>\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t</span>\n" +
+                        "                            </span>\n" +
+                        "                        </p>\n" +
+                        "                        <p class=\"buy-footer-address\">\n" +
+                        "                            <span class=\"buy-line-title\">收货人：</span>\n" +
+                        "                            <span class=\"buy-address-detail\">\n" +
+                        "                                         <span class=\"buy-user\">" + addList[0].receiver_name + " </span>\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">" + addList[0].receiver_mobile + "</span>\n" +
+                        "\t\t\t\t\t\t\t\t\t\t\t\t</span>\n" +
+                        "                        </p>");
+                }
                 $("#showAddress").empty();
+                if(addList.length != 0) {
                 $("#showAddress").append("<div class=\"per-border\"></div>\n" +
                     "                <li class=\"user-addresslist defaultAddr\">\n" +
                     "                    <div class=\"address-left\">\n" +
@@ -450,24 +453,24 @@
                     "\n" +
                     "                </li>");
 
-                for(var i=1;i<addList.length;i++){
+                for(var i=1;i<addList.length;i++) {
                     $("#showAddress").append("<div class=\"per-border\"></div>\n" +
                         "                <li class=\"user-addresslist\">\n" +
                         "                    <div class=\"address-left\">\n" +
                         "                        <div class=\"user DefaultAddr\">\n" +
                         "\n" +
                         "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-address-detail\">\n" +
-                        "                   <span class=\"buy-user\">"+addList[i].receiver_name+" </span>\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">"+addList[i].receiver_mobile+"</span>\n" +
+                        "                   <span class=\"buy-user\">" + addList[i].receiver_name + " </span>\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">" + addList[i].receiver_mobile + "</span>\n" +
                         "\t\t\t\t\t\t\t\t\t\t</span>\n" +
                         "                        </div>\n" +
                         "                        <div class=\"default-address DefaultAddr\">\n" +
                         "                            <span class=\"buy-line-title buy-line-title-type\">收货地址：</span>\n" +
                         "                            <span class=\"buy--address-detail\">\n" +
-                        "\t\t\t\t\t\t\t\t   <span class=\"province\">"+addList[i].receiver_province+"</span>省\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"city\">"+addList[i].receiver_city+"</span>市\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">"+addList[i].receiver_district+"</span>区\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"street\">"+addList[i].receiver_address+"</span>\n" +
+                        "\t\t\t\t\t\t\t\t   <span class=\"province\">" + addList[i].receiver_province + "</span>省\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"city\">" + addList[i].receiver_city + "</span>市\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">" + addList[i].receiver_district + "</span>区\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"street\">" + addList[i].receiver_address + "</span>\n" +
                         "\t\t\t\t\t\t\t\t\t\t</span>\n" +
                         "\n" +
                         "                            </span>\n" +
@@ -480,15 +483,17 @@
                         "                    <div class=\"clear\"></div>\n" +
                         "\n" +
                         "                    <div class=\"new-addr-btn\">\n" +
-                        "                        <a href=\"#\"  onclick=\"delClick("+addList[i].id+");\">删除</a>\n" +
+                        "                        <a href=\"#\"  onclick=\"delClick(" + addList[i].id + ");\">删除</a>\n" +
                         "                    </div>\n" +
                         "\n" +
                         "                </li>");
+                }
                 }
             }
         })
     }
     function delClick(i) {
+        if(confirm("你确定要删除此地址信息吗？")){
         $.ajax({
             url:"/address",
             data:{id:i,_method:"delete"},
@@ -497,6 +502,7 @@
                 reloadAddress();
             }
         })
+        }
     }
     function selectCity() {
         var pId = $("#province").val();
@@ -511,6 +517,7 @@
                     for (var i = 0; i < cList.length; i++) {
                         cSelect.append(" <option value='" + cList[i].cityId + "'>" + cList[i].city + "</option>")
                     }
+                    selectArea()
                 }
             }
         )
@@ -535,19 +542,22 @@
     }
     $("#J_Go").click(function () {
         var username = $("#holyshit268").find(".buy-user").text();
+        if(username == ""){
+            alert("请选择有效的收货地址，亲！")
+        }else{
         var phone = $("#holyshit268").find(".buy-phone").text();
         var province = $("#holyshit268").find(".province").text();
         var city = $("#holyshit268").find(".city").text();
         var dist = $("#holyshit268").find(".dist").text();
         var street = $("#holyshit268").find(".street").text();
         var price = $("#J_ActualFee").text();
-       var carId =  $("#getId").find(":input");
-       var carList = "";
+        var carId =  $("#getId").find(":input");
+        var carList = "";
        for (var i=0;i<carId.length;i++){
            carList =carList+$(carId[i]).val()+",";
 
        }
-        window.location.href = "/commit.do?username="+username+"&phone="+phone+"&province="+province+"&city="+city+"&dist="+dist+"&street="+street+"&price="+price+"&carList="+carList;
+        window.location.href = "/commit.do?username="+username+"&phone="+phone+"&province="+province+"&city="+city+"&dist="+dist+"&street="+street+"&price="+price+"&carList="+carList;}
     })
 </script>
 </body>
