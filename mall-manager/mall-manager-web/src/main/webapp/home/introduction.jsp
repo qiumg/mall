@@ -340,11 +340,9 @@
     </div>
     <li>
         <div class="clearfix tb-btn tb-btn-buy theme-login">
-           <% if(s == null || s.isEmpty()){%>
-            <a id="LikBuy1" title="点此按钮到下一步确认购买信息" href="../home/login.jsp">立即购买</a>
-            <%}else{%>
-            <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
-            <%}%>
+
+            <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="javascript:void(0)">立即购买</a>
+
         </div>
     </li>
     <li>
@@ -352,7 +350,7 @@
             <% if(s == null || s.isEmpty()){%>
             <a id="LikBasket1" title="加入购物车" href="../home/login.jsp"><i></i>加入购物车</a>
             <%}else{%>
-            <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+            <a id="LikBasket" title="加入购物车" href="javascript:void(0)"><i></i>加入购物车</a>
             <%}%>
         </div>
     </li>
@@ -1407,7 +1405,7 @@
                 }
             })
         })
-        $("#LikBasket").click(function () {
+        $("#LikBasket").on("click mouseenter",function(){
             var productId = ${product.id};
             var provinceInfo = $("#province").val();
             var cityInfo = $("#city").val();

@@ -1,3 +1,5 @@
+<%@ page import="com.mall.user" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 
@@ -28,8 +30,21 @@
 						<ul class="message-l">
 							<div class="topMessage">
 								<div class="menu-hd">
-									<a href="#" target="_top" class="h">亲，请登录</a>
-									<a href="#" target="_top">免费注册</a>
+									<%
+									HttpSession hs=request.getSession(false);
+									String s= (String) hs.getAttribute("loginName");
+									user us= (user) hs.getAttribute("user");
+									if(s == null || s.isEmpty()){								%>
+									<a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
+									<%}else{%>
+									<a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+us.getName() %>&nbsp</a>
+									<%}%>
+									<%
+									if(s == null || s.isEmpty()){								%>
+									<a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
+									<%}else{%>
+									<a href="/outajax.do" id="out" target="_top" style="color: red">&nbsp退出登录</a>
+									<%}%>
 								</div>
 							</div>
 						</ul>
@@ -38,14 +53,24 @@
 								<div class="menu-hd"><a href="#" target="_top" class="h">商城首页</a></div>
 							</div>
 							<div class="topMessage my-shangcheng">
-								<div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+								<%
+									if(s == null || s.isEmpty()){								%>
+								<div class="menu-hd MyShangcheng"><a href="home/login.jsp" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+								<%}else{%>
+								<div class="menu-hd MyShangcheng"><a href="person/index.jsp" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
+								<%}%>
 							</div>
 							<div class="topMessage mini-cart">
-								<div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+								<%
+									if(s == null || s.isEmpty()){								%>
+								<div class="menu-hd"><a id="mc-menu-hd" href="home/login.jsp" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+								<%}else{%>
+								<div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+								<%}%>
 							</div>
 							<div class="topMessage favorite">
 								<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>
-						</ul>
+							</div></ul>
 						</div>
 
 						<!--悬浮搜索框-->
@@ -113,27 +138,27 @@
 							<div class="u-progress-bar-inner"></div>
 						</div>
 					</div>
-					<form class="am-form am-form-horizontal">
+					<form class="am-form am-form-horizontal" action="/Pwdupdateservlet" method="get">
 						<div class="am-form-group">
 							<label for="user-old-password" class="am-form-label">原密码</label>
 							<div class="am-form-content">
-								<input type="password" id="user-old-password" placeholder="请输入原登录密码">
+								<input type="password" id="user-old-password" name="user-old-password" placeholder="请输入原登录密码">
 							</div>
 						</div>
 						<div class="am-form-group">
 							<label for="user-new-password" class="am-form-label">新密码</label>
 							<div class="am-form-content">
-								<input type="password" id="user-new-password" placeholder="由数字、字母组合">
+								<input type="password" id="user-new-password" name="user-new-password" placeholder="由数字、字母组合">
 							</div>
 						</div>
 						<div class="am-form-group">
 							<label for="user-confirm-password" class="am-form-label">确认密码</label>
 							<div class="am-form-content">
-								<input type="password" id="user-confirm-password" placeholder="请再次输入上面的密码">
+								<input type="password" id="user-confirm-password" name="user-confirm-password" placeholder="请再次输入上面的密码">
 							</div>
 						</div>
 						<div class="info-btn">
-							<div class="am-btn am-btn-danger">保存修改</div>
+							<input type="submit" style="color: #2e8ded" value="保存修改"/>
 						</div>
 
 					</form>
@@ -167,12 +192,12 @@
 			<aside class="menu">
 				<ul>
 					<li class="person active">
-						<a href="index.html"><i class="am-icon-user"></i>个人中心</a>
+						<a href="index.jsp"><i class="am-icon-user"></i>个人中心</a>
 					</li>
 					<li class="person">
 						<p><i class="am-icon-newspaper-o"></i>个人资料</p>
 						<ul>
-							<li> <a href="information.html">个人信息</a></li>
+							<li> <a href="information.jsp">个人信息</a></li>
 							<li> <a href="safety.html">安全设置</a></li>
 							<li> <a href="address.html">地址管理</a></li>
 							<li> <a href="cardlist.html">快捷支付</a></li>
