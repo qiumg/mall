@@ -22,4 +22,15 @@ public class CommentDAOImpl implements ICommentDAO {
         }
         return comments;
     }
+
+    @Override
+    public void insertComment(Comment comment) {
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "insert into mmall_comment(userid,productid,content,time) values(?,?,?,?)";
+        try {
+            qr.update(sql,comment.getUserId(),comment.getProductId(),comment.getContent(),comment.getTime());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

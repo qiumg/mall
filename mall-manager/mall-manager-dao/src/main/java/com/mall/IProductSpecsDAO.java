@@ -13,5 +13,7 @@ public interface IProductSpecsDAO {
     void updateProductSpec(ProductSpecs productSpecs);
     //根据spu属性和productid查询出sku
     ProductSpecs selectByProIdAndSpec(int productid , String specs);
+    //根据商品id查询出sku；
+    List<Integer> selectProductSpecByPid(int productId);
 
 }

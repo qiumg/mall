@@ -13,4 +13,10 @@ public class CommentServiceImpl implements ICommentService {
         List<Comment> comments = dao.selectCommentByProductId(id);
         return comments;
     }
+
+    @Override
+    public void addComment(Comment comment) {
+        ICommentDAO dao = new CommentDAOImpl();
+        dao.insertComment(comment);
+    }
 }

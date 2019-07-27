@@ -1,5 +1,6 @@
 package com.mall.servlet;
 
+import com.alibaba.fastjson.JSON;
 import com.mall.IProductService;
 import com.mall.Product;
 import com.mall.impl.ProductServiceImpl;
@@ -11,19 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-@WebServlet("/introduction")
-public class IntroductionServlet extends HttpServlet {
+@WebServlet("/browserecord")
+public class BrowseRecordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String productid = request.getParameter("productid");
-        //将访问的商品id加入到cookie
-        //从客户端获得Cookie集合
+        IProductService service= new ProductServiceImpl();
         String list = "";
         Cookie[] cookies = request.getCookies();
-//        遍历Cookie
         if (cookies != null && cookies.length > 0){
             for (Cookie c : cookies){
                 if ("record".equals(c.getName())){
@@ -31,26 +30,24 @@ public class IntroductionServlet extends HttpServlet {
                 }
             }
         }
-        if (productid != null){
-
+        if(!list.equals("")){
             String[] strings = list.split("#");
-            List<String> strings1 = Arrays.asList(strings);
-            if(! strings1.contains(productid)){
-                list += productid +"#";
-                Cookie cookie = new Cookie("record",list);
-                cookie.setMaxAge(60*60*24*7);
-                response.addCookie(cookie);
+            List<Product> products = new ArrayList<>();
+            for (String s : strings){
+                int id = Integer.parseInt(s);
+                Product product = service.queryProductById(id);
+                products.add(product);
             }
+            Collections.reverse(products);
+            String jsonString = JSON.toJSONString(products);
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.print(jsonString);
         }
-        int id = Integer.parseInt(productid);
-        IProductService service = new ProductServiceImpl();
-        Product product = service.queryProductById(id);
-        //System.out.println(product);
-        request.setAttribute("product",product);
-        request.getRequestDispatcher("/home/introduction.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         doPost(request, response);
+            doPost(request, response);
     }
 }

@@ -8,21 +8,22 @@
   Time: 10:34
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0 ,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>结算页面</title>
 
-    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+    <link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css"/>
 
-    <link href="../basic/css/demo.css" rel="stylesheet" type="text/css" />
-    <link href="../css/cartstyle.css" rel="stylesheet" type="text/css" />
+    <link href="../basic/css/demo.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/cartstyle.css" rel="stylesheet" type="text/css"/>
 
-    <link href="../css/jsstyle.css" rel="stylesheet" type="text/css" />
+    <link href="../css/jsstyle.css" rel="stylesheet" type="text/css"/>
 
     <script type="text/javascript" src="../js/address.js"></script>
     <script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
@@ -37,16 +38,16 @@
         <div class="topMessage">
             <div class="menu-hd">
                 <%
-                    String s= (String) request.getSession(false).getAttribute("loginName");
-                    if(s == null || s.isEmpty()){								%>
+                    String s = (String) request.getSession(false).getAttribute("loginName");
+                    if (s == null || s.isEmpty()) { %>
                 <a href="home/login.jsp" target="_top" class="h" style="color: red">请登录&nbsp</a>
-                <%}else{%>
-                <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎："+s %>&nbsp</a>
+                <%} else {%>
+                <a href="home/login.jsp" target="_top" class="h" style="color: seagreen"><%="欢迎：" + s %>&nbsp</a>
                 <%}%>
                 <%
-                    if(s == null || s.isEmpty()){								%>
-                <a href="home/register.jsp" target="_top" >&nbsp免费注册</a>
-                <%}else{%>
+                    if (s == null || s.isEmpty()) { %>
+                <a href="home/register.jsp" target="_top">&nbsp免费注册</a>
+                <%} else {%>
                 <a href="home/login.jsp" target="_top" style="color: red">&nbsp退出登录</a>
                 <%}%>
             </div>
@@ -69,15 +70,16 @@
             <div class="menu-hd"><a href="../person/collection.html" target="_top"><i
                     class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a>
             </div>
-        </div></ul>
+        </div>
+    </ul>
 </div>
 
 <!--悬浮搜索框-->
 
 <div class="nav white">
-    <div class="logo"><img src="images/logo.png" /></div>
+    <div class="logo"><img src="images/logo.png"/></div>
     <div class="logoBig">
-        <li><img src="images/logobig.png" /></li>
+        <li><img src="images/logobig.png"/></li>
     </div>
 
     <div class="search-bar pr">
@@ -109,11 +111,21 @@
         <div class="logistics">
             <h3>选择物流方式</h3>
             <ul class="op_express_delivery_hot">
-                <li data-value="yuantong" class="OP_LOG_BTN  "><i class="c-gap-right" style="background-position:0px -468px"></i>圆通<span></span></li>
-                <li data-value="shentong" class="OP_LOG_BTN  "><i class="c-gap-right" style="background-position:0px -1008px"></i>申通<span></span></li>
-                <li data-value="yunda" class="OP_LOG_BTN  "><i class="c-gap-right" style="background-position:0px -576px"></i>韵达<span></span></li>
-                <li data-value="zhongtong" class="OP_LOG_BTN op_express_delivery_hot_last "><i class="c-gap-right" style="background-position:0px -324px"></i>中通<span></span></li>
-                <li data-value="shunfeng" class="OP_LOG_BTN  op_express_delivery_hot_bottom"><i class="c-gap-right" style="background-position:0px -180px"></i>顺丰<span></span></li>
+                <li data-value="yuantong" class="OP_LOG_BTN  "><i class="c-gap-right"
+                                                                  style="background-position:0px -468px"></i>圆通<span></span>
+                </li>
+                <li data-value="shentong" class="OP_LOG_BTN  "><i class="c-gap-right"
+                                                                  style="background-position:0px -1008px"></i>申通<span></span>
+                </li>
+                <li data-value="yunda" class="OP_LOG_BTN  "><i class="c-gap-right"
+                                                               style="background-position:0px -576px"></i>韵达<span></span>
+                </li>
+                <li data-value="zhongtong" class="OP_LOG_BTN op_express_delivery_hot_last "><i class="c-gap-right"
+                                                                                               style="background-position:0px -324px"></i>中通<span></span>
+                </li>
+                <li data-value="shunfeng" class="OP_LOG_BTN  op_express_delivery_hot_bottom"><i class="c-gap-right"
+                                                                                                style="background-position:0px -180px"></i>顺丰<span></span>
+                </li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -122,9 +134,9 @@
         <div class="logistics">
             <h3>选择支付方式</h3>
             <ul class="pay-list">
-                <li class="pay card"><img src="../images/wangyin.jpg" />银联<span></span></li>
-                <li class="pay qq"><img src="../images/weizhifu.jpg" />微信<span></span></li>
-                <li class="pay taobao"><img src="../images/zhifubao.jpg" />支付宝<span></span></li>
+                <li class="pay card"><img src="../images/wangyin.jpg"/>银联<span></span></li>
+                <li class="pay qq"><img src="../images/weizhifu.jpg"/>微信<span></span></li>
+                <li class="pay taobao"><img src="../images/zhifubao.jpg"/>支付宝<span></span></li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -157,63 +169,67 @@
                 <div class="clear"></div>
 
                 <tr class="item-list">
-                    <div class="bundle  bundle-last"id="getId">
+                    <div class="bundle  bundle-last" id="getId">
                         <c:forEach items="${cars}" var="car">
-                        <div class="bundle-main">
-                            <ul class="item-content clearfix">
-                                <div class="pay-phone">
-                                    <li class="td td-item">
-                                        <div class="item-pic">
-                                            <a href="#" class="J_MakePoint">
-                                                <input type="hidden" value="${car.id}"  />
-                                                <img src="${car.main_image}" class="itempic J_ItemImg" style="width: 100px;height: 100px;"></a>
-
-                                        </div>
-                                        <div class="item-info">
-                                            <div class="item-basic-info">
-                                                <a href="#" class="item-title J_MakePoint" data-point="tbcart.8.11">${car.name}</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="td td-info">
-                                        <div class="item-props">
-                                            <span class="sku-line">${car.product_specs}</span>
-
-                                        </div>
-                                    </li>
-                                    <li class="td td-price">
-                                        <div class="item-price price-promo-promo">
-                                            <div class="price-content">
-                                                <em class="J_Price price-now">${car.product_price}</em>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </div>
-                                <li class="td td-amount">
-                                    <div class="amount-wrapper ">
-                                        <div class="item-amount ">
-                                            <span class="phone-title">购买数量</span>
-                                            <div class="sl">
-
-                                                <em tabindex="0" class="J_ItemSum number">${car.quantity}</em>
+                            <div class="bundle-main">
+                                <ul class="item-content clearfix">
+                                    <div class="pay-phone">
+                                        <li class="td td-item">
+                                            <div class="item-pic">
+                                                <a href="#" class="J_MakePoint">
+                                                    <input type="hidden" value="${car.id}"/>
+                                                    <img src="${car.main_image}" class="itempic J_ItemImg"
+                                                         style="width: 100px;height: 100px;"></a>
 
                                             </div>
-                                        </div>
+                                            <div class="item-info">
+                                                <div class="item-basic-info">
+                                                    <a href="#" class="item-title J_MakePoint"
+                                                       data-point="tbcart.8.11">${car.name}</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="td td-info">
+                                            <div class="item-props">
+                                                <span class="sku-line">${car.product_specs}</span>
+
+                                            </div>
+                                        </li>
+                                        <li class="td td-price">
+                                            <div class="item-price price-promo-promo">
+                                                <div class="price-content">
+                                                    <em class="J_Price price-now">${car.product_price}</em>
+                                                </div>
+                                            </div>
+                                        </li>
                                     </div>
-                                </li>
-                                <li class="td td-sum">
-                                    <div class="td-inner">
-                                        <em tabindex="0" class="J_ItemSum number">${car.quantity*car.product_price}</em>
-                                    </div>
-                                </li>
+                                    <li class="td td-amount">
+                                        <div class="amount-wrapper ">
+                                            <div class="item-amount ">
+                                                <span class="phone-title">购买数量</span>
+                                                <div class="sl">
+
+                                                    <em tabindex="0" class="J_ItemSum number">${car.quantity}</em>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="td td-sum">
+                                        <div class="td-inner">
+                                            <em tabindex="0"
+                                                class="J_ItemSum number">${car.quantity*car.product_price}</em>
+                                        </div>
+                                    </li>
 
 
-                            </ul>
-                            <div class="clear"></div>
+                                </ul>
+                                <div class="clear"></div>
 
-                        </div>
+                            </div>
                         </c:forEach>
-                    </div></tr>
+                    </div>
+                </tr>
                 <div class="clear"></div>
             </div>
 
@@ -223,16 +239,17 @@
 
         <!--含运费小计 -->
         <%
-            List<Car> cars = (List<Car>)request.getAttribute("cars");
+            List<Car> cars = (List<Car>) request.getAttribute("cars");
             int money = 0;
-            if(cars != null){
+            if (cars != null) {
                 for (Car car : cars) {
                     money += car.getQuantity() * car.getProduct_price();
                 }
         %>
         <div class="buy-point-discharge ">
             <p class="price g_price ">
-                合计 <span>¥</span><em class="pay-sum"><%=money%></em>
+                合计 <span>¥</span><em class="pay-sum"><%=money%>
+            </em>
             </p>
         </div>
 
@@ -245,9 +262,10 @@
                                     <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee"><%=money%></em>
 											</span>
                     </div>
-<%
-    }
-%>                   <div id="holyshit268" class="pay-address">
+                    <%
+                        }
+                    %>
+                    <div id="holyshit268" class="pay-address">
 
 
                     </div>
@@ -255,7 +273,7 @@
 
                 <div id="holyshit269" class="submitOrder">
                     <div class="go-btn-wrap">
-                        <a id="J_Go"  class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
+                        <a id="J_Go" class="btn-go" tabindex="0" title="点击此按钮，提交订单">提交订单</a>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -284,17 +302,21 @@
             <a href="#">合作伙伴</a>
             <a href="#">联系我们</a>
             <a href="#">网站地图</a>
-            <em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+            <em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank"
+                                                       title="模板之家">模板之家</a> - Collect from <a
+                    href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
         </p>
     </div>
 </div>
 </div>
 <div class="theme-popover-mask" id="test"></div>
-<div class="theme-popover" id = "modal">
+<div class="theme-popover" id="modal">
 
     <!--标题 -->
     <div class="am-cf am-padding">
-        <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">新增地址</strong> / <small>Add address</small></div>
+        <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">新增地址</strong> /
+            <small>Add address</small>
+        </div>
     </div>
     <hr/>
 
@@ -369,18 +391,18 @@
         reloadAddress();
         $("#save").click(function () {
             $.ajax({
-                url:"/address?_method=add",
-                data:$("#addAddress form").serialize(),
-                type:"get",
-                success:function () {
-                    $("#modal").css("display","none");
-                    $("#test").css("display","none");
-                    $("body").css("overflow","visible");
+                url: "/address?_method=add",
+                data: $("#addAddress form").serialize(),
+                type: "get",
+                success: function () {
+                    $("#modal").css("display", "none");
+                    $("#test").css("display", "none");
+                    $("body").css("overflow", "visible");
                     reloadAddress();
                 }
             })
         })
-        $("#showAddress").delegate("li","click",function () {
+        $("#showAddress").delegate("li", "click", function () {
             $(this).addClass("defaultAddr").siblings().removeClass("defaultAddr");
             $("#holyshit268").find(".buy-user").text($(this).find(".buy-user").text())
             $("#holyshit268").find(".buy-phone").text($(this).find(".buy-phone").text())
@@ -390,15 +412,16 @@
             $("#holyshit268").find(".street").text($(this).find(".street").text())
         })
     })
-    function reloadAddress(){
+
+    function reloadAddress() {
         $.ajax({
-            url:"/address",
-            type:"get",
-            data:{_method:"query"},
-            success:function (data) {
+            url: "/address",
+            type: "get",
+            data: {_method: "query"},
+            success: function (data) {
                 var addList = JSON.parse(data);
                 $("#holyshit268").empty();
-                if(addList.length != 0) {
+                if (addList.length != 0) {
                     $("#holyshit268").append("<p class=\"buy-footer-address\">\n" +
                         "                            <span class=\"buy-line-title buy-line-title-type\">寄送至：</span>\n" +
                         "                            <span class=\"buy--address-detail\">\n" +
@@ -418,59 +441,24 @@
                         "                        </p>");
                 }
                 $("#showAddress").empty();
-                if(addList.length != 0) {
-                $("#showAddress").append("<div class=\"per-border\"></div>\n" +
-                    "                <li class=\"user-addresslist defaultAddr\">\n" +
-                    "                    <div class=\"address-left\">\n" +
-                    "                        <div class=\"user DefaultAddr\">\n" +
-                    "\n" +
-                    "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-address-detail\">\n" +
-                    "                   <span class=\"buy-user\">"+addList[0].receiver_name+" </span>\n" +
-                    "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">"+addList[0].receiver_mobile+"</span>\n" +
-                    "\t\t\t\t\t\t\t\t\t\t</span>\n" +
-                    "                        </div>\n" +
-                    "                        <div class=\"default-address DefaultAddr\">\n" +
-                    "                            <span class=\"buy-line-title buy-line-title-type\">收货地址：</span>\n" +
-                    "                            <span class=\"buy--address-detail\">\n" +
-                    "\t\t\t\t\t\t\t\t   <span class=\"province\">"+addList[0].receiver_province+"</span>省\n" +
-                    "\t\t\t\t\t\t\t\t\t\t<span class=\"city\">"+addList[0].receiver_city+"</span>市\n" +
-                    "\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">"+addList[0].receiver_district+"</span>区\n" +
-                    "\t\t\t\t\t\t\t\t\t\t<span class=\"street\">"+addList[0].receiver_address+"</span>\n" +
-                    "\t\t\t\t\t\t\t\t\t\t</span>\n" +
-                    "\n" +
-                    "                            </span>\n" +
-                    "                        </div>\n" +
-                    "                        <ins class=\"deftip hidden\">默认地址</ins>\n" +
-                    "                    </div>\n" +
-                    "                    <div class=\"address-right\">\n" +
-                    "                        <span class=\"am-icon-angle-right am-icon-lg\"></span>\n" +
-                    "                    </div>\n" +
-                    "                    <div class=\"clear\"></div>\n" +
-                    "\n" +
-                    "                    <div class=\"new-addr-btn\">\n" +
-                    "                        <a href=\"#\"  onclick=\"delClick("+addList[0].id+");\">删除</a>\n" +
-                    "                    </div>\n" +
-                    "\n" +
-                    "                </li>");
-
-                for(var i=1;i<addList.length;i++) {
+                if (addList.length != 0) {
                     $("#showAddress").append("<div class=\"per-border\"></div>\n" +
-                        "                <li class=\"user-addresslist\">\n" +
+                        "                <li class=\"user-addresslist defaultAddr\">\n" +
                         "                    <div class=\"address-left\">\n" +
                         "                        <div class=\"user DefaultAddr\">\n" +
                         "\n" +
                         "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-address-detail\">\n" +
-                        "                   <span class=\"buy-user\">" + addList[i].receiver_name + " </span>\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">" + addList[i].receiver_mobile + "</span>\n" +
+                        "                   <span class=\"buy-user\">" + addList[0].receiver_name + " </span>\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">" + addList[0].receiver_mobile + "</span>\n" +
                         "\t\t\t\t\t\t\t\t\t\t</span>\n" +
                         "                        </div>\n" +
                         "                        <div class=\"default-address DefaultAddr\">\n" +
                         "                            <span class=\"buy-line-title buy-line-title-type\">收货地址：</span>\n" +
                         "                            <span class=\"buy--address-detail\">\n" +
-                        "\t\t\t\t\t\t\t\t   <span class=\"province\">" + addList[i].receiver_province + "</span>省\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"city\">" + addList[i].receiver_city + "</span>市\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">" + addList[i].receiver_district + "</span>区\n" +
-                        "\t\t\t\t\t\t\t\t\t\t<span class=\"street\">" + addList[i].receiver_address + "</span>\n" +
+                        "\t\t\t\t\t\t\t\t   <span class=\"province\">" + addList[0].receiver_province + "</span>省\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"city\">" + addList[0].receiver_city + "</span>市\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">" + addList[0].receiver_district + "</span>区\n" +
+                        "\t\t\t\t\t\t\t\t\t\t<span class=\"street\">" + addList[0].receiver_address + "</span>\n" +
                         "\t\t\t\t\t\t\t\t\t\t</span>\n" +
                         "\n" +
                         "                            </span>\n" +
@@ -483,27 +471,64 @@
                         "                    <div class=\"clear\"></div>\n" +
                         "\n" +
                         "                    <div class=\"new-addr-btn\">\n" +
-                        "                        <a href=\"#\"  onclick=\"delClick(" + addList[i].id + ");\">删除</a>\n" +
+                        "                        <a href=\"#\"  onclick=\"delClick(" + addList[0].id + ");\">删除</a>\n" +
                         "                    </div>\n" +
                         "\n" +
                         "                </li>");
-                }
+
+                    for (var i = 1; i < addList.length; i++) {
+                        $("#showAddress").append("<div class=\"per-border\"></div>\n" +
+                            "                <li class=\"user-addresslist\">\n" +
+                            "                    <div class=\"address-left\">\n" +
+                            "                        <div class=\"user DefaultAddr\">\n" +
+                            "\n" +
+                            "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-address-detail\">\n" +
+                            "                   <span class=\"buy-user\">" + addList[i].receiver_name + " </span>\n" +
+                            "\t\t\t\t\t\t\t\t\t\t<span class=\"buy-phone\">" + addList[i].receiver_mobile + "</span>\n" +
+                            "\t\t\t\t\t\t\t\t\t\t</span>\n" +
+                            "                        </div>\n" +
+                            "                        <div class=\"default-address DefaultAddr\">\n" +
+                            "                            <span class=\"buy-line-title buy-line-title-type\">收货地址：</span>\n" +
+                            "                            <span class=\"buy--address-detail\">\n" +
+                            "\t\t\t\t\t\t\t\t   <span class=\"province\">" + addList[i].receiver_province + "</span>省\n" +
+                            "\t\t\t\t\t\t\t\t\t\t<span class=\"city\">" + addList[i].receiver_city + "</span>市\n" +
+                            "\t\t\t\t\t\t\t\t\t\t<span class=\"dist\">" + addList[i].receiver_district + "</span>区\n" +
+                            "\t\t\t\t\t\t\t\t\t\t<span class=\"street\">" + addList[i].receiver_address + "</span>\n" +
+                            "\t\t\t\t\t\t\t\t\t\t</span>\n" +
+                            "\n" +
+                            "                            </span>\n" +
+                            "                        </div>\n" +
+                            "                        <ins class=\"deftip hidden\">默认地址</ins>\n" +
+                            "                    </div>\n" +
+                            "                    <div class=\"address-right\">\n" +
+                            "                        <span class=\"am-icon-angle-right am-icon-lg\"></span>\n" +
+                            "                    </div>\n" +
+                            "                    <div class=\"clear\"></div>\n" +
+                            "\n" +
+                            "                    <div class=\"new-addr-btn\">\n" +
+                            "                        <a href=\"#\"  onclick=\"delClick(" + addList[i].id + ");\">删除</a>\n" +
+                            "                    </div>\n" +
+                            "\n" +
+                            "                </li>");
+                    }
                 }
             }
         })
     }
+
     function delClick(i) {
-        if(confirm("你确定要删除此地址信息吗？")){
-        $.ajax({
-            url:"/address",
-            data:{id:i,_method:"delete"},
-            type:"get",
-            success:function () {
-                reloadAddress();
-            }
-        })
+        if (confirm("你确定要删除此地址信息吗？")) {
+            $.ajax({
+                url: "/address",
+                data: {id: i, _method: "delete"},
+                type: "get",
+                success: function () {
+                    reloadAddress();
+                }
+            })
         }
     }
+
     function selectCity() {
         var pId = $("#province").val();
         $.ajax({
@@ -540,24 +565,26 @@
             }
         )
     }
+
     $("#J_Go").click(function () {
         var username = $("#holyshit268").find(".buy-user").text();
-        if(username == ""){
+        if (username == "") {
             alert("请选择有效的收货地址，亲！")
-        }else{
-        var phone = $("#holyshit268").find(".buy-phone").text();
-        var province = $("#holyshit268").find(".province").text();
-        var city = $("#holyshit268").find(".city").text();
-        var dist = $("#holyshit268").find(".dist").text();
-        var street = $("#holyshit268").find(".street").text();
-        var price = $("#J_ActualFee").text();
-        var carId =  $("#getId").find(":input");
-        var carList = "";
-       for (var i=0;i<carId.length;i++){
-           carList =carList+$(carId[i]).val()+",";
+        } else {
+            var phone = $("#holyshit268").find(".buy-phone").text();
+            var province = $("#holyshit268").find(".province").text();
+            var city = $("#holyshit268").find(".city").text();
+            var dist = $("#holyshit268").find(".dist").text();
+            var street = $("#holyshit268").find(".street").text();
+            var price = $("#J_ActualFee").text();
+            var carId = $("#getId").find(":input");
+            var carList = "";
+            for (var i = 0; i < carId.length; i++) {
+                carList = carList + $(carId[i]).val() + ",";
 
-       }
-        window.location.href = "/commit.do?username="+username+"&phone="+phone+"&province="+province+"&city="+city+"&dist="+dist+"&street="+street+"&price="+price+"&carList="+carList;}
+            }
+            window.location.href = "/commit.do?username=" + username + "&phone=" + phone + "&province=" + province + "&city=" + city + "&dist=" + dist + "&street=" + street + "&price=" + price + "&carList=" + carList;
+        }
     })
 </script>
 </body>

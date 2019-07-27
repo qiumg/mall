@@ -70,9 +70,9 @@
 <!--悬浮搜索框-->
 
 <div class="nav white">
-    <div class="logo"><img src="images/logo.png" /></div>
+    <div class="logo"><img src="images/logo.png"/></div>
     <div class="logoBig">
-        <li><img src="images/logobig.png" /></li>
+        <li><img src="images/logobig.png"/></li>
     </div>
 
     <div class="search-bar pr">
@@ -164,7 +164,7 @@
                     <li class="tb-selected">
                         <div class="tb-pic tb-s40">
                             <c:if test="${product != null}">
-                            <a href="#"><img src="../${product.main_Image}"/></a>
+                                <a href="#"><img src="../${product.main_Image}"/></a>
                             </c:if>
                         </div>
                     </li>
@@ -190,7 +190,7 @@
                     <li class="price iteminfo_price">
                         <dt>促销价</dt>
                         <c:if test="${product != null}">
-                        <dd><em>¥</em><b class="sys_item_price">${product.price}</b></dd>
+                            <dd><em>¥</em><b class="sys_item_price">${product.price}</b></dd>
                         </c:if>
                     </li>
                     <li class="price iteminfo_mktprice">
@@ -275,9 +275,9 @@
                         <input id="min" class="am-btn am-btn-default" name="" type="button" value="-"/>
                         <input id="text_box" name="" type="text" value="1" style="width:30px;"/>
                         <input id="add" class="am-btn am-btn-default" name="" type="button" value="+"/>
-                    <c:if test="${product != null}">
-                        <span id="Stock" class="tb-hidden">库存<span class="stock">${product.stock}</span>件</span>
-                    </c:if>
+                        <c:if test="${product != null}">
+                            <span id="Stock" class="tb-hidden">库存<span class="stock">${product.stock}</span>件</span>
+                        </c:if>
                     </dd>
 
                 </dl>
@@ -328,10 +328,10 @@
 </div>
 </div>
 <%
-    HttpSession hs=request.getSession(false);
-    String s= (String) hs.getAttribute("loginName");
-    user us= (user) hs.getAttribute("user");
-							%>
+    HttpSession hs = request.getSession(false);
+    String s = (String) hs.getAttribute("loginName");
+    user us = (user) hs.getAttribute("user");
+%>
 <div class="pay" style="margin-left: 600px">
     <div class="pay-opt">
         <a href="home.html"><span class="am-icon-home am-icon-fw">首页</span></a>
@@ -340,18 +340,18 @@
     </div>
     <li>
         <div class="clearfix tb-btn tb-btn-buy theme-login">
-           <% if(s == null || s.isEmpty()){%>
+            <% if (s == null || s.isEmpty()) {%>
             <a id="LikBuy1" title="点此按钮到下一步确认购买信息" href="../home/login.jsp">立即购买</a>
-            <%}else{%>
+            <%} else {%>
             <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
             <%}%>
         </div>
     </li>
     <li>
         <div class="clearfix tb-btn tb-btn-basket theme-login">
-            <% if(s == null || s.isEmpty()){%>
+            <% if (s == null || s.isEmpty()) {%>
             <a id="LikBasket1" title="加入购物车" href="../home/login.jsp"><i></i>加入购物车</a>
-            <%}else{%>
+            <%} else {%>
             <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
             <%}%>
         </div>
@@ -478,11 +478,6 @@
 
                 </li>
 
-                <li>
-                    <a href="#">
-
-                        <span class="index-needs-dt-txt">猜你喜欢</span></a>
-                </li>
             </ul>
 
             <div class="am-tabs-bd">
@@ -494,10 +489,9 @@
                             <h4>产品参数：</h4></div>
                         <div class="clear"></div>
                         <ul id="J_AttrUL">
-                            <li title="">产品类型:&nbsp;休闲鞋</li>
+                            <li title="">产品类型:&nbsp;鞋</li>
                             <li title="">产品商家:&nbsp;花花公子</li>
                             <li title="">产地:&nbsp;湖北省武汉市</li>
-                            <li title="">产品规格:&nbsp;</li>
                             <li title="">产品标准号:&nbsp;GB/T 22165</li>
                             <li title="">生产许可证编号：&nbsp;QS4201 1801 0226</li>
                         </ul>
@@ -509,13 +503,7 @@
                             <h4>商品细节</h4>
                         </div>
                         <div class="twlistNews">
-                            <img src="../images/act1.jpg"/>
-                            <img src="../images/act2.jpg"/>
-                            <img src="../images/act3.jpg"/>
-                            <img src="../images/b-51.jpg"/>
-                            <img src="../images/b-52.jpg"/>
-                            <img src="../images/b-53.jpg"/>
-                            <img src="../images/b-54.jpg"/>
+                            <img src="../${product.main_Image}"/>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -575,413 +563,7 @@
                     </div>
                     <div class="clear"></div>
 
-                    <ul class="am-comments-list am-comments-list-flip">
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月02日 17:46</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255776406962">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            穿起来合脚轻松，不厚，没色差，颜色好看！买这个鞋子还接到诈骗电话，我很好奇他们是怎么知道我买了这双鞋子，并且还知道我的电话的！
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：白色&nbsp;&nbsp;尺码：42码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">l***4 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年10月28日 11:33</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255095758792">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            式样不错，初冬穿
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：黑色&nbsp;&nbsp;尺码：41码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月02日 17:46</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255776406962">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            穿起来合脚轻松，不厚，没色差，颜色好看！买这个鞋子还接到诈骗电话，我很好奇他们是怎么知道我买了这双鞋子，并且还知道我的电话的！
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：白色&nbsp;&nbsp;尺码：42码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">h***n (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月25日 12:48</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="258040417670">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            式样不错，初冬穿
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：黑色&nbsp;&nbsp;尺码：41码
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月02日 17:46</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255776406962">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            穿起来合脚轻松，不厚，没色差，颜色好看！买这个鞋子还接到诈骗电话，我很好奇他们是怎么知道我买了这双鞋子，并且还知道我的电话的！
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：白色&nbsp;&nbsp;尺码：42码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">l***4 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年10月28日 11:33</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255095758792">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            式样不错，初冬穿
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：黑色&nbsp;&nbsp;尺码：41码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月02日 17:46</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255776406962">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            穿起来合脚轻松，不厚，没色差，颜色好看！买这个鞋子还接到诈骗电话，我很好奇他们是怎么知道我买了这双鞋子，并且还知道我的电话的！
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：白色&nbsp;&nbsp;尺码：42码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">h***n (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月25日 12:48</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="258040417670">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            式样不错，初冬穿
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：黑色&nbsp;&nbsp;尺码：41码
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月02日 17:46</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255776406962">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            穿起来合脚轻松，不厚，没色差，颜色好看！买这个鞋子还接到诈骗电话，我很好奇他们是怎么知道我买了这双鞋子，并且还知道我的电话的！
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：白色&nbsp;&nbsp;尺码：42码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">l***4 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年10月28日 11:33</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255095758792">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            式样不错，初冬穿
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：黑色&nbsp;&nbsp;尺码：41码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">b***1 (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月02日 17:46</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="255776406962">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            穿起来合脚轻松，不厚，没色差，颜色好看！买这个鞋子还接到诈骗电话，我很好奇他们是怎么知道我买了这双鞋子，并且还知道我的电话的！
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：白色&nbsp;&nbsp;尺码：42码
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
-                        <li class="am-comment">
-                            <!-- 评论容器 -->
-                            <a href="">
-                                <img class="am-comment-avatar" src="../images/hwbn40x40.jpg"/>
-                                <!-- 评论者头像 -->
-                            </a>
-
-                            <div class="am-comment-main">
-                                <!-- 评论内容容器 -->
-                                <header class="am-comment-hd">
-                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
-                                    <div class="am-comment-meta">
-                                        <!-- 评论元数据 -->
-                                        <a href="#link-to-user" class="am-comment-author">h***n (匿名)</a>
-                                        <!-- 评论者 -->
-                                        评论于
-                                        <time datetime="">2015年11月25日 12:48</time>
-                                    </div>
-                                </header>
-
-                                <div class="am-comment-bd">
-                                    <div class="tb-rev-item " data-id="258040417670">
-                                        <div class="J_TbcRate_ReviewContent tb-tbcr-content ">
-                                            式样不错，初冬穿
-                                        </div>
-                                        <div class="tb-r-act-bar">
-                                            颜色分类：黑色&nbsp;&nbsp;尺码：41码
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- 评论内容 -->
-                            </div>
-                        </li>
+                    <ul class="am-comments-list am-comments-list-flip" id="comment">
 
                     </ul>
 
@@ -1006,191 +588,39 @@
 
                 </div>
 
-                <div class="am-tab-panel am-fade">
-                    <div class="like">
-                        <ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-
-                                </div>
-                            </li>
-                            <li>
-                                <div class="i-pic limit">
-                                    <img src="../images/f-2.jpg"/>
-                                    <p>【鳄鱼】精品皮鞋
-                                        <span>体验舒服的皮鞋</span></p>
-                                    <p class="price fl">
-                                        <b>¥</b>
-                                        <strong>298.00</strong>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="clear"></div>
-
-                    <!--分页 -->
-                    <ul class="am-pagination am-pagination-right">
-                        <li class="am-disabled"><a href="#">&laquo;</a></li>
-                        <li class="am-active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
-                    </ul>
-                    <div class="clear"></div>
-
-                </div>
-
             </div>
 
         </div>
 
-        <div class="clear"></div>
+    </div>
 
-        <div class="footer">
-            <div class="footer-hd">
-                <p>
-                    <a href="#">恒望科技</a>
-                    <b>|</b>
-                    <a href="#">商城首页</a>
-                    <b>|</b>
-                    <a href="#">支付宝</a>
-                    <b>|</b>
-                    <a href="#">物流</a>
-                </p>
-            </div>
-            <div class="footer-bd">
-                <p>
-                    <a href="#">关于恒望</a>
-                    <a href="#">合作伙伴</a>
-                    <a href="#">联系我们</a>
-                    <a href="#">网站地图</a>
-                    <em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank"
-                                                               title="模板之家">模板之家</a> - Collect from <a
-                            href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
-                </p>
-            </div>
+    <div class="clear"></div>
+
+    <div class="footer">
+        <div class="footer-hd">
+            <p>
+                <a href="#">恒望科技</a>
+                <b>|</b>
+                <a href="#">商城首页</a>
+                <b>|</b>
+                <a href="#">支付宝</a>
+                <b>|</b>
+                <a href="#">物流</a>
+            </p>
+        </div>
+        <div class="footer-bd">
+            <p>
+                <a href="#">关于恒望</a>
+                <a href="#">合作伙伴</a>
+                <a href="#">联系我们</a>
+                <a href="#">网站地图</a>
+                <em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank"
+                                                           title="模板之家">模板之家</a> - Collect from <a
+                        href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+            </p>
         </div>
     </div>
+</div>
 
 </div>
 </div>
@@ -1374,19 +804,19 @@
             }
         )
         var List = ${product.attribute_List};
-        $("#color").append("<li class='sku-line selected'>"+List.color[0]+"<i></i></li>");
-        for(var i=1 ;i<List.color.length; i++){
-            $("#color").append("<li class='sku-line '>"+List.color[i]+"<i></i></li>");
+        $("#color").append("<li class='sku-line selected'>" + List.color[0] + "<i></i></li>");
+        for (var i = 1; i < List.color.length; i++) {
+            $("#color").append("<li class='sku-line '>" + List.color[i] + "<i></i></li>");
         }
-        $("#size").append("<li class='sku-line selected'>"+List.size[0]+"<i></i></li>");
-        for(var i=1 ;i<List.size.length; i++){
-            $("#size").append("<li class='sku-line '>"+List.size[i]+"<i></i></li>");
+        $("#size").append("<li class='sku-line selected'>" + List.size[0] + "<i></i></li>");
+        for (var i = 1; i < List.size.length; i++) {
+            $("#size").append("<li class='sku-line '>" + List.size[i] + "<i></i></li>");
         }
-        $("#color").delegate("li","click",function(){
+        $("#color").delegate("li", "click", function () {
             $(this).siblings("li").removeClass("selected");
             $(this).addClass("selected");
         })
-        $("#size").delegate("li","click",function(){
+        $("#size").delegate("li", "click", function () {
             $(this).siblings("li").removeClass("selected");
             $(this).addClass("selected");
         })
@@ -1399,11 +829,20 @@
             var sizeInfo = $("#size").find(".selected").text();
             var productNum = $("#text_box").val();
             $.ajax({
-                url:"/pay.do",
-                type:"get",
-                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
-                success:function(data){
-                    window.location.href="/pay.do?_method=jump&id="+data;
+                url: "/pay.do",
+                type: "get",
+                data: {
+                    _method: "addInfo",
+                    productid: productId,
+                    province: provinceInfo,
+                    city: cityInfo,
+                    area: areaInfo,
+                    color: colorInfo,
+                    size: sizeInfo,
+                    productnum: productNum
+                },
+                success: function (data) {
+                    window.location.href = "/pay.do?_method=jump&id=" + data;
                 }
             })
         })
@@ -1416,14 +855,69 @@
             var sizeInfo = $("#size").find(".selected").text();
             var productNum = $("#text_box").val();
             $.ajax({
-                url:"/pay.do",
-                type:"get",
-                data:{_method:"addInfo",productid:productId,province:provinceInfo,city:cityInfo,area:areaInfo,color:colorInfo,size:sizeInfo,productnum:productNum},
-                success:function(){
-                    window.location.href="/car.do?_method=selectCar";
+                url: "/pay.do",
+                type: "get",
+                data: {
+                    _method: "addInfo",
+                    productid: productId,
+                    province: provinceInfo,
+                    city: cityInfo,
+                    area: areaInfo,
+                    color: colorInfo,
+                    size: sizeInfo,
+                    productnum: productNum
+                },
+                success: function () {
+                    window.location.href = "/car.do?_method=selectCar";
                 }
             })
         })
+        $.ajax({
+            url: "/comment.do",
+            type: "get",
+            data: {_method: "query", productid:${product.id}},
+            success: function (data) {
+                //alert(data)
+                var commentList = JSON.parse(data);
+                for(var i=0 ; i < commentList.length ; i++){
+                    var spec = JSON.parse(commentList[i].productSpecs.product_Specs)
+                $("#comment").append("<li class=\"am-comment\">\n" +
+                    "                            <!-- 评论容器 -->\n" +
+                    "                            <a href=\"\">\n" +
+                    "                                <img class=\"am-comment-avatar\" src=\"../images/hwbn40x40.jpg\"/>\n" +
+                    "                                <!-- 评论者头像 -->\n" +
+                    "                            </a>\n" +
+                    "\n" +
+                    "                            <div class=\"am-comment-main\">\n" +
+                    "                                <!-- 评论内容容器 -->\n" +
+                    "                                <header class=\"am-comment-hd\">\n" +
+                    "                                    <!--<h3 class=\"am-comment-title\">评论标题</h3>-->\n" +
+                    "                                    <div class=\"am-comment-meta\">\n" +
+                    "                                        <!-- 评论元数据 -->\n" +
+                    "                                        <a href=\"#link-to-user\" class=\"am-comment-author\"> (匿名)</a>\n" +
+                    "                                        <!-- 评论者 -->\n" +
+                    "                                        评论于\n" +
+                    "                                        <time datetime=\"\">"+new Date(commentList[i].time).Format("yyyy年MM月dd日 hh时mm分ss秒")+"</time>\n" +
+                    "                                    </div>\n" +
+                    "                                </header>\n" +
+                    "\n" +
+                    "                                <div class=\"am-comment-bd\">\n" +
+                    "                                    <div class=\"tb-rev-item \" data-id=\"255776406962\">\n" +
+                    "                                        <div class=\"J_TbcRate_ReviewContent tb-tbcr-content \">\n" +
+                    "                                            "+commentList[i].content+"\n" +
+                    "                                        </div>\n" +
+                    "                                        <div class=\"tb-r-act-bar\">\n" +
+                    "                                            颜色分类："+spec.color+"&nbsp;&nbsp;尺码："+spec.size+"\n" +
+                    "                                        </div>\n" +
+                    "                                    </div>\n" +
+                    "\n" +
+                    "                                </div>\n" +
+                    "                                <!-- 评论内容 -->\n" +
+                    "                            </div>\n" +
+                    "                        </li>")}
+            }
+        })
+
     })
 
     function selectCity() {
@@ -1439,6 +933,7 @@
                     for (var i = 0; i < cList.length; i++) {
                         cSelect.append(" <option value='" + cList[i].cityId + "'>" + cList[i].city + "</option>")
                     }
+                    selectArea();
                 }
             }
         )
@@ -1460,6 +955,24 @@
                 }
             }
         )
+    }
+    Date.prototype.Format = function(fmt)
+    { //author: meizz
+        var o = {
+            "M+" : this.getMonth()+1,                 //月份
+            "d+" : this.getDate(),                    //日
+            "h+" : this.getHours(),                   //小时
+            "m+" : this.getMinutes(),                 //分
+            "s+" : this.getSeconds(),                 //秒
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度
+            "S"  : this.getMilliseconds()             //毫秒
+        };
+        if(/(y+)/.test(fmt))
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        for(var k in o)
+            if(new RegExp("("+ k +")").test(fmt))
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        return fmt;
     }
 
 </script>

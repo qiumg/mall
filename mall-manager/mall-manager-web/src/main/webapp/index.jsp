@@ -1,4 +1,5 @@
-<%@ page import="com.mall.user" %><%--
+<%@ page import="com.mall.user" %>
+<%--
   Created by IntelliJ IDEA.
   User: asus
   Date: 2019/7/14
@@ -8,7 +9,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -67,9 +67,9 @@
             <div class="topMessage mini-cart">
                 <%
                     if(s == null || s.isEmpty()){								%>
-                <div class="menu-hd"><a id="mc-menu-hd" href="home/login.jsp" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+                <div class="menu-hd"><a id="mc-menu-hd" href="home/login.jsp" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"></strong></a></div>
                 <%}else{%>
-                <div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
+                <div class="menu-hd"><a id="mc-menu-hd" href="car.do?_method=selectCar" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong id="J_MiniCartNum" class="h"></strong></a></div>
                 <%}%>
             </div>
             <div class="topMessage favorite">
@@ -707,22 +707,13 @@
 
             </div>
             <div id="shopCart " class="item ">
-                <a href="# ">
+                <a href="car.do?_method=selectCar">
                     <span class="message "></span>
                 </a>
                 <p>
                     购物车
                 </p>
-                <p class="cart_num ">0</p>
-            </div>
-            <div id="asset " class="item ">
-                <a href="# ">
-                    <span class="view "></span>
-                </a>
-                <div class="mp_tooltip ">
-                    我的资产
-                    <i class="icon_arrow_right_black "></i>
-                </div>
+                <p class="cart_num "></p>
             </div>
 
             <div id="foot " class="item ">
@@ -741,16 +732,6 @@
                 </a>
                 <div class="mp_tooltip ">
                     我的收藏
-                    <i class="icon_arrow_right_black "></i>
-                </div>
-            </div>
-
-            <div id="broadcast " class="item ">
-                <a href="# ">
-                    <span class="chongzhi "><img src="images/chongzhi.png " /></span>
-                </a>
-                <div class="mp_tooltip ">
-                    我要充值
                     <i class="icon_arrow_right_black "></i>
                 </div>
             </div>
@@ -841,9 +822,6 @@
         </div>
     </div>
 </div>
-<script>
-
-</script>
 <script type="text/javascript " src="basic/js/quick_links.js "></script>
 <script type="text/javascript">
     $(function () {
@@ -939,7 +917,7 @@
                         "                        <a href='"+product[0].detail+"?productid="+product[0].id+"'>\n" +
                         "                            <img src='"+product[0].main_Image+"' />\n" +
                         "                            <div class=\"pro-title \">靓女精选</div>\n" +
-                        "                            <span class=\"e-price \">￥118</span>\n" +
+                        "                            <span class=\"e-price \">￥"+product[0].price+"</span>\n" +
                         "                        </a>\n" +
                         "                    </div>\n" +
                         "                </li>\n" +
@@ -948,7 +926,7 @@
                         "                        <a href='"+product[1].detail+"?productid="+product[1].id+"'>\n" +
                         "                            <img src='"+product[1].main_Image+"?productid="+product[1].id+"' />\n" +
                         "                            <div class=\"pro-title \">俊男优选</div>\n" +
-                        "                            <span class=\"e-price \">￥108</span>\n" +
+                        "                            <span class=\"e-price \">￥"+product[1].price+"</span>\n" +
                         "                        </a>\n" +
                         "                    </div>\n" +
                         "                </li>")

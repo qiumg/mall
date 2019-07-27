@@ -15,4 +15,8 @@ public interface IProductDAO {
     void updateProduct(Product product);
     //根据分类id查询信息
     List<Product> selectProductByCategoryId(int id);
+    //删除商品 根据id
+    void deleteProductById(int id);
+    //查询所有商品信息
+    List<Product> selectAll();
 }

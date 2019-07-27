@@ -1,6 +1,8 @@
 package com.mall;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Comment {
     private int id;
@@ -8,8 +10,15 @@ public class Comment {
     private int productId;
     private String content;
     private Timestamp time;
-
+    private ProductSpecs productSpecs;
     public Comment() {
+    }
+
+    public Comment(int userId, int productId, String content, Timestamp time) {
+        this.userId = userId;
+        this.productId = productId;
+        this.content = content;
+        this.time = time;
     }
 
     public Comment(int id, int userId, int productId, String content, Timestamp time) {
@@ -18,6 +27,14 @@ public class Comment {
         this.productId = productId;
         this.content = content;
         this.time = time;
+    }
+
+    public ProductSpecs getProductSpecs() {
+        return productSpecs;
+    }
+
+    public void setProductSpecs(ProductSpecs productSpecs) {
+        this.productSpecs = productSpecs;
     }
 
     public int getId() {
@@ -68,6 +85,7 @@ public class Comment {
                 ", productId=" + productId +
                 ", content='" + content + '\'' +
                 ", time=" + time +
+                ", productSpecs=" + productSpecs +
                 '}';
     }
 }

@@ -125,46 +125,51 @@
 									</dl>
 								</li>
 								<div class="clear"></div>
-								<li class="select-list">
-									<dl id="select1">
-										<dt class="am-badge am-round">品牌</dt>	
-									
-										 <div class="dd-conent">										
-											<dd class="select-all selected"><a href="#">全部</a></dd>
-											<dd><a href="#">奥康</a></dd>
-											<dd><a href="#">红蜻蜓</a></dd>
-											<dd><a href="#">意尔康</a></dd>
-											<dd><a href="#">斯凯奇</a></dd>
-											<dd><a href="#">康奈</a></dd>
-											<dd><a href="#">骆驼</a></dd>
-										 </div>
-						
-									</dl>
-								</li>
+<%--								<li class="select-list">--%>
+<%--									<dl id="select1">--%>
+<%--										<dt class="am-badge am-round">品牌</dt>	--%>
+<%--									--%>
+<%--										 <div class="dd-conent">										--%>
+<%--											<dd class="select-all selected"><a href="#">全部</a></dd>--%>
+<%--											<dd><a href="#">奥康</a></dd>--%>
+<%--											<dd><a href="#">红蜻蜓</a></dd>--%>
+<%--											<dd><a href="#">意尔康</a></dd>--%>
+<%--											<dd><a href="#">斯凯奇</a></dd>--%>
+<%--											<dd><a href="#">康奈</a></dd>--%>
+<%--											<dd><a href="#">骆驼</a></dd>--%>
+<%--										 </div>--%>
+<%--						--%>
+<%--									</dl>--%>
+<%--								</li>--%>
 								<li class="select-list">
 									<dl id="select2">
 										<dt class="am-badge am-round">种类</dt>
 										<div class="dd-conent">
 											<dd class="select-all selected"><a href="#">全部</a></dd>
-											<dd><a href="#">休闲鞋</a></dd>
-											<dd><a href="#">高跟鞋</a></dd>
-											<dd><a href="#">凉鞋</a></dd>
-											<dd><a href="#">板鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=休闲">休闲鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=高跟">高跟鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=凉鞋">凉鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=板鞋">板鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=皮鞋">皮鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=运动">运动鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=帆布">帆布鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=工装">工装鞋</a></dd>
+											<dd><a href="/SearchProductServlet?index_none_header_sysc=拖鞋">拖鞋</a></dd>
 										</div>
 									</dl>
 								</li>
-								<li class="select-list">
-									<dl id="select3">
-										<dt class="am-badge am-round">选购热点</dt>
-										<div class="dd-conent">
-											<dd class="select-all selected"><a href="#">全部</a></dd>
-											<dd><a href="#">板鞋</a></dd>
-											<dd><a href="#">皮鞋</a></dd>
-											<dd><a href="#">休闲鞋</a></dd>
-											<dd><a href="#">高跟鞋</a></dd>
-										</div>
-									</dl>
-								</li>
+<%--								<li class="select-list">--%>
+<%--									<dl id="select3">--%>
+<%--										<dt class="am-badge am-round">选购热点</dt>--%>
+<%--										<div class="dd-conent">--%>
+<%--											<dd class="select-all selected"><a href="#">全部</a></dd>--%>
+<%--											<dd><a href="#">板鞋</a></dd>--%>
+<%--											<dd><a href="#">皮鞋</a></dd>--%>
+<%--											<dd><a href="#">休闲鞋</a></dd>--%>
+<%--											<dd><a href="#">高跟鞋</a></dd>--%>
+<%--										</div>--%>
+<%--									</dl>--%>
+<%--								</li>--%>
 					        
 							</ul>
 							<div class="clear"></div>

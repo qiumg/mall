@@ -2,12 +2,11 @@ package com.test;
 
 
 import com.mall.*;
-import com.mall.impl.CategoryDAOImpl;
-import com.mall.impl.ProductDAOImpl;
-import com.mall.impl.ShippingDAOImpl;
+import com.mall.impl.*;
 import com.utils.JDBCUtils;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -16,29 +15,25 @@ public class ConnectionTest {
     public void connTest() {
         System.out.println(JDBCUtils.getConnection());
     }
+
     @Test
-    public  void productTest(){
+    public void productTest() {
         IProductDAO dao = new ProductDAOImpl();
-        dao.selectProductByCategoryId(10002);
+        Product product = dao.selectProductById(31);
+        product.setStock(111111);
+        dao.updateProduct(product);
 
     }
+
     @Test
-    public  void productImgTest(){
-//        Shipping shipping = new Shipping();
-//        shipping.setUser_Id(1);
-//        shipping.setReceiver_name("helloworld");
-//        shipping.setReceiver_mobile("13356295928");
-//        shipping.setReceiver_province("山西");
-//        shipping.setReceiver_city("binzhou");
-//        shipping.setReceiver_district("buyang");
-//        shipping.setReceiver_address("daxue");
-//        IShippingDAO dao = new ShippingDAOImpl();
-//        dao.insertShipping(shipping);
-//        String color = "白色";
-//        String size = "41码";
-//        String spec = "{\"color\":\""+color+"\",\"size\":\""+size+"\"}";
-//        System.out.println(spec);
-        }
-
+    public void productImgTest() {
+        IProductSpecsDAO dao = new ProductSpecDAOImpl();
+        List<Integer> integers = dao.selectProductSpecByPid(30);
+        System.out.println(integers);
     }
+
+}
+
+
+
 

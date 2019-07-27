@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductSpecDAOImpl implements IProductSpecsDAO {
@@ -59,5 +60,21 @@ public class ProductSpecDAOImpl implements IProductSpecsDAO {
             e.printStackTrace();
         }
         return productSpecs;
+    }
+
+    @Override
+    public List<Integer> selectProductSpecByPid(int productId) {
+        List<Integer> integers = new ArrayList<>();
+        QueryRunner qr = new QueryRunner(JDBCUtils.getDataSource());
+        String sql = "select id from mmall_product_specs where product_id = ?";
+        try {
+            List<ProductSpecs> specs = qr.query(sql, new BeanListHandler<>(ProductSpecs.class), productId);
+            for (int i =0 ; i < specs.size();i++) {
+                integers.add(specs.get(i).getId());
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return integers;
     }
 }
